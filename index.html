@@ -1,66 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
+<meta name="theme-color" content="#17152b">
 <title>Aung English Pro</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
-  padding:0
+  padding:0;
 }
 
 :root{
-  --bg:#f6f7fb;
+  --bg:#f7f7fb;
   --card:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --line:#e5e7eb;
-  --primary:#7c3aed;
-  --primary2:#9333ea;
-  --green:#16a34a;
-  --orange:#f59e0b;
-  --red:#ef4444;
-  --cyan:#0891b2;
-  --dark:#111827;
-  --sidebar:#111827;
-  --shadow:0 8px 30px rgba(15,23,42,.08);
-  --radius:20px
+  --text:#19172a;
+  --muted:#77748a;
+  --line:#e9e7f0;
+  --primary:#7357e8;
+  --primary2:#5d43d0;
+  --green:#27ae73;
+  --orange:#f3a33b;
+  --red:#e85d75;
+  --dark:#17152b;
+  --soft:#f0edff;
+  --shadow:0 10px 30px rgba(30,20,70,.08);
 }
 
-body.dark{
-  --bg:#0b1120;
-  --card:#111827;
-  --text:#f9fafb;
-  --muted:#9ca3af;
-  --line:#243044;
-  --sidebar:#070b14;
-  --shadow:0 8px 30px rgba(0,0,0,.25)
+html{
+  scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,"Noto Sans Myanmar",sans-serif;
   background:var(--bg);
   color:var(--text);
-  min-height:100vh
+  min-height:100vh;
 }
 
 button,
 input,
-textarea,
-select{
-  font:inherit
+select,
+textarea{
+  font:inherit;
 }
 
 button{
-  cursor:pointer
+  cursor:pointer;
 }
 
 .app{
-  min-height:100vh
+  min-height:100vh;
 }
 
 .sidebar{
@@ -69,91 +61,123 @@ button{
   top:0;
   bottom:0;
   width:260px;
-  background:var(--sidebar);
+  background:var(--dark);
   color:white;
-  padding:20px 14px;
-  z-index:1000;
-  overflow-y:auto
+  padding:22px 15px;
+  z-index:100;
+  overflow-y:auto;
 }
 
-.logo{
-  padding:8px 12px 20px
+.brand{
+  padding:5px 10px 25px;
 }
 
-.logo-title{
+.brand-title{
   font-size:21px;
-  font-weight:900;
-  letter-spacing:.3px
+  font-weight:800;
+  letter-spacing:.2px;
 }
 
-.logo-sub{
-  color:#9ca3af;
+.brand-sub{
   font-size:11px;
-  margin-top:5px
+  color:#aaa6bf;
+  margin-top:5px;
 }
 
-.profile-mini{
+.profile{
   background:rgba(255,255,255,.07);
   border:1px solid rgba(255,255,255,.08);
+  padding:13px;
   border-radius:16px;
-  padding:12px;
-  margin-bottom:15px
+  margin-bottom:20px;
 }
 
-.profile-mini strong{
-  display:block;
-  font-size:14px
+.avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#8d75ff,#5d43d0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  margin-bottom:9px;
 }
 
-.profile-mini span{
-  color:#9ca3af;
-  font-size:11px
+.profile-name{
+  font-size:14px;
+  font-weight:700;
 }
 
-.nav-section{
-  margin:17px 10px 7px;
-  color:#6b7280;
+.profile-role{
+  font-size:11px;
+  color:#aaa6bf;
+  margin-top:3px;
+}
+
+.nav-title{
   font-size:10px;
+  color:#77738f;
+  font-weight:700;
+  padding:12px 10px 7px;
   text-transform:uppercase;
-  letter-spacing:1px;
-  font-weight:800
 }
 
 .nav-btn{
   width:100%;
+  border:0;
+  background:transparent;
+  color:#bbb8ca;
+  text-align:left;
+  padding:11px 12px;
+  border-radius:11px;
+  margin:2px 0;
   display:flex;
   align-items:center;
   gap:11px;
-  background:transparent;
-  border:0;
-  color:#d1d5db;
-  padding:11px 12px;
-  border-radius:12px;
-  margin-bottom:3px;
-  text-align:left;
-  font-size:13px;
-  transition:.2s
+  transition:.2s;
 }
 
 .nav-btn:hover,
 .nav-btn.active{
-  background:rgba(124,58,237,.22);
-  color:white
+  background:#292541;
+  color:white;
 }
 
 .nav-icon{
   width:24px;
-  text-align:center
+  text-align:center;
+}
+
+.premium{
+  margin-top:18px;
+  background:linear-gradient(135deg,#7357e8,#9b73ff);
+  border-radius:16px;
+  padding:15px;
+}
+
+.premium strong{
+  display:block;
+  font-size:13px;
+  margin-bottom:5px;
+}
+
+.premium span{
+  display:block;
+  color:#eee9ff;
+  font-size:11px;
+  line-height:1.5;
 }
 
 .main{
   margin-left:260px;
-  min-height:100vh
+  min-height:100vh;
 }
 
 .topbar{
-  height:66px;
-  background:var(--card);
+  height:68px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
   display:flex;
   align-items:center;
@@ -161,57 +185,60 @@ button{
   padding:0 28px;
   position:sticky;
   top:0;
-  z-index:500
+  z-index:50;
 }
 
 .mobile-menu{
   display:none;
   border:0;
-  background:var(--bg);
+  background:var(--soft);
   width:40px;
   height:40px;
-  border-radius:12px
+  border-radius:11px;
+  font-size:20px;
 }
 
 .top-title{
-  font-size:18px;
-  font-weight:800
+  font-size:17px;
+  font-weight:800;
 }
 
-.top-right{
+.top-stats{
   display:flex;
-  align-items:center;
-  gap:8px
+  gap:8px;
 }
 
-.top-pill{
-  background:var(--bg);
+.top-stat{
+  background:#faf9fd;
   border:1px solid var(--line);
-  border-radius:12px;
   padding:8px 11px;
+  border-radius:11px;
   font-size:12px;
-  font-weight:800
+  font-weight:700;
+}
+
+.content{
+  max-width:1250px;
+  margin:auto;
+  padding:28px;
 }
 
 .page{
   display:none;
-  padding:28px;
-  max-width:1500px;
-  margin:auto
 }
 
 .page.active{
-  display:block
+  display:block;
 }
 
 .hero{
-  background:linear-gradient(135deg,#4c1d95,#7c3aed 55%,#a855f7);
+  background:linear-gradient(135deg,#201b3b,#34285d);
   color:white;
-  border-radius:26px;
-  padding:27px;
+  border-radius:25px;
+  padding:28px;
   position:relative;
   overflow:hidden;
-  box-shadow:var(--shadow)
+  margin-bottom:22px;
 }
 
 .hero:after{
@@ -219,858 +246,854 @@ button{
   position:absolute;
   width:220px;
   height:220px;
-  right:-70px;
-  top:-90px;
   border-radius:50%;
-  background:rgba(255,255,255,.12)
+  right:-60px;
+  top:-90px;
+  background:rgba(137,112,255,.18);
 }
 
 .hero small{
-  color:#ddd6fe
+  color:#c9c1eb;
 }
 
 .hero h1{
-  font-size:30px;
-  margin:7px 0
+  margin-top:8px;
+  font-size:28px;
 }
 
 .hero p{
-  color:#ede9fe;
-  max-width:650px;
+  margin-top:9px;
+  color:#d6d0ea;
   line-height:1.6;
-  font-size:14px
+  max-width:680px;
 }
 
 .hero-actions{
   display:flex;
   gap:10px;
   margin-top:18px;
-  flex-wrap:wrap
+  flex-wrap:wrap;
 }
 
 .btn{
   border:0;
   border-radius:12px;
-  padding:11px 16px;
-  font-weight:800;
-  font-size:13px
+  padding:11px 15px;
+  font-weight:700;
+  transition:.2s;
 }
 
 .btn-primary{
   background:var(--primary);
-  color:white
+  color:white;
+}
+
+.btn-primary:hover{
+  background:var(--primary2);
 }
 
 .btn-light{
   background:white;
-  color:#4c1d95
+  color:var(--dark);
 }
 
-.btn-outline{
-  background:transparent;
-  border:1px solid var(--line);
-  color:var(--text)
+.btn-soft{
+  background:var(--soft);
+  color:var(--primary2);
 }
 
 .btn-green{
-  background:var(--green);
-  color:white
+  background:#e9f9f1;
+  color:#198052;
 }
 
-.btn-orange{
-  background:var(--orange);
-  color:white
+.btn-danger{
+  background:#fff0f3;
+  color:#c63d59;
 }
 
-.btn-red{
-  background:var(--red);
-  color:white
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin:25px 0 13px
-}
-
-.section-head h2{
-  font-size:19px
-}
-
-.section-head p{
-  color:var(--muted);
-  font-size:12px
-}
-
-.stat-grid{
+.stats-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:14px;
-  margin-top:18px
+  margin-bottom:22px;
 }
 
-.stat{
+.stat-card{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
   padding:18px;
-  box-shadow:var(--shadow)
-}
-
-.stat-icon{
-  font-size:22px
+  box-shadow:var(--shadow);
 }
 
 .stat-label{
-  color:var(--muted);
   font-size:11px;
-  margin-top:8px
+  color:var(--muted);
 }
 
 .stat-value{
-  font-size:24px;
-  font-weight:900;
-  margin-top:4px
+  font-size:25px;
+  font-weight:800;
+  margin-top:6px;
 }
 
-.stat-sub{
-  font-size:10px;
+.stat-extra{
+  font-size:11px;
   color:var(--muted);
-  margin-top:3px
+  margin-top:5px;
 }
 
-.grid-2{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:18px
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:25px 0 13px;
 }
 
-.grid-3{
+.section-title h2{
+  font-size:18px;
+}
+
+.section-title span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.card-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px
+  gap:15px;
 }
 
 .card{
   background:var(--card);
   border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.course-card{
+  cursor:pointer;
+  transition:.2s;
+}
+
+.course-card:hover{
+  transform:translateY(-2px);
+}
+
+.course-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.course-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:var(--soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+}
+
+.badge{
+  font-size:10px;
+  font-weight:800;
+  padding:5px 8px;
   border-radius:20px;
-  padding:20px;
-  box-shadow:var(--shadow)
+  background:#f0eef5;
+  color:#686477;
 }
 
-.card h3{
+.badge.active{
+  background:#e9f9f1;
+  color:#188153;
+}
+
+.course-card h3{
   font-size:16px;
-  margin-bottom:6px
+  margin-top:14px;
 }
 
-.card p{
-  color:var(--muted);
+.course-card p{
   font-size:12px;
-  line-height:1.6
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:7px;
 }
 
 .progress{
-  width:100%;
-  height:9px;
+  height:7px;
+  background:#eceaf2;
   border-radius:20px;
-  background:var(--line);
   overflow:hidden;
-  margin-top:10px
+  margin-top:13px;
 }
 
-.progress > div{
+.progress-bar{
   height:100%;
-  background:linear-gradient(90deg,var(--primary),#c084fc);
+  background:linear-gradient(90deg,var(--primary),#a080ff);
   border-radius:20px;
-  transition:.4s
+}
+
+.path-wrap{
+  max-width:760px;
+  margin:auto;
+}
+
+.path-header{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:var(--shadow);
+}
+
+.path-header h1{
+  font-size:22px;
+}
+
+.path-header p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  margin-top:7px;
 }
 
 .path{
   position:relative;
-  max-width:700px;
-  margin:10px auto
+  padding:10px 0 30px;
 }
 
-.path-line{
+.path:before{
+  content:"";
   position:absolute;
   left:50%;
-  top:30px;
-  bottom:30px;
-  width:6px;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#e4e1ed;
   transform:translateX(-50%);
-  background:var(--line);
-  border-radius:10px
+  border-radius:10px;
 }
 
-.path-node{
+.path-item{
   position:relative;
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin:17px 0
-}
-
-.path-node:nth-child(even){
-  flex-direction:row-reverse
-}
-
-.node-info{
-  width:calc(50% - 50px);
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:13px;
-  box-shadow:var(--shadow)
-}
-
-.node-info h4{
-  font-size:13px
-}
-
-.node-info p{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:4px
-}
-
-.node{
-  position:relative;
-  z-index:2;
-  width:62px;
-  height:62px;
-  min-width:62px;
-  border-radius:50%;
-  border:5px solid var(--bg);
+  min-height:115px;
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+.path-node{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  border:6px solid white;
+  background:#dedbe7;
+  box-shadow:0 5px 18px rgba(40,30,80,.12);
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+  font-weight:800;
+}
+
+.path-node.completed{
+  background:var(--green);
   color:white;
-  font-size:22px;
-  font-weight:900;
-  box-shadow:0 5px 15px rgba(0,0,0,.15)
 }
 
-.node.done{
-  background:var(--green)
-}
-
-.node.current{
+.path-node.current{
   background:var(--primary);
-  box-shadow:0 0 0 6px rgba(124,58,237,.15)
+  color:white;
+  box-shadow:0 0 0 7px #e8e3ff;
 }
 
-.node.locked{
-  background:#9ca3af
+.path-node.locked{
+  background:#ddd9e4;
+  color:#898595;
+}
+
+.path-info{
+  position:absolute;
+  width:42%;
+  padding:12px 15px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+}
+
+.path-item:nth-child(odd) .path-info{
+  right:54%;
+  text-align:right;
+}
+
+.path-item:nth-child(even) .path-info{
+  left:54%;
+}
+
+.path-info h4{
+  font-size:13px;
+}
+
+.path-info p{
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.5;
+  margin-top:3px;
+}
+
+.path-info button{
+  margin-top:7px;
+  padding:6px 9px;
+  border:0;
+  border-radius:8px;
+  background:var(--soft);
+  color:var(--primary2);
+  font-size:10px;
+  font-weight:800;
+}
+
+.lesson-head{
+  background:linear-gradient(135deg,#211b3d,#36295f);
+  color:white;
+  padding:23px;
+  border-radius:20px;
+  margin-bottom:18px;
+}
+
+.lesson-meta{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.lesson-meta span{
+  background:rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:5px 9px;
+  font-size:10px;
+}
+
+.lesson-head h1{
+  margin-top:12px;
+  font-size:25px;
+}
+
+.lesson-head p{
+  margin-top:7px;
+  color:#d7d1e8;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.lesson-progress{
+  margin-top:17px;
+  height:7px;
+  background:rgba(255,255,255,.15);
+  border-radius:20px;
+}
+
+.lesson-progress div{
+  height:100%;
+  width:100%;
+  background:#a994ff;
+  border-radius:20px;
 }
 
 .lesson-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px
-}
-
-.lesson-card{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  padding:15px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:16px;
-  cursor:pointer;
-  transition:.2s
-}
-
-.lesson-card:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--shadow)
-}
-
-.lesson-card.locked{
-  opacity:.55;
-  cursor:not-allowed
-}
-
-.lesson-number{
-  width:42px;
-  height:42px;
-  min-width:42px;
-  border-radius:13px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#ede9fe;
-  color:#6d28d9;
-  font-weight:900
-}
-
-.lesson-card.done .lesson-number{
-  background:#dcfce7;
-  color:#15803d
-}
-
-.lesson-title{
-  font-weight:800;
-  font-size:13px
-}
-
-.lesson-meta{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:4px
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  border-radius:20px;
-  padding:5px 8px;
-  font-size:9px;
-  font-weight:800;
-  background:#ede9fe;
-  color:#6d28d9
-}
-
-.badge.green{
-  background:#dcfce7;
-  color:#15803d
-}
-
-.badge.orange{
-  background:#fef3c7;
-  color:#b45309
-}
-
-.badge.red{
-  background:#fee2e2;
-  color:#b91c1c
-}
-
-.lesson-header{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:20px;
-  box-shadow:var(--shadow)
-}
-
-.lesson-top{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap
-}
-
-.lesson-header h1{
-  margin-top:10px;
-  font-size:27px
-}
-
-.lesson-header .my-title{
-  color:var(--muted);
-  margin-top:5px;
-  font-size:13px
-}
-
-.lesson-tabs{
-  display:flex;
-  gap:7px;
-  overflow-x:auto;
-  margin-top:18px;
-  padding-bottom:3px
-}
-
-.lesson-tab{
-  border:1px solid var(--line);
-  background:var(--bg);
-  color:var(--muted);
-  border-radius:12px;
-  padding:9px 12px;
-  white-space:nowrap;
-  font-size:11px;
-  font-weight:800
-}
-
-.lesson-tab.active{
-  background:var(--primary);
-  color:white;
-  border-color:var(--primary)
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
 
 .lesson-section{
-  margin-top:16px;
-  background:var(--card);
+  background:white;
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:20px;
-  box-shadow:var(--shadow)
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
 }
 
-.lesson-section h2{
-  font-size:18px;
-  margin-bottom:10px
+.lesson-section.full{
+  grid-column:1/-1;
 }
 
 .lesson-section h3{
-  font-size:14px;
-  margin:15px 0 7px
+  font-size:16px;
+  margin-bottom:11px;
 }
 
-.lesson-section p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.7
+.lesson-section h3 span{
+  font-size:18px;
+  margin-right:5px;
 }
 
-.objective-list{
+.my-text{
+  color:#6e697c;
+  font-size:12px;
+  line-height:1.7;
+  margin-top:6px;
+}
+
+.objective-list,
+.takeaway-list{
+  padding-left:18px;
+}
+
+.objective-list li,
+.takeaway-list li{
+  margin:7px 0;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.vocab-list{
   display:grid;
-  gap:8px
+  gap:9px;
 }
 
-.objective{
-  padding:10px 12px;
-  background:var(--bg);
+.vocab-row{
+  padding:11px;
+  background:#faf9fd;
+  border:1px solid #eeeaf5;
   border-radius:12px;
-  font-size:12px
 }
 
-.vocab-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px
-}
-
-.vocab-item{
-  padding:13px;
-  border:1px solid var(--line);
-  border-radius:14px
+.vocab-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
 }
 
 .vocab-word{
-  font-weight:900;
-  color:var(--primary)
+  font-weight:800;
 }
 
 .vocab-meaning{
   font-size:11px;
-  color:var(--muted);
-  margin-top:4px
+  color:var(--primary2);
+  margin-left:5px;
 }
 
-.vocab-example{
-  font-size:11px;
-  margin-top:7px;
-  line-height:1.5
+.speak-btn{
+  border:0;
+  background:var(--soft);
+  width:32px;
+  height:32px;
+  border-radius:9px;
 }
 
 .example{
-  background:var(--bg);
-  padding:12px;
-  border-radius:12px;
-  margin-top:8px;
-  font-size:13px;
-  line-height:1.7
+  margin-top:5px;
+  font-size:11px;
+  color:#555164;
+  line-height:1.5;
 }
 
-.conversation{
-  display:grid;
-  gap:8px
+.example-my{
+  color:#8a8595;
+  font-size:10px;
+  margin-top:3px;
+}
+
+.pattern{
+  padding:12px;
+  border-radius:12px;
+  background:#f9f8fc;
+  border:1px solid var(--line);
+  margin-bottom:8px;
+}
+
+.pattern-en{
+  font-weight:700;
+  font-size:13px;
+}
+
+.pattern-my{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:4px;
+}
+
+.script-box{
+  background:#f9f8fc;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+  line-height:1.8;
+  font-size:13px;
+}
+
+.script-actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
 }
 
 .dialogue{
-  padding:11px 13px;
-  background:var(--bg);
-  border-radius:12px;
-  font-size:12px
-}
-
-.dialogue strong{
-  color:var(--primary)
-}
-
-.audio-box{
-  display:flex;
+  display:grid;
   gap:8px;
-  flex-wrap:wrap;
-  margin-top:12px
+}
+
+.dialogue-row{
+  padding:10px 12px;
+  border-radius:12px;
+  background:#faf9fd;
+}
+
+.dialogue-speaker{
+  font-size:10px;
+  color:var(--primary2);
+  font-weight:800;
+}
+
+.dialogue-en{
+  font-size:12px;
+  margin-top:3px;
+}
+
+.dialogue-my{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:3px;
 }
 
 .question{
+  padding:12px;
+  background:#faf9fd;
+  border-radius:13px;
   border:1px solid var(--line);
-  border-radius:15px;
-  padding:15px;
-  margin-top:10px
+  margin-bottom:9px;
 }
 
-.question-title{
-  font-weight:800;
-  font-size:13px;
-  line-height:1.5
+.question p{
+  font-size:12px;
+  line-height:1.5;
+  margin-bottom:8px;
 }
 
 .options{
-  display:grid;
+  display:flex;
+  flex-wrap:wrap;
   gap:7px;
-  margin-top:10px
 }
 
 .option{
-  border:1px solid var(--line);
-  background:var(--bg);
-  padding:10px 12px;
-  border-radius:11px;
-  text-align:left;
-  color:var(--text);
-  font-size:12px
+  border:1px solid #ddd9e8;
+  background:white;
+  padding:8px 11px;
+  border-radius:9px;
+  font-size:11px;
 }
 
 .option.selected{
+  background:var(--soft);
   border-color:var(--primary);
-  background:#ede9fe;
-  color:#6d28d9
+  color:var(--primary2);
+  font-weight:700;
 }
 
 .option.correct{
-  border-color:var(--green);
-  background:#dcfce7
+  background:#e9f9f1;
+  border-color:#83d2ae;
 }
 
 .option.wrong{
-  border-color:var(--red);
-  background:#fee2e2
+  background:#fff0f3;
+  border-color:#ed9dad;
 }
 
-textarea,
-input,
-select{
-  width:100%;
-  border:1px solid var(--line);
-  background:var(--bg);
-  color:var(--text);
-  border-radius:13px;
-  padding:12px;
-  outline:none
+.practice-list{
+  display:grid;
+  gap:8px;
+}
+
+.practice-item{
+  padding:11px 12px;
+  background:#faf9fd;
+  border-radius:11px;
+  font-size:11px;
 }
 
 textarea{
-  min-height:150px;
+  width:100%;
+  min-height:145px;
   resize:vertical;
-  line-height:1.6
-}
-
-.search{
-  margin-bottom:14px
-}
-
-.skill-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px
-}
-
-.skill{
-  background:var(--card);
   border:1px solid var(--line);
-  border-radius:17px;
-  padding:15px
-}
-
-.skill-icon{
-  font-size:22px
-}
-
-.skill-name{
-  font-weight:800;
-  font-size:12px;
-  margin-top:7px
-}
-
-.skill-percent{
-  font-size:22px;
-  font-weight:900;
-  margin-top:5px
-}
-
-.achievement{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:13px
-}
-
-.achievement-icon{
-  width:43px;
-  height:43px;
   border-radius:13px;
-  background:#fef3c7;
+  padding:13px;
+  outline:none;
+  background:#fbfaff;
+}
+
+textarea:focus,
+input:focus,
+select:focus{
+  border-color:var(--primary);
+}
+
+.input{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:11px 12px;
+  outline:none;
+  background:white;
+}
+
+.search-row{
   display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px
+  gap:8px;
+  margin-bottom:15px;
 }
 
-.achievement.locked{
-  opacity:.45
-}
-
-.ai-box{
-  background:linear-gradient(135deg,#1e1b4b,#312e81);
-  color:white;
-  border-radius:22px;
-  padding:22px
-}
-
-.ai-box p{
-  color:#ddd6fe
-}
-
-.chat{
-  height:300px;
-  overflow-y:auto;
-  background:rgba(255,255,255,.06);
-  border-radius:15px;
-  padding:12px;
-  margin:15px 0
-}
-
-.msg{
-  max-width:85%;
-  padding:10px 12px;
-  border-radius:14px;
-  margin-bottom:8px;
+.quiz-result{
+  margin-top:12px;
+  padding:13px;
+  border-radius:12px;
+  background:#f0edff;
+  color:#503ca8;
   font-size:12px;
-  line-height:1.5
+  display:none;
 }
 
-.msg.ai{
-  background:rgba(255,255,255,.12)
-}
-
-.msg.user{
-  background:#7c3aed;
-  margin-left:auto
-}
-
-.ai-input{
+.lesson-footer{
   display:flex;
-  gap:7px
+  justify-content:space-between;
+  gap:10px;
+  margin-top:18px;
+  flex-wrap:wrap;
 }
 
-.ai-input input{
-  background:rgba(255,255,255,.1);
-  color:white;
-  border-color:rgba(255,255,255,.15)
-}
-
-.result{
-  text-align:center;
-  padding:25px
-}
-
-.score-circle{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  border:10px solid #ede9fe;
+.skill-buttons{
   display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:15px auto;
-  font-size:34px;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.skill-chip{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:20px;
+  padding:7px 11px;
+  font-size:10px;
+}
+
+.skill-chip.done{
+  background:#e9f9f1;
+  color:#187c50;
+}
+
+.table-wrap{
+  overflow:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}
+
+th,
+td{
+  padding:11px 9px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+
+th{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.test-box{
+  max-width:720px;
+  margin:auto;
+}
+
+.score-big{
+  font-size:48px;
   font-weight:900;
-  color:var(--primary)
+  color:var(--primary);
+}
+
+.setting-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.setting-row:last-child{
+  border-bottom:0;
+}
+
+.setting-label strong{
+  font-size:13px;
+  display:block;
+}
+
+.setting-label span{
+  font-size:10px;
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+
+.select{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:10px;
+  padding:9px;
+  outline:none;
+}
+
+.overlay{
+  display:none;
+}
+
+.empty{
+  text-align:center;
+  padding:35px;
+  color:var(--muted);
 }
 
 .toast{
   position:fixed;
   left:50%;
-  bottom:25px;
+  bottom:22px;
   transform:translateX(-50%) translateY(80px);
-  background:#111827;
+  background:#211d35;
   color:white;
-  padding:12px 17px;
-  border-radius:13px;
+  padding:11px 16px;
+  border-radius:12px;
   font-size:12px;
-  z-index:3000;
+  z-index:500;
+  transition:.3s;
   opacity:0;
-  transition:.3s
 }
 
 .toast.show{
+  transform:translateX(-50%) translateY(0);
   opacity:1;
-  transform:translateX(-50%) translateY(0)
-}
-
-.overlay{
-  display:none
-}
-
-.footer-note{
-  text-align:center;
-  color:var(--muted);
-  font-size:10px;
-  padding:30px 0
 }
 
 @media(max-width:900px){
-  .stat-grid{
-    grid-template-columns:repeat(2,1fr)
-  }
-
-  .grid-2,
-  .grid-3{
-    grid-template-columns:1fr
-  }
-
-  .skill-grid{
-    grid-template-columns:repeat(2,1fr)
-  }
-}
-
-@media(max-width:700px){
   .sidebar{
     transform:translateX(-100%);
-    transition:.25s
+    transition:.25s;
   }
 
   .sidebar.open{
-    transform:translateX(0)
-  }
-
-  .overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.5);
-    z-index:900
-  }
-
-  .overlay.show{
-    display:block
+    transform:translateX(0);
   }
 
   .main{
-    margin-left:0
-  }
-
-  .topbar{
-    padding:0 13px
+    margin-left:0;
   }
 
   .mobile-menu{
-    display:block
+    display:block;
+  }
+
+  .topbar{
+    padding:0 14px;
+    gap:10px;
   }
 
   .top-title{
-    font-size:15px
+    flex:1;
+    text-align:center;
   }
 
-  .top-pill:nth-child(1){
-    display:none
+  .top-stat:nth-child(n+3){
+    display:none;
   }
 
-  .page{
-    padding:15px
+  .content{
+    padding:18px 13px 30px;
   }
 
-  .hero{
-    padding:21px;
-    border-radius:20px
+  .overlay.show{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    z-index:90;
   }
 
-  .hero h1{
-    font-size:24px
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .stat-grid{
-    gap:9px
-  }
-
-  .stat{
-    padding:14px
-  }
-
-  .stat-value{
-    font-size:20px
+  .card-grid{
+    grid-template-columns:1fr;
   }
 
   .lesson-grid{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
-  .vocab-grid{
-    grid-template-columns:1fr
-  }
-
-  .skill-grid{
-    grid-template-columns:1fr 1fr
-  }
-
-  .path-node{
-    gap:8px
-  }
-
-  .node-info{
-    width:calc(50% - 35px);
-    padding:10px
-  }
-
-  .node{
-    width:54px;
-    height:54px;
-    min-width:54px;
-    font-size:18px
-  }
-
-  .path-line{
-    width:5px
-  }
-
-  .lesson-header h1{
-    font-size:22px
+  .lesson-section.full{
+    grid-column:auto;
   }
 }
 
-@media(max-width:430px){
-  .top-right{
-    gap:4px
+@media(max-width:560px){
+  .hero{
+    padding:21px;
+    border-radius:19px;
   }
 
-  .top-pill{
+  .hero h1{
+    font-size:23px;
+  }
+
+  .stats-grid{
+    gap:9px;
+  }
+
+  .stat-card{
+    padding:13px;
+  }
+
+  .stat-value{
+    font-size:21px;
+  }
+
+  .path-info{
+    width:38%;
+  }
+
+  .path-item:nth-child(odd) .path-info{
+    right:58%;
+  }
+
+  .path-item:nth-child(even) .path-info{
+    left:58%;
+  }
+
+  .path-node{
+    width:62px;
+    height:62px;
+  }
+
+  .top-stat{
     padding:7px 8px;
-    font-size:10px
-  }
-
-  .hero-actions .btn{
-    width:100%
-  }
-
-  .stat-grid{
-    grid-template-columns:1fr 1fr
-  }
-
-  .skill-grid{
-    grid-template-columns:1fr 1fr
-  }
-
-  .skill{
-    padding:11px
-  }
-
-  .skill-percent{
-    font-size:18px
-  }
-
-  .node-info h4{
-    font-size:11px
-  }
-
-  .node-info p{
-    font-size:9px
+    font-size:10px;
   }
 }
 </style>
@@ -1080,541 +1103,531 @@ textarea{
 
 <div class="app">
 
-<aside class="sidebar" id="sidebar">
+  <aside class="sidebar" id="sidebar">
 
-  <div class="logo">
-    <div class="logo-title">AUNG ENGLISH PRO</div>
-    <div class="logo-sub">Basic to Advanced • 4 Skills English</div>
-  </div>
-
-  <div class="profile-mini">
-    <strong>Aung Zar Ni Win</strong>
-    <span>English Learner</span>
-  </div>
-
-  <div class="nav-section">Learn</div>
-
-  <button class="nav-btn active" data-page="dashboard">
-    <span class="nav-icon">🏠</span> Dashboard
-  </button>
-
-  <button class="nav-btn" data-page="path">
-    <span class="nav-icon">🗺️</span> Learning Path
-  </button>
-
-  <button class="nav-btn" data-page="courses">
-    <span class="nav-icon">📚</span> Courses
-  </button>
-
-  <button class="nav-btn" data-page="practice">
-    <span class="nav-icon">🎮</span> Practice
-  </button>
-
-  <div class="nav-section">English Skills</div>
-
-  <button class="nav-btn" data-page="grammar">
-    <span class="nav-icon">🧠</span> Grammar
-  </button>
-
-  <button class="nav-btn" data-page="vocabulary">
-    <span class="nav-icon">📖</span> Vocabulary
-  </button>
-
-  <button class="nav-btn" data-page="business">
-    <span class="nav-icon">💼</span> Business English
-  </button>
-
-  <button class="nav-btn" data-page="ai">
-    <span class="nav-icon">🤖</span> AI English Coach
-  </button>
-
-  <div class="nav-section">Track</div>
-
-  <button class="nav-btn" data-page="test">
-    <span class="nav-icon">🧪</span> Level Test
-  </button>
-
-  <button class="nav-btn" data-page="progress">
-    <span class="nav-icon">📈</span> Progress
-  </button>
-
-  <button class="nav-btn" data-page="settings">
-    <span class="nav-icon">⚙️</span> Settings
-  </button>
-
-</aside>
-
-<div class="overlay" id="overlay"></div>
-
-<main class="main">
-
-<header class="topbar">
-
-  <button class="mobile-menu" id="mobileMenu">☰</button>
-
-  <div class="top-title" id="topTitle">Dashboard</div>
-
-  <div class="top-right">
-    <div class="top-pill">🔥 <span id="topStreak">0</span></div>
-    <div class="top-pill">⚡ <span id="topXP">0</span> XP</div>
-    <div class="top-pill">❤️ <span id="topHearts">5</span></div>
-  </div>
-
-</header>
-
-
-<!-- DASHBOARD -->
-
-<section class="page active" id="page-dashboard">
-
-  <div class="hero">
-
-    <small>WELCOME BACK</small>
-
-    <h1>Aung Zar Ni Win 👋</h1>
-
-    <p>
-      Build real English ability through Listening, Speaking, Reading and Writing
-      with a structured CEFR learning path
-    </p>
-
-    <div class="hero-actions">
-      <button class="btn btn-light" onclick="resumeLearning()">
-        ▶ Continue Learning
-      </button>
-
-      <button class="btn btn-light" onclick="showPage('practice')">
-        🎮 Quick Practice
-      </button>
+    <div class="brand">
+      <div class="brand-title">AUNG ENGLISH PRO</div>
+      <div class="brand-sub">Basic to Advanced • 4 Skills English Learning</div>
     </div>
 
-  </div>
-
-  <div class="stat-grid">
-
-    <div class="stat">
-      <div class="stat-icon">🔥</div>
-      <div class="stat-label">Daily Streak</div>
-      <div class="stat-value" id="dashStreak">0</div>
-      <div class="stat-sub">days</div>
+    <div class="profile">
+      <div class="avatar">AZ</div>
+      <div class="profile-name">Aung Zar Ni Win</div>
+      <div class="profile-role">English Learner</div>
     </div>
 
-    <div class="stat">
-      <div class="stat-icon">⚡</div>
-      <div class="stat-label">Total XP</div>
-      <div class="stat-value" id="dashXP">0</div>
-      <div class="stat-sub">learning points</div>
-    </div>
+    <div class="nav-title">Learning</div>
 
-    <div class="stat">
-      <div class="stat-icon">📚</div>
-      <div class="stat-label">Completed</div>
-      <div class="stat-value" id="dashCompleted">0</div>
-      <div class="stat-sub">lessons</div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-icon">🎯</div>
-      <div class="stat-label">Daily Goal</div>
-      <div class="stat-value"><span id="dashMinutes">0</span>/20</div>
-      <div class="stat-sub">minutes</div>
-    </div>
-
-  </div>
-
-
-  <div class="section-head">
-    <div>
-      <h2>Continue Your Path</h2>
-      <p>Your next recommended lesson</p>
-    </div>
-  </div>
-
-  <div class="card" id="continueCard"></div>
-
-
-  <div class="section-head">
-    <div>
-      <h2>4 Skills</h2>
-      <p>Build balanced English ability</p>
-    </div>
-  </div>
-
-  <div class="skill-grid" id="dashboardSkills"></div>
-
-
-  <div class="grid-2">
-
-    <div>
-
-      <div class="section-head">
-        <div>
-          <h2>Daily Mission</h2>
-          <p>Complete today's target</p>
-        </div>
-      </div>
-
-      <div class="card" id="missionCard"></div>
-
-    </div>
-
-    <div>
-
-      <div class="section-head">
-        <div>
-          <h2>Achievements</h2>
-          <p>Your milestones</p>
-        </div>
-      </div>
-
-      <div class="card" id="achievementCard"></div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PATH -->
-
-<section class="page" id="page-path">
-
-  <div class="section-head">
-    <div>
-      <h2>🗺️ Learning Path</h2>
-      <p>Pre-A1 → A1 → A2 → B1 → B2 → C1 → C2</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="path" id="learningPath"></div>
-  </div>
-
-</section>
-
-
-<!-- COURSES -->
-
-<section class="page" id="page-courses">
-
-  <div class="section-head">
-    <div>
-      <h2>📚 Courses</h2>
-      <p>Structured English from Beginner to Advanced</p>
-    </div>
-  </div>
-
-  <div class="grid-3" id="courseCards"></div>
-
-  <div class="section-head">
-    <div>
-      <h2 id="courseLessonTitle">A1 Beginner</h2>
-      <p>Choose a lesson</p>
-    </div>
-  </div>
-
-  <div class="lesson-grid" id="courseLessons"></div>
-
-</section>
-
-
-<!-- PRACTICE -->
-
-<section class="page" id="page-practice">
-
-  <div class="hero">
-    <small>SMART PRACTICE</small>
-    <h1>Practice what you learned 🎮</h1>
-    <p>
-      Use short practice sessions to strengthen vocabulary, grammar,
-      listening, reading and speaking
-    </p>
-  </div>
-
-  <div class="grid-3" style="margin-top:18px">
-
-    <div class="card">
-      <div style="font-size:28px">🔊</div>
-      <h3>Listening Sprint</h3>
-      <p>Listen to English and answer quick questions</p>
-      <button class="btn btn-primary" style="margin-top:12px"
-        onclick="practiceListening()">Start</button>
-    </div>
-
-    <div class="card">
-      <div style="font-size:28px">🗣️</div>
-      <h3>Speaking Sprint</h3>
-      <p>Speak English using your microphone</p>
-      <button class="btn btn-primary" style="margin-top:12px"
-        onclick="practiceSpeaking()">Start</button>
-    </div>
-
-    <div class="card">
-      <div style="font-size:28px">🧠</div>
-      <h3>Grammar Sprint</h3>
-      <p>Quick grammar questions and corrections</p>
-      <button class="btn btn-primary" style="margin-top:12px"
-        onclick="practiceGrammar()">Start</button>
-    </div>
-
-  </div>
-
-  <div class="section-head">
-    <div>
-      <h2>🔄 Review Mistakes</h2>
-      <p>Strengthen areas where you made mistakes</p>
-    </div>
-  </div>
-
-  <div class="card" id="mistakeReview"></div>
-
-</section>
-
-
-<!-- LESSON -->
-
-<section class="page" id="page-lesson">
-
-  <div id="lessonContainer"></div>
-
-</section>
-
-
-<!-- GRAMMAR -->
-
-<section class="page" id="page-grammar">
-
-  <div class="hero">
-    <small>GRAMMAR LAB</small>
-    <h1>Understand the Why 🧠</h1>
-    <p>
-      Learn grammar through rules, examples, patterns and real-life use
-    </p>
-  </div>
-
-  <div class="section-head">
-    <div>
-      <h2>Grammar Topics</h2>
-      <p>From Beginner to Advanced</p>
-    </div>
-  </div>
-
-  <div class="grid-3" id="grammarCards"></div>
-
-</section>
-
-
-<!-- VOCABULARY -->
-
-<section class="page" id="page-vocabulary">
-
-  <div class="section-head">
-    <div>
-      <h2>📖 Vocabulary Lab</h2>
-      <p>Learn words in context</p>
-    </div>
-  </div>
-
-  <input class="search" id="vocabSearch"
-    placeholder="Search English word or Myanmar meaning..."
-    oninput="renderVocabulary()">
-
-  <div class="vocab-grid" id="vocabularyGrid"></div>
-
-</section>
-
-
-<!-- BUSINESS -->
-
-<section class="page" id="page-business">
-
-  <div class="hero">
-    <small>PROFESSIONAL ENGLISH</small>
-    <h1>Business English 💼</h1>
-    <p>
-      English for meetings, sales, customer service, leadership,
-      negotiation and professional communication
-    </p>
-  </div>
-
-  <div class="grid-3" style="margin-top:18px" id="businessCards"></div>
-
-</section>
-
-
-<!-- AI -->
-
-<section class="page" id="page-ai">
-
-  <div class="ai-box">
-
-    <div style="font-size:11px;color:#c4b5fd">
-      AUNG ENGLISH PRO
-    </div>
-
-    <h2 style="margin-top:5px">🤖 AI English Coach</h2>
-
-    <p style="margin-top:5px">
-      Practice English conversation, interviews, business English and everyday communication
-    </p>
-
-    <div class="chat" id="chatBox">
-
-      <div class="msg ai">
-        Hello Aung 👋 I am your English Coach
-        <br><br>
-        Try asking me something like:
-        <br>
-        “Help me practice a job interview”
-      </div>
-
-    </div>
-
-    <div class="ai-input">
-      <input id="aiInput" placeholder="Type your English question...">
-      <button class="btn btn-light" onclick="sendAI()">Send</button>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- TEST -->
-
-<section class="page" id="page-test">
-
-  <div class="hero">
-    <small>PLACEMENT TEST</small>
-    <h1>Find Your English Level 🧪</h1>
-    <p>
-      This quick diagnostic checks grammar, vocabulary and comprehension
-    </p>
-  </div>
-
-  <div class="card" style="margin-top:18px">
-
-    <div id="testArea"></div>
-
-  </div>
-
-</section>
-
-
-<!-- PROGRESS -->
-
-<section class="page" id="page-progress">
-
-  <div class="section-head">
-    <div>
-      <h2>📈 Your Progress</h2>
-      <p>Track your English development</p>
-    </div>
-  </div>
-
-  <div class="stat-grid" id="progressStats"></div>
-
-  <div class="section-head">
-    <div>
-      <h2>Skill Mastery</h2>
-      <p>Based on your lesson activity</p>
-    </div>
-  </div>
-
-  <div class="skill-grid" id="progressSkills"></div>
-
-  <div class="section-head">
-    <div>
-      <h2>CEFR Progress</h2>
-      <p>Your learning journey</p>
-    </div>
-  </div>
-
-  <div class="card" id="cefrProgress"></div>
-
-</section>
-
-
-<!-- SETTINGS -->
-
-<section class="page" id="page-settings">
-
-  <div class="section-head">
-    <div>
-      <h2>⚙️ Settings</h2>
-      <p>Customize Aung English Pro</p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-
-    <div class="card">
-
-      <h3>Appearance</h3>
-
-      <p style="margin-bottom:12px">
-        Choose your preferred theme
-      </p>
-
-      <button class="btn btn-outline" onclick="toggleDarkMode()">
-        🌙 Toggle Dark Mode
-      </button>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Daily Goal</h3>
-
-      <p style="margin-bottom:12px">
-        Set your daily learning target
-      </p>
-
-      <select id="goalSelect" onchange="changeGoal()">
-        <option value="10">10 minutes</option>
-        <option value="20">20 minutes</option>
-        <option value="30">30 minutes</option>
-        <option value="45">45 minutes</option>
-        <option value="60">60 minutes</option>
-      </select>
-
-    </div>
-
-  </div>
-
-  <div class="card" style="margin-top:15px">
-
-    <h3>Progress Management</h3>
-
-    <p>
-      Reset local learning progress if you want to start again
-    </p>
-
-    <button class="btn btn-red" style="margin-top:12px"
-      onclick="resetProgress()">
-      Reset My Progress
+    <button class="nav-btn active" data-page="dashboard">
+      <span class="nav-icon">⌂</span> Dashboard
     </button>
 
-  </div>
+    <button class="nav-btn" data-page="path">
+      <span class="nav-icon">🛤️</span> Learning Path
+    </button>
 
-</section>
+    <button class="nav-btn" data-page="courses">
+      <span class="nav-icon">📚</span> Courses
+    </button>
+
+    <button class="nav-btn" data-page="lesson">
+      <span class="nav-icon">🎯</span> Current Lesson
+    </button>
+
+    <div class="nav-title">Practice</div>
+
+    <button class="nav-btn" data-page="grammar">
+      <span class="nav-icon">🧠</span> Grammar
+    </button>
+
+    <button class="nav-btn" data-page="vocabulary">
+      <span class="nav-icon">🔤</span> Vocabulary
+    </button>
+
+    <button class="nav-btn" data-page="test">
+      <span class="nav-icon">📝</span> Level Test
+    </button>
+
+    <button class="nav-btn" data-page="progress">
+      <span class="nav-icon">📊</span> Progress
+    </button>
+
+    <div class="nav-title">Professional</div>
+
+    <button class="nav-btn" data-page="business">
+      <span class="nav-icon">💼</span> Business English
+    </button>
+
+    <button class="nav-btn" data-page="settings">
+      <span class="nav-icon">⚙️</span> Settings
+    </button>
+
+    <div class="premium">
+      <strong>✦ Aung English Pro</strong>
+      <span>Build English skills for real life, career and business</span>
+    </div>
+
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+
+      <div class="top-title" id="topTitle">Dashboard</div>
+
+      <div class="top-stats">
+        <div class="top-stat">🔥 <span id="topStreak">0</span></div>
+        <div class="top-stat">⭐ <span id="topXP">0</span> XP</div>
+        <div class="top-stat">❤️ <span id="topHearts">5</span></div>
+      </div>
+
+    </header>
+
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <section class="page active" id="page-dashboard">
+
+        <div class="hero">
+          <small>WELCOME BACK</small>
+          <h1>Aung Zar Ni Win 👋</h1>
+          <p>
+            English ကို Basic ကနေ Advanced အထိ
+            Listening, Speaking, Reading, Writing 4 Skills နဲ့
+            တစ်ဆင့်ချင်းတိုးတက်အောင် လေ့လာပါ
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-light" onclick="resumeLearning()">▶ Continue Learning</button>
+            <button class="btn btn-soft" onclick="showPage('path')">View Learning Path</button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-label">Current Level</div>
+            <div class="stat-value" id="dashLevel">A1</div>
+            <div class="stat-extra">CEFR English Level</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Lessons Completed</div>
+            <div class="stat-value" id="dashLessons">0</div>
+            <div class="stat-extra">of 50 active lessons</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">XP</div>
+            <div class="stat-value" id="dashXP">0</div>
+            <div class="stat-extra">Learning points</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Daily Streak</div>
+            <div class="stat-value" id="dashStreak">0 🔥</div>
+            <div class="stat-extra">Keep learning every day</div>
+          </div>
+
+        </div>
+
+        <div class="section-title">
+          <h2>Today's Goal</h2>
+          <span id="goalText">0 / 15 XP</span>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+            <div>
+              <strong>Daily English Practice</strong>
+              <div class="my-text">နေ့စဉ် English လေ့ကျင့်မှုကို မပြတ်လုပ်ပါ</div>
+            </div>
+            <strong id="goalPercent">0%</strong>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" id="goalBar" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <h2>Continue Your Course</h2>
+        </div>
+
+        <div id="continueCard"></div>
+
+        <div class="section-title">
+          <h2>4 Skills</h2>
+          <span>Balanced English</span>
+        </div>
+
+        <div class="card-grid">
+
+          <div class="card">
+            <div style="font-size:25px">🎧</div>
+            <h3 style="margin-top:8px">Listening</h3>
+            <p class="my-text">နားထောင်ပြီး English ကို နားလည်နိုင်စွမ်း</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size:25px">🗣️</div>
+            <h3 style="margin-top:8px">Speaking</h3>
+            <p class="my-text">English ကို ယုံကြည်စွာ ပြောနိုင်စွမ်း</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size:25px">📖</div>
+            <h3 style="margin-top:8px">Reading</h3>
+            <p class="my-text">English စာဖတ်ပြီး နားလည်နိုင်စွမ်း</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size:25px">✍️</div>
+            <h3 style="margin-top:8px">Writing</h3>
+            <p class="my-text">English စာကို မှန်ကန်စွာ ရေးနိုင်စွမ်း</p>
+          </div>
+
+        </div>
+
+      </section>
 
 
-<div class="footer-note">
-  Aung English Pro • Basic to Advanced • 4 Skills English Learning
-</div>
+      <!-- PATH -->
+      <section class="page" id="page-path">
 
-</main>
+        <div class="path-wrap">
+
+          <div class="path-header">
+            <h1>🛤️ Aung English Learning Path</h1>
+            <p>
+              Pre-A1 ကနေ C2 အထိ level တစ်ဆင့်ချင်း တက်သွားမယ့်
+              structured learning path ဖြစ်ပါတယ်
+            </p>
+          </div>
+
+          <div class="path" id="learningPath"></div>
+
+        </div>
+
+      </section>
+
+
+      <!-- COURSES -->
+      <section class="page" id="page-courses">
+
+        <div class="section-title">
+          <h2>English Courses</h2>
+          <span>CEFR Roadmap</span>
+        </div>
+
+        <div class="card-grid" id="courseGrid"></div>
+
+      </section>
+
+
+      <!-- LESSON -->
+      <section class="page" id="page-lesson">
+
+        <div id="lessonContainer"></div>
+
+      </section>
+
+
+      <!-- GRAMMAR -->
+      <section class="page" id="page-grammar">
+
+        <div class="section-title">
+          <h2>🧠 Grammar Center</h2>
+          <span>Learn → Practice → Use</span>
+        </div>
+
+        <div class="card-grid" id="grammarGrid"></div>
+
+      </section>
+
+
+      <!-- VOCABULARY -->
+      <section class="page" id="page-vocabulary">
+
+        <div class="section-title">
+          <h2>🔤 Vocabulary</h2>
+          <span id="vocabCount"></span>
+        </div>
+
+        <div class="search-row">
+          <input class="input" id="vocabSearch" placeholder="Search English or Myanmar meaning">
+        </div>
+
+        <div class="card" id="vocabList"></div>
+
+      </section>
+
+
+      <!-- TEST -->
+      <section class="page" id="page-test">
+
+        <div class="test-box">
+
+          <div class="card">
+
+            <div class="section-title" style="margin-top:0">
+              <h2>📝 English Level Test</h2>
+            </div>
+
+            <p class="my-text">
+              သင့် English level ကို အကြမ်းဖျင်းသိနိုင်ရန် test ဖြေပါ
+            </p>
+
+            <div id="testQuestions" style="margin-top:18px"></div>
+
+            <button class="btn btn-primary" onclick="submitLevelTest()">
+              Check My Level
+            </button>
+
+            <div id="testResult" style="margin-top:18px"></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROGRESS -->
+      <section class="page" id="page-progress">
+
+        <div class="section-title">
+          <h2>📊 Your Progress</h2>
+          <span>Learning Analytics</span>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-label">Completed</div>
+            <div class="stat-value" id="progressCompleted">0</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Average Quiz</div>
+            <div class="stat-value" id="progressQuiz">0%</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">XP</div>
+            <div class="stat-value" id="progressXP">0</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-label">Streak</div>
+            <div class="stat-value" id="progressStreak">0</div>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <h3>CEFR Progress</h3>
+
+          <div style="margin-top:17px">
+            <div style="display:flex;justify-content:space-between;font-size:11px">
+              <span>A1 Beginner</span>
+              <strong id="a1ProgressText">0%</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" id="a1ProgressBar"></div>
+            </div>
+          </div>
+
+          <div style="margin-top:17px">
+            <div style="display:flex;justify-content:space-between;font-size:11px">
+              <span>A2 Elementary</span>
+              <strong id="a2ProgressText">0%</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" id="a2ProgressBar"></div>
+            </div>
+          </div>
+
+          <div style="margin-top:17px">
+            <div style="display:flex;justify-content:space-between;font-size:11px">
+              <span>B1 Intermediate</span>
+              <strong id="b1ProgressText">0%</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" id="b1ProgressBar"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-title">
+          <h2>Lesson History</h2>
+        </div>
+
+        <div class="card table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Lesson</th>
+                <th>Level</th>
+                <th>Status</th>
+                <th>Quiz</th>
+              </tr>
+            </thead>
+            <tbody id="historyTable"></tbody>
+          </table>
+        </div>
+
+      </section>
+
+
+      <!-- BUSINESS -->
+      <section class="page" id="page-business">
+
+        <div class="hero">
+          <small>PROFESSIONAL ENGLISH</small>
+          <h1>💼 Business English</h1>
+          <p>
+            Workplace, Sales, Management, Meetings, Presentation,
+            Email နဲ့ Customer Communication အတွက် အသုံးဝင်တဲ့ English
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <div class="card">
+            <h3>🤝 Meetings</h3>
+            <p class="my-text">
+              Meeting ဖွင့်ခြင်း၊ အမြင်ပြောခြင်း၊ သဘောတူ/မတူ ပြောခြင်း
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>📈 Sales English</h3>
+            <p class="my-text">
+              Customer conversation, target, sales performance နဲ့ negotiation
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>👥 Management</h3>
+            <p class="my-text">
+              Team management, coaching, feedback နဲ့ leadership communication
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>📧 Business Email</h3>
+            <p class="my-text">
+              Professional email ရေးသားခြင်း၊ request, follow-up နဲ့ report
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>🎤 Presentation</h3>
+            <p class="my-text">
+              Presentation opening, data explanation နဲ့ closing
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>💬 Professional Small Talk</h3>
+            <p class="my-text">
+              Client နဲ့ professional relationship တည်ဆောက်ရန် conversation
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SETTINGS -->
+      <section class="page" id="page-settings">
+
+        <div class="section-title">
+          <h2>⚙️ Settings</h2>
+        </div>
+
+        <div class="card">
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <strong>Language Mode</strong>
+              <span>English နဲ့ Myanmar ပြသပုံရွေးပါ</span>
+            </div>
+
+            <select class="select" id="languageMode">
+              <option value="en">English Only</option>
+              <option value="enmy">English + Myanmar</option>
+              <option value="help">Myanmar Help</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <strong>Accent</strong>
+              <span>Listening အတွက် pronunciation accent</span>
+            </div>
+
+            <select class="select" id="accentSelect">
+              <option value="us">US English</option>
+              <option value="uk">British English</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <strong>Speech Speed</strong>
+              <span>Listening practice speed</span>
+            </div>
+
+            <select class="select" id="speedSelect">
+              <option value="slow">Slow</option>
+              <option value="normal">Normal</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-label">
+              <strong>Daily Goal</strong>
+              <span>နေ့စဉ်ရရှိချင်တဲ့ XP</span>
+            </div>
+
+            <select class="select" id="goalSelect">
+              <option value="10">10 XP</option>
+              <option value="15">15 XP</option>
+              <option value="20">20 XP</option>
+              <option value="30">30 XP</option>
+            </select>
+          </div>
+
+          <div style="margin-top:20px">
+            <button class="btn btn-danger" onclick="resetProgress()">
+              Reset Learning Progress
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
 </div>
 
 <div class="toast" id="toast"></div>
 
 
 <script>
+"use strict";
 
 /* =========================================================
-   AUNG ENGLISH PRO ULTIMATE V3
+   AUNG ENGLISH PRO V3
    ========================================================= */
 
 const STORAGE = {
@@ -1622,1154 +1635,657 @@ const STORAGE = {
   streak:"aep_streak",
   lastStudy:"aep_last_study",
   goal:"aep_daily_goal",
-  minutes:"aep_daily_minutes",
+  dailyXP:"aep_daily_xp",
+  dailyDate:"aep_daily_date",
   hearts:"aep_hearts",
-  completed:"aep_completed_lessons",
+  completed:"aep_completed",
   lastLesson:"aep_last_lesson",
-  scores:"aep_quiz_scores",
-  mistakes:"aep_mistakes",
-  dark:"aep_dark",
-  writing:"aep_writing",
-  test:"aep_level_test"
+  accent:"aep_accent",
+  speed:"aep_speed",
+  language:"aep_language",
+  quiz:"aep_quiz_"
 };
 
-
-/* =========================
-   LESSON DATA
-   ========================= */
-
 const A1_LESSONS = [
-
 {
-id:1,
-level:"A1",
-module:"Beginner Module 1",
-title:"Introducing Yourself",
-myTitle:"ကိုယ့်အကြောင်း မိတ်ဆက်ခြင်း",
-focus:"be verb + personal information",
-grammar:"am / is / are",
-objectives:[
-"Introduce yourself clearly",
-"Say your name, job and nationality",
-"Use am, is and are correctly",
-"Ask simple personal questions"
-],
-vocab:[
-["name","အမည်","My name is Aung"],
-["job","အလုပ်","I have a new job"],
-["manager","မန်နေဂျာ","I am a sales manager"],
-["company","ကုမ္ပဏီ","I work for a company"],
-["country","နိုင်ငံ","Myanmar is my country"],
-["city","မြို့","I live in Yangon"],
-["live","နေထိုင်သည်","I live in Yangon"],
-["work","အလုပ်လုပ်သည်","I work in sales"],
-["from","မှဖြစ်သည်","I am from Myanmar"],
-["meet","တွေ့ဆုံသည်","Nice to meet you"],
-["business","စီးပွားရေး","I work in business"],
-["English","အင်္ဂလိပ်ဘာသာ","I am learning English"],
-["learn","လေ့လာသည်","I learn English every day"],
-["manager","မန်နေဂျာ","I am a manager"],
-["experience","အတွေ့အကြုံ","I have sales experience"]
-],
-pronunciation:"Focus on the sounds in I am, my name, work and manager. Speak slowly first, then naturally",
-grammarExamples:[
-"I am Aung",
-"She is a manager",
-"He is from Myanmar",
-"We are colleagues",
-"They are students"
-],
-patterns:[
-"I am + name/job",
-"I am from + place",
-"I work in + field",
-"My name is + name",
-"Nice to meet you"
-],
-listening:"Hello. My name is David. I am from Australia. I live in Yangon and I work for an international company. I am a sales manager. Nice to meet you",
-conversation:[
-["A","Hello. My name is Aung"],
-["B","Hi Aung. Nice to meet you"],
-["A","Nice to meet you too"],
-["B","Where are you from?"],
-["A","I am from Myanmar"],
-["B","What do you do?"],
-["A","I am a sales manager"]
-],
-reading:"My name is Aung. I am from Myanmar. I live in Yangon. I work in sales. I am learning English because I want to communicate better with customers and colleagues",
-writingTask:"Write 5 to 8 sentences introducing yourself in English",
-practice:[
-"Complete: I ___ Aung",
-"Complete: She ___ a manager",
-"Complete: They ___ from Myanmar",
-"Write one sentence about your job"
-],
-mistakes:[
-"Do not say: I is Aung",
-"Do not say: I am work in sales",
-"Say: I am Aung",
-"Say: I work in sales"
-],
-quiz:[
-["I ___ Aung","am|is|are","am"],
-["She ___ a manager","am|is|are","is"],
-["They ___ students","am|is|are","are"],
-["I am ___ Myanmar","from|in|at","from"],
-["Nice to ___ you","meet|meeting|meets","meet"]
-]
+ id:1, level:"A1", module:"Beginner Module 1",
+ title:"Introducing Yourself",
+ myTitle:"ကိုယ့်ကိုယ်ကို မိတ်ဆက်ခြင်း",
+ focus:"be verb • subject pronouns • basic introductions",
+ objectives:[
+  "Introduce yourself clearly in English",
+  "Use I am, You are and My name is correctly",
+  "Ask and answer basic personal questions"
+ ],
+ warmup:"Say your name, job and one thing you like in English",
+ vocab:[
+  {word:"name",meaning:"အမည်",example:"My name is Aung.",myMeaning:"ကျွန်တော့်နာမည် Aung ပါ"},
+  {word:"manager",meaning:"မန်နေဂျာ",example:"I am a manager.",myMeaning:"ကျွန်တော် မန်နေဂျာတစ်ယောက်ပါ"},
+  {word:"company",meaning:"ကုမ္ပဏီ",example:"I work for a company.",myMeaning:"ကျွန်တော် ကုမ္ပဏီတစ်ခုမှာ အလုပ်လုပ်ပါတယ်"},
+  {word:"from",meaning:"မှ / ကနေ",example:"I am from Myanmar.",myMeaning:"ကျွန်တော် မြန်မာနိုင်ငံကပါ"},
+  {word:"live",meaning:"နေထိုင်သည်",example:"I live in Yangon.",myMeaning:"ကျွန်တော် ရန်ကုန်မှာ နေပါတယ်"},
+  {word:"work",meaning:"အလုပ်လုပ်သည်",example:"I work in sales.",myMeaning:"ကျွန်တော် Sales ပိုင်းမှာ အလုပ်လုပ်ပါတယ်"},
+  {word:"like",meaning:"နှစ်သက်သည်",example:"I like English.",myMeaning:"ကျွန်တော် English ကို နှစ်သက်ပါတယ်"},
+  {word:"learn",meaning:"လေ့လာသည်",example:"I learn English every day.",myMeaning:"ကျွန်တော် နေ့တိုင်း English လေ့လာပါတယ်"},
+  {word:"manager",meaning:"မန်နေဂျာ",example:"She is a sales manager.",myMeaning:"သူမက Sales Manager ပါ"},
+  {word:"customer",meaning:"ဖောက်သည်",example:"I talk to customers.",myMeaning:"ကျွန်တော် ဖောက်သည်တွေနဲ့ စကားပြောပါတယ်"}
+ ],
+ pronunciation:"I am → I'm. You are → You're. My name is should sound natural and connected",
+ grammar:"Use the verb be for identity and basic information. I am, You are, He is, She is, We are, They are",
+ grammarMy:"လူတစ်ယောက်ရဲ့ အမည်၊ အလုပ်၊ နေရာနဲ့ အခြေခံအချက်အလက်တွေ ပြောရာမှာ be verb ကို သုံးပါတယ်",
+ grammarExamples:[
+  "I am Aung.",
+  "I am a sales manager.",
+  "She is from Myanmar.",
+  "They are my colleagues.",
+  "We are ready."
+ ],
+ patterns:[
+  {en:"My name is + name",my:"ကျွန်တော့်နာမည်က + အမည်"},
+  {en:"I am + job",my:"ကျွန်တော်က + အလုပ်"},
+  {en:"I am from + place",my:"ကျွန်တော်က + နေရာကပါ"},
+  {en:"I work in + field",my:"ကျွန်တော် + နယ်ပယ်မှာ အလုပ်လုပ်ပါတယ်"}
+ ],
+ listening:"Hello. My name is David. I am from Australia. I work in sales. I live in Yangon now. I am learning Burmese, and I like meeting new people.",
+ listeningMy:"မင်္ဂလာပါ။ ကျွန်တော့်နာမည် David ပါ။ Australia ကလာတာပါ။ Sales မှာ အလုပ်လုပ်ပါတယ်။ အခု Yangon မှာ နေပါတယ်။ Burmese လေ့လာနေပြီး လူသစ်တွေနဲ့ တွေ့ရတာကို နှစ်သက်ပါတယ်",
+ listeningQuestions:[
+  "Where is David from?",
+  "What does he do?",
+  "Where does he live now?"
+ ],
+ speaking:"Introduce yourself using your name, job, city and one thing you like. Speak for 30 seconds",
+ speakingQuestions:[
+  "What is your name?",
+  "Where are you from?",
+  "What do you do?",
+  "What do you like?"
+ ],
+ conversation:[
+  {speaker:"A",en:"Hi, my name is Aung. What's your name?",my:"မင်္ဂလာပါ၊ ကျွန်တော့်နာမည် Aung ပါ။ ခင်ဗျားနာမည် ဘယ်လိုခေါ်လဲ"},
+  {speaker:"B",en:"I'm David. Nice to meet you.",my:"ကျွန်တော် David ပါ။ တွေ့ရတာ ဝမ်းသာပါတယ်"},
+  {speaker:"A",en:"Nice to meet you too. Where are you from?",my:"ကျွန်တော်လည်း တွေ့ရတာဝမ်းသာပါတယ်။ ဘယ်ကလာတာလဲ"},
+  {speaker:"B",en:"I'm from Australia. I work in sales.",my:"Australia ကပါ။ Sales မှာ အလုပ်လုပ်ပါတယ်"}
+ ],
+ reading:"My name is Aung. I am a sales manager. I am from Myanmar and I live in Yangon. I work with customers and my team every day. I want to improve my English because English is important for my career.",
+ readingMy:"ကျွန်တော့်နာမည် Aung ပါ။ ကျွန်တော် Sales Manager တစ်ယောက်ပါ။ မြန်မာနိုင်ငံကဖြစ်ပြီး Yangon မှာ နေပါတယ်။ နေ့တိုင်း Customer တွေနဲ့ Team နဲ့ အလုပ်လုပ်ပါတယ်။ Career အတွက် English က အရေးကြီးတဲ့အတွက် English တိုးတက်ချင်ပါတယ်",
+ readingQuestions:[
+  "What is Aung's job?",
+  "Where does he live?",
+  "Why does he want to improve English?"
+ ],
+ writing:"Write a short self-introduction",
+ writingTask:"Write 5–7 English sentences about your name, job, city, interests and English goal",
+ practice:[
+  "Complete: My name ___ Aung",
+  "Complete: I ___ from Myanmar",
+  "Make a sentence with work",
+  "Make a sentence with like",
+  "Ask someone their name"
+ ],
+ mistakes:[
+  "I am come from Myanmar ✗ → I am from Myanmar ✓",
+  "My name Aung ✗ → My name is Aung ✓",
+  "I am work in sales ✗ → I work in sales ✓"
+ ],
+ review:"I am / You are / He is / She is / We are / They are",
+ quiz:[
+  {q:"Choose the correct sentence",options:["I am a manager","I a manager","I is a manager"],a:0},
+  {q:"Choose the correct sentence",options:["My name Aung","My name is Aung","My name are Aung"],a:1},
+  {q:"Where are you from?",options:["I am from Myanmar","I am Myanmar","I from Myanmar"],a:0},
+  {q:"Which word means ဖောက်သည်?",options:["customer","manager","company"],a:0},
+  {q:"Choose the correct sentence",options:["I work in sales","I am work in sales","I working sales"],a:0}
+ ],
+ challenge:"Speak a 30-second self-introduction without reading",
+ takeaways:[
+  "Use be verb correctly",
+  "Learn a simple self-introduction",
+  "Practice speaking aloud every day"
+ ]
 },
 
 {
-id:2,
-level:"A1",
-module:"Beginner Module 1",
-title:"Greetings & Basic Conversations",
-myTitle:"နှုတ်ဆက်ခြင်းနှင့် အခြေခံစကားပြော",
-focus:"greetings + simple questions",
-grammar:"Present simple be",
-objectives:[
-"Use common greetings",
-"Ask and answer simple questions",
-"Start a short conversation",
-"Use polite expressions"
-],
-vocab:[
-["hello","မင်္ဂလာပါ","Hello, how are you?"],
-["hi","ဟိုင်း","Hi, nice to meet you"],
-["good morning","မင်္ဂလာနံနက်ခင်း","Good morning, everyone"],
-["afternoon","နေ့လယ်","Good afternoon"],
-["evening","ညနေ","Good evening"],
-["fine","အဆင်ပြေသော","I am fine"],
-["thanks","ကျေးဇူးတင်ပါတယ်","Thanks for asking"],
-["welcome","ကြိုဆိုသည်","Welcome to our company"],
-["please","ကျေးဇူးပြု၍","Please come in"],
-["sorry","တောင်းပန်ပါတယ်","Sorry I am late"],
-["excuse me","ခွင့်ပြုပါ","Excuse me, are you Mr Lee?"],
-["great","အလွန်ကောင်းသော","I am great"],
-["today","ယနေ့","How are you today?"],
-["busy","အလုပ်များသော","I am busy today"],
-["meeting","အစည်းအဝေး","I have a meeting"]
-],
-pronunciation:"Practice hello, good morning, thank you and excuse me with natural rhythm",
-grammarExamples:[
-"How are you?",
-"I am fine",
-"Are you busy?",
-"Yes, I am",
-"No, I am not"
-],
-patterns:[
-"How are you?",
-"How are you today?",
-"Nice to meet you",
-"Are you busy?",
-"See you later"
-],
-listening:"Good morning, John. How are you today? I am good, thanks. How about you? I am great. Are you busy? Yes, I have a meeting at ten",
-conversation:[
-["A","Good morning"],
-["B","Good morning. How are you?"],
-["A","I am fine, thanks. How about you?"],
-["B","I am great"],
-["A","Are you busy today?"],
-["B","Yes, I have a meeting"]
-],
-reading:"Every morning, I greet my colleagues at work. I usually say good morning and ask how they are. A simple greeting helps create a friendly working environment",
-writingTask:"Write a short conversation between two colleagues",
-practice:[
-"Complete: How ___ you?",
-"Answer: Are you busy?",
-"Write three polite expressions",
-"Write one greeting for a manager"
-],
-mistakes:[
-"Use How are you, not How you are",
-"Use Thanks, not Thanks you",
-"Use Good morning in the morning"
-],
-quiz:[
-["How ___ you?","am|is|are","are"],
-["Good ___","morning|nighting|morn","morning"],
-["Are you busy?","Yes, I am|Yes, I are|Yes, I is","Yes, I am"],
-["Nice to ___ you","meet|meets|meeting","meet"],
-["Thank ___","you|your|yours","you"]
-]
+ id:2,level:"A1",module:"Beginner Module 1",
+ title:"Greetings & Basic Conversations",myTitle:"နှုတ်ဆက်ခြင်းနှင့် အခြေခံစကားပြောခြင်း",
+ focus:"greetings • questions • polite expressions"
 },
 
 {
-id:3,
-level:"A1",
-module:"Beginner Module 1",
-title:"Personal Information",
-myTitle:"ကိုယ်ရေးအချက်အလက်",
-focus:"questions + personal details",
-grammar:"Wh- questions",
-objectives:[
-"Ask for personal information",
-"Give simple personal information",
-"Use who, what, where and how",
-"Complete a simple profile"
-],
-vocab:[
-["age","အသက်","What is your age?"],
-["address","လိပ်စာ","What is your address?"],
-["phone","ဖုန်း","What is your phone number?"],
-["number","နံပါတ်","My number is 09..."],
-["email","အီးမေးလ်","What is your email?"],
-["married","အိမ်ထောင်ရှိ","I am married"],
-["single","အိမ်ထောင်မရှိ","He is single"],
-["address","လိပ်စာ","Please write your address"],
-["nationality","နိုင်ငံသား","What is your nationality?"],
-["language","ဘာသာစကား","English is a language"],
-["birthday","မွေးနေ့","My birthday is in October"],
-["name","အမည်","What is your name?"],
-["where","ဘယ်နေရာ","Where do you live?"],
-["what","ဘာ","What do you do?"],
-["how","ဘယ်လို","How old are you?"]
-],
-pronunciation:"Practice question intonation: What is your name? Where do you live?",
-grammarExamples:[
-"What is your name?",
-"Where do you live?",
-"What do you do?",
-"How old are you?",
-"What is your phone number?"
-],
-patterns:[
-"What is your name?",
-"Where do you live?",
-"What do you do?",
-"How old are you?",
-"What is your email?"
-],
-listening:"Hello. My name is Anna. I live in Yangon. I am thirty years old. I work in marketing. My email is anna@example.com",
-conversation:[
-["A","What is your name?"],
-["B","My name is Anna"],
-["A","Where do you live?"],
-["B","I live in Yangon"],
-["A","What do you do?"],
-["B","I work in marketing"]
-],
-reading:"A personal profile gives basic information about a person. It may include a name, age, city, job, phone number and email address",
-writingTask:"Create your own English profile with at least 8 pieces of information",
-practice:[
-"Ask someone's name",
-"Ask where someone lives",
-"Ask someone's job",
-"Ask someone's age politely"
-],
-mistakes:[
-"Say What is your name, not What your name",
-"Say Where do you live, not Where you live?"
-],
-quiz:[
-["___ is your name?","What|Where|Who","What"],
-["___ do you live?","What|Where|Why","Where"],
-["What do you ___?","do|does|doing","do"],
-["How ___ are you?","old|age|many","old"],
-["What is your ___?","name|named|naming","name"]
-]
+ id:3,level:"A1",module:"Beginner Module 1",
+ title:"Personal Information",myTitle:"ကိုယ်ရေးအချက်အလက်",
+ focus:"age • address • phone • personal details"
 },
 
 {
-id:4,
-level:"A1",
-module:"Beginner Module 1",
-title:"Family",
-myTitle:"မိသားစုအကြောင်း",
-focus:"family vocabulary + have/has",
-grammar:"have / has",
-objectives:[
-"Talk about family members",
-"Use have and has",
-"Describe a simple family",
-"Ask about someone's family"
-],
-vocab:[
-["family","မိသားစု","My family is small"],
-["father","အဖေ","My father is a teacher"],
-["mother","အမေ","My mother works at home"],
-["brother","အစ်ကို/ညီ","I have one brother"],
-["sister","အစ်မ/ညီမ","She has two sisters"],
-["husband","ခင်ပွန်း","Her husband is a manager"],
-["wife","ဇနီး","His wife is a doctor"],
-["son","သား","They have one son"],
-["daughter","သမီး","They have one daughter"],
-["parent","မိဘ","My parents live in Yangon"],
-["child","ကလေး","They have two children"],
-["uncle","ဦးလေး","My uncle lives nearby"],
-["aunt","အဒေါ်","My aunt is a nurse"],
-["cousin","ဝမ်းကွဲ","My cousin is a student"],
-["family member","မိသားစုဝင်","He is a family member"]
-],
-pronunciation:"Practice brother, mother, father and daughter slowly",
-grammarExamples:[
-"I have one brother",
-"She has two sisters",
-"He has a son",
-"We have a small family",
-"Do you have children?"
-],
-patterns:[
-"I have + family member",
-"She has + family member",
-"Do you have + ...?",
-"How many brothers do you have?"
-],
-listening:"I have a small family. I have one brother and one sister. My parents live in Yangon. My brother works in sales and my sister is a student",
-conversation:[
-["A","How many brothers do you have?"],
-["B","I have one brother"],
-["A","Do you have any sisters?"],
-["B","Yes, I have one sister"],
-["A","Where do your parents live?"],
-["B","They live in Yangon"]
-],
-reading:"Family structures are different around the world. Some people live with their parents, while others live independently. Family members often support each other",
-writingTask:"Write 8 sentences about your family",
-practice:[
-"Complete: I ___ two brothers",
-"Complete: She ___ one sister",
-"Ask: Do you have children?",
-"Describe your family in five sentences"
-],
-mistakes:[
-"Use has with he, she and it",
-"Use have with I, you, we and they"
-],
-quiz:[
-["I ___ one brother","have|has|having","have"],
-["She ___ two sisters","have|has|having","has"],
-["They ___ three children","has|have|having","have"],
-["He ___ a son","have|has|having","has"],
-["Do you ___ a sister?","have|has|having","have"]
-]
+ id:4,level:"A1",module:"Beginner Module 1",
+ title:"Family",myTitle:"မိသားစု",
+ focus:"family members • possessives • relationships"
 },
 
 {
-id:5,
-level:"A1",
-module:"Beginner Module 1",
-title:"Daily Routine",
-myTitle:"နေ့စဉ်လုပ်ငန်းစဉ်",
-focus:"daily activities",
-grammar:"Present Simple",
-objectives:[
-"Describe daily routines",
-"Use common action verbs",
-"Use present simple",
-"Talk about work routines"
-],
-vocab:[
-["wake up","အိပ်ရာထသည်","I wake up at six"],
-["get up","အိပ်ရာမှထသည်","I get up early"],
-["shower","ရေချိုးသည်","I take a shower"],
-["breakfast","မနက်စာ","I have breakfast"],
-["go","သွားသည်","I go to work"],
-["work","အလုပ်လုပ်သည်","I work from Monday"],
-["lunch","နေ့လယ်စာ","I have lunch at one"],
-["finish","ပြီးဆုံးသည်","I finish work at five"],
-["return","ပြန်လာသည်","I return home at six"],
-["dinner","ညစာ","I have dinner at seven"],
-["sleep","အိပ်သည်","I sleep at ten"],
-["usually","ပုံမှန်အားဖြင့်","I usually wake up early"],
-["sometimes","တစ်ခါတစ်ရံ","I sometimes exercise"],
-["always","အမြဲတမ်း","I always check my email"],
-["never","ဘယ်တော့မှမ","I never skip breakfast"]
-],
-pronunciation:"Practice wake up, work, lunch, finish and sleep",
-grammarExamples:[
-"I wake up at six",
-"She wakes up at six",
-"I work every day",
-"He works in sales",
-"They go to work"
-],
-patterns:[
-"I usually + verb",
-"I always + verb",
-"I sometimes + verb",
-"I never + verb"
-],
-listening:"I usually wake up at six in the morning. I have breakfast at seven and go to work at eight. I have lunch at one. I finish work at five and return home at six",
-conversation:[
-["A","What time do you wake up?"],
-["B","I usually wake up at six"],
-["A","What time do you start work?"],
-["B","I start work at eight"],
-["A","What time do you finish?"],
-["B","I finish at five"]
-],
-reading:"A good daily routine can help people manage their time. Many professionals start their day early, plan their priorities and review their work before finishing the day",
-writingTask:"Describe your weekday routine from morning to night",
-practice:[
-"Write five daily activities",
-"Use usually in a sentence",
-"Use sometimes in a sentence",
-"Describe your workday"
-],
-mistakes:[
-"She works, not She work",
-"He goes, not He go",
-"I work, not I works"
-],
-quiz:[
-["I ___ at six","wake up|wakes up|waking","wake up"],
-["She ___ at seven","wake|wakes|waking","wakes"],
-["He ___ in sales","work|works|working","works"],
-["They ___ to work","go|goes|going","go"],
-["I ___ lunch at one","have|has|having","have"]
-]
+ id:5,level:"A1",module:"Beginner Module 1",
+ title:"Daily Routine",myTitle:"နေ့စဉ်လုပ်ငန်းများ",
+ focus:"present simple • daily activities"
 },
 
 {
-id:6,
-level:"A1",
-module:"Beginner Module 1",
-title:"Time & Dates",
-myTitle:"အချိန်နှင့် ရက်စွဲ",
-focus:"time expressions",
-grammar:"at / on / in",
-objectives:[
-"Tell the time",
-"Talk about dates",
-"Use at, on and in",
-"Arrange simple appointments"
-],
-vocab:[
-["today","ယနေ့","I have a meeting today"],
-["tomorrow","မနက်ဖြန်","See you tomorrow"],
-["yesterday","မနေ့က","I called yesterday"],
-["morning","မနက်","I work in the morning"],
-["afternoon","နေ့လယ်","The meeting is in the afternoon"],
-["evening","ညနေ","I exercise in the evening"],
-["Monday","တနင်္လာ","I work on Monday"],
-["weekend","အားလပ်ရက်","I rest on weekends"],
-["January","ဇန်နဝါရီ","The course starts in January"],
-["date","ရက်စွဲ","What is the date?"],
-["time","အချိန်","What time is it?"],
-["early","စောသော","I arrived early"],
-["late","နောက်ကျသော","Sorry I am late"],
-["schedule","အချိန်ဇယား","Check the schedule"],
-["appointment","ချိန်းဆိုမှု","I have an appointment"]
-],
-pronunciation:"Practice numbers and time expressions clearly",
-grammarExamples:[
-"The meeting is at 9",
-"I work on Monday",
-"I was born in October",
-"We meet in the morning"
-],
-patterns:[
-"at + time",
-"on + day/date",
-"in + month/year",
-"in + morning/afternoon/evening"
-],
-listening:"The meeting is on Monday at nine in the morning. Our next appointment is on Friday at three in the afternoon",
-conversation:[
-["A","What time is the meeting?"],
-["B","It is at nine"],
-["A","What day is it?"],
-["B","It is on Monday"],
-["A","When is the next meeting?"],
-["B","It is on Friday"]
-],
-reading:"Time management is important in business. A clear schedule helps teams arrive on time and prepare for meetings",
-writingTask:"Write your schedule for one working day",
-practice:[
-"Use at with a time",
-"Use on with a day",
-"Use in with a month",
-"Write three appointments"
-],
-mistakes:[
-"at 9, not in 9",
-"on Monday, not at Monday",
-"in January, not on January"
-],
-quiz:[
-["at ___","Monday|9 o'clock|January","9 o'clock"],
-["on ___","Monday|9 o'clock|January","Monday"],
-["in ___","Monday|9 o'clock|January","January"],
-["The meeting is ___ Monday","on|at|in","on"],
-["I work ___ the morning","at|on|in","in"]
-]
+ id:6,level:"A1",module:"Beginner Module 1",
+ title:"Time & Dates",myTitle:"အချိန်နှင့် ရက်စွဲ",
+ focus:"telling time • days • months • dates"
 },
 
 {
-id:7,
-level:"A1",
-module:"Beginner Module 1",
-title:"Numbers & Money",
-myTitle:"နံပါတ်များနှင့် ငွေကြေး",
-focus:"prices + numbers",
-grammar:"How much / How many",
-objectives:[
-"Say numbers correctly",
-"Ask about prices",
-"Talk about quantities",
-"Use money vocabulary"
-],
-vocab:[
-["price","စျေးနှုန်း","What is the price?"],
-["cost","ကုန်ကျသည်","How much does it cost?"],
-["cheap","စျေးသက်သာ","It is cheap"],
-["expensive","စျေးကြီး","It is expensive"],
-["cash","ငွေသား","I pay in cash"],
-["card","ကတ်","I pay by card"],
-["change","အကြွေ","Here is your change"],
-["total","စုစုပေါင်း","The total is 50,000"],
-["discount","လျှော့စျေး","We offer a discount"],
-["percent","ရာခိုင်နှုန်း","The discount is ten percent"],
-["thousand","ထောင်","Ten thousand"],
-["million","သန်း","One million"],
-["budget","ဘတ်ဂျက်","Our budget is limited"],
-["payment","ငွေပေးချေမှု","The payment is due today"],
-["receipt","ပြေစာ","Please keep the receipt"]
-],
-pronunciation:"Practice numbers in groups and say prices clearly",
-grammarExamples:[
-"How much is it?",
-"How much does it cost?",
-"How many items do you need?",
-"The total is 50 dollars"
-],
-patterns:[
-"How much is + item?",
-"How much does it cost?",
-"How many + plural noun?",
-"The total is + amount"
-],
-listening:"The product costs fifty dollars. There is a ten percent discount today. The final price is forty-five dollars",
-conversation:[
-["A","How much is this?"],
-["B","It is fifty dollars"],
-["A","Is there a discount?"],
-["B","Yes, there is a ten percent discount"],
-["A","How much is the total?"],
-["B","The total is forty-five dollars"]
-],
-reading:"Prices are important when people make buying decisions. Customers usually compare price, quality and value before they purchase a product",
-writingTask:"Write five sentences using numbers and money",
-practice:[
-"Write 25 in English",
-"Write 1,000 in English",
-"Ask the price of a product",
-"Ask for a discount politely"
-],
-mistakes:[
-"How much is it, not How many is it",
-"How many items, not How much items"
-],
-quiz:[
-["How ___ is it?","much|many|more","much"],
-["How ___ items?","much|many|more","many"],
-["The price ___ $50","is|are|be","is"],
-["A 10% ___","discount|discounts|discounting","discount"],
-["Please give me the ___","receipt|receiving|receive","receipt"]
-]
+ id:7,level:"A1",module:"Beginner Module 1",
+ title:"Numbers & Money",myTitle:"နံပါတ်များနှင့် ငွေကြေး",
+ focus:"numbers • prices • money expressions"
 },
 
 {
-id:8,
-level:"A1",
-module:"Beginner Module 1",
-title:"Shopping",
-myTitle:"စျေးဝယ်ခြင်း",
-focus:"shopping conversations",
-grammar:"this / that / these / those",
-objectives:[
-"Ask about products",
-"Ask about size and price",
-"Use this, that, these and those",
-"Buy something politely"
-],
-vocab:[
-["shop","ဆိုင်","This shop is popular"],
-["product","ကုန်ပစ္စည်း","This product is new"],
-["size","အရွယ်အစား","What size do you need?"],
-["color","အရောင်","What color do you want?"],
-["large","ကြီးသော","I need a large size"],
-["small","သေးသော","Do you have a small size?"],
-["available","ရရှိနိုင်သော","Is this available?"],
-["try","စမ်းကြည့်သည်","Can I try this?"],
-["buy","ဝယ်သည်","I want to buy this"],
-["sell","ရောင်းသည်","We sell shoes"],
-["customer","ဖောက်သည်","The customer needs help"],
-["quality","အရည်အသွေး","The quality is good"],
-["brand","အမှတ်တံဆိပ်","Which brand is this?"],
-["cashier","ငွေရှင်းသူ","Please ask the cashier"],
-["bag","အိတ်","Can I have a bag?"]
-],
-pronunciation:"Practice Can I try this? and Do you have this in a larger size?",
-grammarExamples:[
-"This is good",
-"That is expensive",
-"These are cheap",
-"Those are new"
-],
-patterns:[
-"Can I try this?",
-"Do you have this in + size?",
-"How much is this?",
-"I would like + item"
-],
-listening:"Excuse me. Can I try this shirt? Of course. What size do you need? Medium, please. Do you have it in blue? Yes, we do",
-conversation:[
-["Customer","Can I try this shirt?"],
-["Staff","Of course"],
-["Customer","Do you have medium?"],
-["Staff","Yes, we do"],
-["Customer","Do you have it in blue?"],
-["Staff","Yes, here you are"]
-],
-reading:"Good customer service is important in retail. Staff should listen carefully, answer questions clearly and help customers choose the right product",
-writingTask:"Write a shopping dialogue with a customer and a salesperson",
-practice:[
-"Ask for a different size",
-"Ask for another color",
-"Ask the price",
-"Ask politely for a bag"
-],
-mistakes:[
-"Say How much is this, not How much this",
-"Say I would like, not I like buy"
-],
-quiz:[
-["How much ___ this?","is|are|be","is"],
-["These ___ good","is|are|be","are"],
-["That ___ expensive","is|are|be","is"],
-["Can I ___ this?","try|tries|trying","try"],
-["I would ___ this","like|likes|liking","like"]
-]
+ id:8,level:"A1",module:"Beginner Module 1",
+ title:"Shopping",myTitle:"ဈေးဝယ်ခြင်း",
+ focus:"prices • sizes • requests • shopping conversation"
 },
 
 {
-id:9,
-level:"A1",
-module:"Beginner Module 1",
-title:"Food & Drinks",
-myTitle:"အစားအစာနှင့် သောက်စရာ",
-focus:"food vocabulary + preferences",
-grammar:"like / would like",
-objectives:[
-"Talk about food",
-"Say what you like",
-"Order simple food",
-"Use would like politely"
-],
-vocab:[
-["food","အစားအစာ","I like local food"],
-["drink","သောက်စရာ","What would you like to drink?"],
-["water","ရေ","I would like water"],
-["coffee","ကော်ဖီ","I drink coffee"],
-["tea","လက်ဖက်ရည်","Would you like tea?"],
-["rice","ထမင်း","I usually eat rice"],
-["chicken","ကြက်သား","I like chicken"],
-["fish","ငါး","The fish is fresh"],
-["vegetable","ဟင်းသီးဟင်းရွက်","I eat vegetables"],
-["fruit","သစ်သီး","Fruit is healthy"],
-["hungry","ဗိုက်ဆာသော","I am hungry"],
-["thirsty","ရေငတ်သော","I am thirsty"],
-["delicious","အရသာရှိသော","The food is delicious"],
-["menu","မီနူး","Can I see the menu?"],
-["order","မှာယူသည်","I would like to order"]
-],
-pronunciation:"Practice food names and polite ordering expressions",
-grammarExamples:[
-"I like coffee",
-"I don't like tea",
-"I would like water",
-"Would you like rice?"
-],
-patterns:[
-"I like + food",
-"I don't like + food",
-"I would like + item",
-"Would you like + item?"
-],
-listening:"I am hungry. I would like chicken and rice. I would also like a glass of water. The food looks delicious",
-conversation:[
-["A","Are you hungry?"],
-["B","Yes, I am"],
-["A","What would you like?"],
-["B","I would like chicken and rice"],
-["A","Would you like a drink?"],
-["B","Yes, I would like water"]
-],
-reading:"Food is an important part of everyday life. In restaurants, customers usually look at the menu, choose food and order politely",
-writingTask:"Write your favorite food and drink and explain why you like them",
-practice:[
-"Say three foods you like",
-"Say one food you do not like",
-"Order a drink",
-"Ask someone what they would like"
-],
-mistakes:[
-"Use would like for polite requests",
-"Do not say I would like to water",
-"Say I would like water"
-],
-quiz:[
-["I ___ coffee","like|likes|liking","like"],
-["She ___ tea","like|likes|liking","likes"],
-["I would ___ water","like|likes|liking","like"],
-["Would you ___ coffee?","like|likes|liking","like"],
-["The food is ___","delicious|deliciously|deliciousness","delicious"]
-]
+ id:9,level:"A1",module:"Beginner Module 1",
+ title:"Food & Drinks",myTitle:"အစားအစာနှင့် သောက်စရာများ",
+ focus:"food vocabulary • likes • ordering"
 },
 
 {
-id:10,
-level:"A1",
-module:"Beginner Module 1",
-title:"At a Restaurant",
-myTitle:"စားသောက်ဆိုင်တွင်",
-focus:"restaurant conversation",
-grammar:"polite requests",
-objectives:[
-"Order food confidently",
-"Ask for the bill",
-"Handle simple restaurant problems",
-"Use polite English"
-],
-vocab:[
-["table","စားပွဲ","A table for two, please"],
-["reservation","ကြိုတင်မှာထားခြင်း","I have a reservation"],
-["waiter","စားပွဲထိုး","The waiter is helpful"],
-["menu","မီနူး","Can I see the menu?"],
-["order","မှာယူသည်","Are you ready to order?"],
-["bill","ငွေရှင်းစာရင်း","Can I have the bill?"],
-["available","ရနိုင်သော","Is this table available?"],
-["recommend","အကြံပြုသည်","What do you recommend?"],
-["special","အထူးအစားအစာ","What is today's special?"],
-["spicy","စပ်သော","Is it spicy?"],
-["vegetarian","သက်သတ်လွတ်","Do you have vegetarian food?"],
-["service","ဝန်ဆောင်မှု","The service is good"],
-["tip","ဝန်ဆောင်ခ","Is service included?"],
-["fork","ခက်ရင်း","Can I have a fork?"],
-["bill","ဘေလ်","Please bring the bill"]
-],
-pronunciation:"Practice polite restaurant phrases with clear intonation",
-grammarExamples:[
-"Can I have the menu?",
-"I would like chicken",
-"Could I have some water?",
-"Can I have the bill?"
-],
-patterns:[
-"A table for two, please",
-"Could I have + item?",
-"What do you recommend?",
-"Can I have the bill?"
-],
-listening:"Good evening. Welcome. Do you have a reservation? Yes, a reservation for two. Here is your table. Would you like to see the menu? Yes, please",
-conversation:[
-["Waiter","Good evening. Do you have a reservation?"],
-["Customer","Yes, a reservation for two"],
-["Waiter","Right this way"],
-["Customer","Could I have the menu, please?"],
-["Waiter","Of course"],
-["Customer","Thank you"]
-],
-reading:"A professional restaurant conversation should be polite and clear. Customers can ask questions about ingredients, prices and recommendations before ordering",
-writingTask:"Write a complete restaurant dialogue from entering the restaurant to paying the bill",
-practice:[
-"Make a reservation",
-"Ask for the menu",
-"Order a meal",
-"Ask for the bill"
-],
-mistakes:[
-"Use Could I have for polite requests",
-"Use the bill when asking to pay",
-"Say A table for two, please"
-],
-quiz:[
-["A table for ___","two|second|twice","two"],
-["Could I ___ the menu?","have|has|having","have"],
-["What do you ___?","recommend|recommends|recommending","recommend"],
-["Can I have the ___?","bill|billing|bills","bill"],
-["Is it ___?","spicy|spice|spicily","spicy"]
-]
-
+ id:10,level:"A1",module:"Beginner Module 1",
+ title:"At a Restaurant",myTitle:"စားသောက်ဆိုင်တွင်",
+ focus:"restaurant conversation • ordering • paying"
 }
-
 ];
 
-
-/* =========================
-   A2 / B1 CURRICULUM
-   ========================= */
-
-const A2_META = [
-[11,"Daily Activities Review","နေ့စဉ်လုပ်ငန်းများ ပြန်လည်လေ့ကျင့်ခြင်း","Present Simple vs Present Continuous"],
-[12,"Talking About Past Events","အတိတ်ဖြစ်ရပ်များ ပြောခြင်း","Past Simple"],
-[13,"Weekend Plans","အားလပ်ရက်အစီအစဉ်","be going to"],
-[14,"Invitations & Arrangements","ဖိတ်ကြားခြင်းနှင့် စီစဉ်ခြင်း","Present Continuous for future"],
-[15,"Travel Basics","ခရီးသွားခြင်းအခြေခံ","Past and future travel language"],
-[16,"Transportation","သယ်ယူပို့ဆောင်ရေး","How long / How far"],
-[17,"Directions","လမ်းညွှန်ခြင်း","Imperatives and prepositions"],
-[18,"Health & Well-being","ကျန်းမာရေးနှင့် နေထိုင်မှုပုံစံ","should / shouldn't"],
-[19,"At the Doctor","ဆေးခန်းတွင်","Present Perfect introduction"],
-[20,"Weather","ရာသီဥတု","Comparatives"],
-[21,"House & Home","အိမ်နှင့်နေအိမ်","There is / There are"],
-[22,"Neighborhood","ပတ်ဝန်းကျင်","Places and prepositions"],
-[23,"Jobs & Workplace","အလုပ်အကိုင်နှင့် အလုပ်ခွင်","Present Simple workplace"],
-[24,"Phone Conversations","ဖုန်းပြောခြင်း","Could / Can"],
-[25,"Email & Messages","Email နှင့် Message","Polite requests"],
-[26,"Making Suggestions","အကြံပြုခြင်း","Let's / Why don't we / should"],
-[27,"Comparing Things","နှိုင်းယှဉ်ခြင်း","Comparatives and superlatives"],
-[28,"Shopping & Services","စျေးဝယ်ခြင်းနှင့် ဝန်ဆောင်မှု","Quantifiers"],
-[29,"Problems & Solutions","ပြဿနာနှင့် ဖြေရှင်းချက်","Past + advice"],
-[30,"A2 Review Challenge","A2 ပြန်လည်စစ်ဆေးမှု","Mixed A2 Grammar"]
+const A2_TITLES = [
+"Daily Activities Review",
+"Talking About Past Events",
+"Weekend Plans",
+"Invitations & Arrangements",
+"Travel Basics",
+"Transportation",
+"Directions",
+"Health & Well-being",
+"At the Doctor",
+"Weather",
+"House & Home",
+"Neighborhood",
+"Jobs & Workplace",
+"Phone Conversations",
+"Email & Messages",
+"Making Suggestions",
+"Comparing Things",
+"Shopping & Services",
+"Problems & Solutions",
+"A2 Review Challenge"
 ];
 
-const B1_META = [
-[31,"Storytelling in the Past","အတိတ်ဖြစ်ရပ်ကို ဇာတ်လမ်းပုံစံပြောခြင်း","Past Simple + Past Continuous"],
-[32,"Experiences & Present Perfect","အတွေ့အကြုံများ","Present Perfect"],
-[33,"Future Plans & Predictions","အနာဂတ်အစီအစဉ်နှင့် ခန့်မှန်းချက်","will / going to"],
-[34,"Opinions & Reasons","အမြင်နှင့် အကြောင်းပြချက်","because / although"],
-[35,"Agreeing & Disagreeing","သဘောတူခြင်းနှင့် မတူခြင်း","Opinion expressions"],
-[36,"Workplace Communication","အလုပ်ခွင်ဆက်သွယ်ရေး","Polite workplace English"],
-[37,"Meetings","အစည်းအဝေးများ","Meeting language"],
-[38,"Presentations","Presentation ပြုလုပ်ခြင်း","Signposting"],
-[39,"Sales Conversations","အရောင်းစကားပြော","Question techniques"],
-[40,"Customer Service","Customer Service","Handling requests"],
-[41,"Negotiation Basics","ညှိနှိုင်းခြင်းအခြေခံ","Conditionals"],
-[42,"Problem Solving","ပြဿနာဖြေရှင်းခြင်း","Cause and effect"],
-[43,"Leadership Communication","ခေါင်းဆောင်မှုဆက်သွယ်ရေး","Modals"],
-[44,"Teamwork & Feedback","အဖွဲ့လိုက်အလုပ်နှင့် Feedback","Feedback language"],
-[45,"Reports & Data","Report နှင့် Data","Language of trends"],
-[46,"Business Email","Business Email","Formal email structures"],
-[47,"Interviews","အလုပ်အင်တာဗျူး","Interview language"],
-[48,"Travel for Work","အလုပ်အတွက်ခရီးသွားခြင်း","Professional travel English"],
-[49,"Professional Small Talk","Professional Small Talk","Conversation strategies"],
-[50,"B1 Final Challenge","B1 Final Challenge","Mixed B1 Grammar"]
+const B1_TITLES = [
+"Storytelling in the Past",
+"Experiences & Present Perfect",
+"Future Plans & Predictions",
+"Opinions & Reasons",
+"Agreeing & Disagreeing",
+"Workplace Communication",
+"Meetings",
+"Presentations",
+"Sales Conversations",
+"Customer Service",
+"Negotiation Basics",
+"Problem Solving",
+"Leadership Communication",
+"Teamwork & Feedback",
+"Reports & Data",
+"Business Email",
+"Interviews",
+"Travel for Work",
+"Professional Small Talk",
+"B1 Final Challenge"
 ];
 
+function makeGeneratedLesson(id,level,title){
+  const isB1 = level==="B1";
+  const topics = {
+    "Daily Activities Review":["routine","present simple","daily habits"],
+    "Talking About Past Events":["past simple","yesterday","last week"],
+    "Weekend Plans":["future plans","going to","weekend"],
+    "Invitations & Arrangements":["would you like","arrangements","appointments"],
+    "Travel Basics":["travel","hotel","airport"],
+    "Transportation":["bus","train","taxi"],
+    "Directions":["turn left","straight","location"],
+    "Health & Well-being":["health","exercise","healthy habits"],
+    "At the Doctor":["symptoms","doctor","advice"],
+    "Weather":["weather","temperature","forecast"],
+    "House & Home":["rooms","furniture","home"],
+    "Neighborhood":["places","community","location"],
+    "Jobs & Workplace":["job","workplace","responsibility"],
+    "Phone Conversations":["phone","message","call"],
+    "Email & Messages":["email","subject","reply"],
+    "Making Suggestions":["should","could","suggest"],
+    "Comparing Things":["comparatives","superlatives","differences"],
+    "Shopping & Services":["service","price","problem"],
+    "Problems & Solutions":["problem","solution","action"],
+    "A2 Review Challenge":["review","accuracy","communication"],
+    "Storytelling in the Past":["storytelling","past events","sequence"],
+    "Experiences & Present Perfect":["present perfect","experience","ever"],
+    "Future Plans & Predictions":["future","prediction","planning"],
+    "Opinions & Reasons":["opinion","reason","because"],
+    "Agreeing & Disagreeing":["agreement","disagreement","polite language"],
+    "Workplace Communication":["workplace","communication","professional"],
+    "Meetings":["agenda","meeting","discussion"],
+    "Presentations":["presentation","data","audience"],
+    "Sales Conversations":["sales","customer","needs"],
+    "Customer Service":["service","complaint","solution"],
+    "Negotiation Basics":["negotiation","offer","agreement"],
+    "Problem Solving":["problem","analysis","solution"],
+    "Leadership Communication":["leadership","team","direction"],
+    "Teamwork & Feedback":["teamwork","feedback","performance"],
+    "Reports & Data":["report","data","trend"],
+    "Business Email":["email","request","follow-up"],
+    "Interviews":["interview","experience","answers"],
+    "Travel for Work":["business travel","schedule","client"],
+    "Professional Small Talk":["small talk","networking","relationship"],
+    "B1 Final Challenge":["review","fluency","accuracy"]
+  };
 
-function generatedLesson(meta,level){
+  const t = topics[title] || [title,"communication","English"];
+  const myTitles = {
+    "Daily Activities Review":"နေ့စဉ်လုပ်ငန်းများ ပြန်လည်လေ့ကျင့်ခြင်း",
+    "Talking About Past Events":"အတိတ်ဖြစ်ရပ်များအကြောင်း ပြောခြင်း",
+    "Weekend Plans":"အားလပ်ရက်အစီအစဉ်များ",
+    "Invitations & Arrangements":"ဖိတ်ကြားခြင်းနှင့် အစီအစဉ်များ",
+    "Travel Basics":"ခရီးသွားခြင်း အခြေခံ",
+    "Transportation":"သယ်ယူပို့ဆောင်ရေး",
+    "Directions":"လမ်းညွှန်ခြင်း",
+    "Health & Well-being":"ကျန်းမာရေးနှင့် ကောင်းမွန်စွာနေထိုင်ခြင်း",
+    "At the Doctor":"ဆရာဝန်ထံတွင်",
+    "Weather":"ရာသီဥတု",
+    "House & Home":"အိမ်နှင့် နေအိမ်",
+    "Neighborhood":"ရပ်ကွက်နှင့် ပတ်ဝန်းကျင်",
+    "Jobs & Workplace":"အလုပ်နှင့် လုပ်ငန်းခွင်",
+    "Phone Conversations":"ဖုန်းပြောဆိုခြင်း",
+    "Email & Messages":"Email နှင့် Message",
+    "Making Suggestions":"အကြံပြုခြင်း",
+    "Comparing Things":"နှိုင်းယှဉ်ခြင်း",
+    "Shopping & Services":"ဈေးဝယ်ခြင်းနှင့် ဝန်ဆောင်မှု",
+    "Problems & Solutions":"ပြဿနာနှင့် ဖြေရှင်းချက်",
+    "A2 Review Challenge":"A2 ပြန်လည်သုံးသပ်စိန်ခေါ်မှု",
+    "Storytelling in the Past":"အတိတ်အကြောင်းအရာကို ဇာတ်လမ်းပြောခြင်း",
+    "Experiences & Present Perfect":"အတွေ့အကြုံများနှင့် Present Perfect",
+    "Future Plans & Predictions":"အနာဂတ်အစီအစဉ်နှင့် ခန့်မှန်းချက်",
+    "Opinions & Reasons":"အမြင်နှင့် အကြောင်းပြချက်",
+    "Agreeing & Disagreeing":"သဘောတူခြင်းနှင့် သဘောမတူခြင်း",
+    "Workplace Communication":"လုပ်ငန်းခွင် ဆက်သွယ်ပြောဆိုခြင်း",
+    "Meetings":"အစည်းအဝေး",
+    "Presentations":"တင်ပြချက်များ",
+    "Sales Conversations":"အရောင်းဆိုင်ရာ စကားပြောခြင်း",
+    "Customer Service":"ဖောက်သည်ဝန်ဆောင်မှု",
+    "Negotiation Basics":"ညှိနှိုင်းဆွေးနွေးခြင်း အခြေခံ",
+    "Problem Solving":"ပြဿနာဖြေရှင်းခြင်း",
+    "Leadership Communication":"Leadership Communication",
+    "Teamwork & Feedback":"အဖွဲ့လိုက်အလုပ်နှင့် Feedback",
+    "Reports & Data":"Report နှင့် Data",
+    "Business Email":"Business Email",
+    "Interviews":"အလုပ်အင်တာဗျူး",
+    "Travel for Work":"အလုပ်အတွက် ခရီးသွားခြင်း",
+    "Professional Small Talk":"Professional Small Talk",
+    "B1 Final Challenge":"B1 Final Challenge"
+  };
 
-  const [
-    id,title,myTitle,grammar
-  ] = meta;
-
-  const business = level === "B1";
-
-  const vocab = business
-    ? [
-      ["objective","ရည်မှန်းချက်","Our objective is clear"],
-      ["target","ပစ်မှတ်","We need to achieve the target"],
-      ["customer","ဖောက်သည်","The customer needs support"],
-      ["meeting","အစည်းအဝေး","We have a meeting today"],
-      ["report","အစီရင်ခံစာ","Please send the report"],
-      ["performance","လုပ်ဆောင်ရည်","Sales performance improved"],
-      ["solution","ဖြေရှင်းချက်","We need a solution"],
-      ["strategy","မဟာဗျူဟာ","Our strategy is simple"],
-      ["result","ရလဒ်","The result was positive"],
-      ["feedback","တုံ့ပြန်ချက်","Thank you for the feedback"],
-      ["team","အဖွဲ့","Our team works well"],
-      ["customer service","ဖောက်သည်ဝန်ဆောင်မှု","Customer service matters"],
-      ["deadline","နောက်ဆုံးသတ်မှတ်ချိန်","We must meet the deadline"],
-      ["priority","ဦးစားပေး","This is our priority"],
-      ["improve","တိုးတက်စေသည်","We need to improve"]
-    ]
-    : [
-      ["activity","လုပ်ဆောင်ချက်","This is my daily activity"],
-      ["experience","အတွေ့အကြုံ","It was a useful experience"],
-      ["plan","အစီအစဉ်","I have a plan"],
-      ["problem","ပြဿနာ","We have a problem"],
-      ["solution","ဖြေရှင်းချက်","Let's find a solution"],
-      ["important","အရေးကြီးသော","This is important"],
-      ["different","မတူသော","They are different"],
-      ["similar","ဆင်တူသော","The two products are similar"],
-      ["usually","ပုံမှန်အားဖြင့်","I usually work early"],
-      ["already","ပြီးသား","I have already finished"],
-      ["yet","သေးသည်","I haven't finished yet"],
-      ["probably","ဖြစ်နိုင်ခြေရှိ","It will probably rain"],
-      ["because","အကြောင်းမှာ","I stayed because I was busy"],
-      ["although","သော်လည်း","Although it was late, I worked"],
-      ["improve","တိုးတက်စေသည်","I want to improve"]
-    ];
-
-  const reading = business
-    ? `In professional situations, clear communication helps people understand objectives, priorities and responsibilities. The ${title.toLowerCase()} topic is useful because professionals often need to explain ideas, ask questions, respond to problems and work with other people.`
-    : `The topic of ${title.toLowerCase()} is an important part of everyday English. Learners need to understand useful vocabulary, common sentence patterns and practical situations. By practicing this topic regularly, you can communicate more confidently.`;
-
-  const listening = business
-    ? `Good morning. Let's discuss ${title.toLowerCase()}. We need to understand the situation, identify the main issue and agree on the next action. Please share your ideas and let us decide on a practical solution.`
-    : `Let's practice ${title.toLowerCase()}. First, listen carefully. Then think about the meaning, repeat the important sentences and answer the questions. Regular practice will help you communicate more naturally.`;
-
-  const conversation = business
-    ? [
-      ["Manager","Let's discuss today's topic"],
-      ["Employee","Sure. What is the main objective?"],
-      ["Manager","We need a clear and practical solution"],
-      ["Employee","I agree. I have one suggestion"],
-      ["Manager","Great. Please explain it"],
-      ["Employee","I think we should focus on the customer"],
-      ["Manager","Good. Let's agree on the next action"]
-    ]
-    : [
-      ["A","What are you working on?"],
-      ["B","I am working on this topic"],
-      ["A","Is it difficult?"],
-      ["B","It is a little difficult, but I am learning"],
-      ["A","What can you do next?"],
-      ["B","I can practice more"],
-      ["A","Good idea"]
-    ];
-
-  const quiz = [
-    [`Which grammar is the main focus?`,`${grammar}|Present Simple only|Past Perfect only`,grammar],
-    [`Which word is closest to "important"?`,"important|small|late","important"],
-    [`Choose the correct sentence`,"I am learning English|I learning English|I am learn English","I am learning English"],
-    [`Choose the best response`,"That sounds good|Yesterday table|Blue yesterday","That sounds good"],
-    [`Which sentence is more natural?`,"I want to improve my English|I improve want English|English my want improve","I want to improve my English"]
-  ];
+  const topic=t[0];
 
   return {
     id,
     level,
-    module:level==="A2"?"A2 Elementary":"B1 Intermediate",
+    module:level==="A2"?"Elementary English": "Intermediate English",
     title,
-    myTitle,
-    focus:grammar,
+    myTitle:myTitles[title] || title,
+    focus:t.join(" • "),
     objectives:[
-      `Understand the main idea of ${title}`,
-      `Use important vocabulary in context`,
-      `Practice ${grammar}`,
-      `Apply the lesson in real communication`
+      `Use practical English for ${topic}`,
+      "Understand the key grammar and vocabulary",
+      "Speak and write using complete sentences"
     ],
-    vocab,
-    pronunciation:`Focus on natural rhythm, word stress and clear pronunciation. Read each example slowly first, then repeat at normal speed`,
+    warmup:`Think about a real situation related to ${topic} and say three English words you already know`,
+    vocab:[
+      {word:t[0],meaning:"အဓိကအကြောင်းအရာ",example:`I often talk about ${t[0]}.`,myMeaning:`${topic} အကြောင်း မကြာခဏ ပြောပါတယ်`},
+      {word:t[1],meaning:"အဓိကဘာသာရပ်",example:`This lesson focuses on ${t[1]}.`,myMeaning:"ဒီသင်ခန်းစာမှာ အဓိကလေ့လာပါမယ်"},
+      {word:t[2],meaning:"ဆက်စပ်အကြောင်းအရာ",example:`This is useful in real life.`,myMeaning:"ဒါက လက်တွေ့ဘဝမှာ အသုံးဝင်ပါတယ်"},
+      {word:"important",meaning:"အရေးကြီးသော",example:"This is important for communication.",myMeaning:"ဆက်သွယ်ပြောဆိုရာမှာ ဒါက အရေးကြီးပါတယ်"},
+      {word:"practice",meaning:"လေ့ကျင့်သည်",example:"I practice English every day.",myMeaning:"နေ့တိုင်း English လေ့ကျင့်ပါတယ်"},
+      {word:"improve",meaning:"တိုးတက်စေသည်",example:"I want to improve my English.",myMeaning:"English တိုးတက်ချင်ပါတယ်"},
+      {word:"explain",meaning:"ရှင်းပြသည်",example:"Can you explain this?",myMeaning:"ဒါကို ရှင်းပြပေးနိုင်မလား"},
+      {word:"answer",meaning:"အဖြေ / ဖြေဆိုသည်",example:"Please answer the question.",myMeaning:"မေးခွန်းကို ဖြေပေးပါ"},
+      {word:"understand",meaning:"နားလည်သည်",example:"I understand the idea.",myMeaning:"အကြောင်းအရာကို နားလည်ပါတယ်"},
+      {word:"communicate",meaning:"ဆက်သွယ်ပြောဆိုသည်",example:"We communicate with customers.",myMeaning:"Customer တွေနဲ့ ဆက်သွယ်ပြောဆိုပါတယ်"}
+    ],
+    pronunciation:`Focus on clear ${level} pronunciation. Listen once slowly, then repeat at normal speed`,
+    grammar:level==="A2"
+      ? "Review practical tense, question and comparison structures. Use complete subject + verb + object sentences"
+      : "Use linking words, accurate tense forms and professional sentence structures to express ideas clearly",
+    grammarMy:level==="A2"
+      ? "A2 အဆင့်မှာ tense၊ question နဲ့ comparison structure တွေကို မှန်ကန်စွာ သုံးနိုင်ရပါမယ်"
+      : "B1 အဆင့်မှာ အတွေးအမြင်တွေကို tense မှန်မှန်နဲ့ linking words အသုံးပြုပြီး ရှင်းလင်းစွာ ပြောနိုင်ရပါမယ်",
     grammarExamples:[
-      `I am learning English`,
-      `I usually practice every day`,
-      `I want to communicate clearly`,
-      `We can use English at work`,
-      `She is improving her English`
+      `I usually ${topic.toLowerCase()} at work.`,
+      `I have learned how to communicate clearly.`,
+      `I think this is useful because it saves time.`,
+      `If there is a problem, we can discuss a solution.`
     ],
     patterns:[
-      "I think + sentence",
-      "I want to + verb",
-      "I need to + verb",
-      "Could you + verb?",
-      "I would like to + verb"
+      {en:"I usually + verb + ...",my:"ကျွန်တော် ပုံမှန်အားဖြင့် + ကြိယာ + ..."},
+      {en:"I think + sentence",my:"ကျွန်တော်ထင်တာက + စာကြောင်း"},
+      {en:"Could you + verb + ...?",my:"... လုပ်ပေးနိုင်မလား"},
+      {en:"We need to + verb + ...",my:"ကျွန်တော်တို့ + လုပ်ဖို့လိုပါတယ်"}
     ],
-    listening,
-    conversation,
-    reading,
-    writingTask:`Write a short paragraph about ${title}. Use at least 6 sentences and include the new vocabulary`,
+    listening:`A: What are you working on today? B: I am working on ${topic.toLowerCase()}. A: Is there any problem? B: There is a small issue, but I think we can solve it. A: Good. Let's discuss the next step together.`,
+    listeningMy:"A: ဒီနေ့ ဘာအလုပ်လုပ်နေလဲ။ B: ဒီသင်ခန်းစာနဲ့ ဆိုင်တဲ့အလုပ်ကို လုပ်နေပါတယ်။ A: ပြဿနာရှိလား။ B: ပြဿနာနည်းနည်းရှိပေမယ့် ဖြေရှင်းနိုင်မယ်လို့ ထင်ပါတယ်။ A: ကောင်းတယ်။ နောက်တစ်ဆင့်ကို အတူဆွေးနွေးကြမယ်",
+    listeningQuestions:[
+      "What are they discussing?",
+      "Is there a problem?",
+      "What do they decide to do?"
+    ],
+    speaking:`Speak for 45–60 seconds about ${topic}. Give a clear beginning, two details and a short conclusion`,
+    speakingQuestions:[
+      `What do you know about ${topic}?`,
+      "Why is it important?",
+      "What is your personal experience?"
+    ],
+    conversation:[
+      {speaker:"A",en:`Can we talk about ${topic}?`,my:`${topic} အကြောင်း ပြောလို့ရမလား`},
+      {speaker:"B",en:"Sure. What would you like to know?",my:"ရပါတယ်။ ဘာကို သိချင်တာလဲ"},
+      {speaker:"A",en:"I want to understand the practical side.",my:"လက်တွေ့ပိုင်းကို နားလည်ချင်ပါတယ်"},
+      {speaker:"B",en:"Let's look at a real example together.",my:"လက်တွေ့ဥပမာတစ်ခုကို အတူကြည့်ရအောင်"}
+    ],
+    reading:`${topic} is an important part of effective communication. In real life, people need to understand the situation, choose appropriate words and respond clearly. Good English is not only about grammar. It is also about using the language naturally and confidently.`,
+    readingMy:`${topic} က ထိရောက်တဲ့ communication အတွက် အရေးကြီးတဲ့အပိုင်းတစ်ခု ဖြစ်ပါတယ်။ လက်တွေ့ဘဝမှာ အခြေအနေကို နားလည်ပြီး သင့်တော်တဲ့ စကားလုံးတွေ ရွေးချယ်ကာ ရှင်းလင်းစွာ ပြန်ပြောနိုင်ဖို့ လိုပါတယ်။ English က grammar တစ်ခုတည်းမဟုတ်ဘဲ သဘာဝကျကျနဲ့ ယုံကြည်စွာ အသုံးပြုနိုင်ဖို့လည်း အရေးကြီးပါတယ်`,
+    readingQuestions:[
+      "Why is the topic important?",
+      "What should people understand?",
+      "Is English only about grammar?"
+    ],
+    writing:"Write a practical paragraph",
+    writingTask:`Write 80–120 words about ${topic}. Include an opening idea, practical details and your own opinion`,
     practice:[
-      `Explain ${title} in your own words`,
-      `Use three new vocabulary words`,
-      `Create two sentences with the grammar`,
-      `Ask and answer one question`,
-      `Give one real-life example`
+      `Make one sentence about ${topic}`,
+      "Ask a question using Could you...?",
+      "Give one reason using because",
+      "Give one example",
+      "Summarize the topic in one sentence"
     ],
     mistakes:[
-      "Check subject and verb agreement",
-      "Check verb tense before submitting",
-      "Use complete sentences",
-      "Do not translate every word directly from Myanmar"
+      "Avoid translating every sentence word-for-word",
+      "Use a complete subject and verb",
+      "Check tense consistency",
+      "Use polite forms in professional situations"
     ],
-    quiz
+    review:`Review: ${topic}, key vocabulary, sentence patterns and the main grammar point`,
+    quiz:[
+      {q:"Choose the most natural sentence",options:["I think this is useful","I think useful this","I this think useful"],a:0},
+      {q:"Choose the correct question",options:["Could you explain this?","Could explain you this?","You could this explain?"],a:0},
+      {q:"Choose the correct connector",options:["because","yesterday","table"],a:0},
+      {q:"Which skill helps you understand spoken English?",options:["Listening","Writing","Typing"],a:0},
+      {q:"Choose the professional response",options:["Sure, let's discuss it","No understand","You wrong"],a:0}
+    ],
+    challenge:"Listen to the dialogue, repeat it and then explain the situation using your own words",
+    takeaways:[
+      `Understand practical English for ${topic}`,
+      "Use complete and clear sentences",
+      "Practice all four skills together"
+    ]
   };
 }
 
-const A2_LESSONS = A2_META.map(x=>generatedLesson(x,"A2"));
-const B1_LESSONS = B1_META.map(x=>generatedLesson(x,"B1"));
+const A2_LESSONS=A2_TITLES.map((t,i)=>makeGeneratedLesson(i+11,"A2",t));
+const B1_LESSONS=B1_TITLES.map((t,i)=>makeGeneratedLesson(i+31,"B1",t));
 
-const ALL_LESSONS = [
-  ...A1_LESSONS,
-  ...A2_LESSONS,
-  ...B1_LESSONS
-];
+/* A1 basic generated details for lessons 2-10 */
+const A1_DETAILS = {
+2:["Greetings & Basic Conversations","နှုတ်ဆက်ခြင်းနှင့် အခြေခံစကားပြောခြင်း"],
+3:["Personal Information","ကိုယ်ရေးအချက်အလက်"],
+4:["Family","မိသားစု"],
+5:["Daily Routine","နေ့စဉ်လုပ်ငန်းများ"],
+6:["Time & Dates","အချိန်နှင့် ရက်စွဲ"],
+7:["Numbers & Money","နံပါတ်များနှင့် ငွေကြေး"],
+8:["Shopping","ဈေးဝယ်ခြင်း"],
+9:["Food & Drinks","အစားအစာနှင့် သောက်စရာများ"],
+10:["At a Restaurant","စားသောက်ဆိုင်တွင်"]
+};
 
-
-/* =========================
-   B2 / C1 / C2 STRUCTURE
-   ========================= */
-
-const ADVANCED_COURSES = [
-{
-level:"B2",
-title:"Upper Intermediate",
-myTitle:"Professional Fluency",
-icon:"🚀",
-description:"Advanced workplace communication, negotiation, presentations and business writing",
-lessons:"51–80"
-},
-{
-level:"C1",
-title:"Advanced",
-myTitle:"Advanced Professional English",
-icon:"🏆",
-description:"Strategy, persuasion, reports, complex meetings and nuanced communication",
-lessons:"81–110"
-},
-{
-level:"C2",
-title:"Proficiency",
-myTitle:"English Mastery",
-icon:"👑",
-description:"Precision, idiomatic language, advanced writing, debate and professional fluency",
-lessons:"111–140"
+for(let i=1;i<A1_LESSONS.length;i++){
+  const id=A1_LESSONS[i].id;
+  const d=A1_DETAILS[id];
+  A1_LESSONS[i]=makeGeneratedLesson(id,"A1",d[0]);
+  A1_LESSONS[i].myTitle=d[1];
+  A1_LESSONS[i].module="Beginner Module 1";
 }
+
+const ALL_LESSONS=[...A1_LESSONS,...A2_LESSONS,...B1_LESSONS];
+
+/* =========================================================
+   COURSES
+   ========================================================= */
+
+const COURSES=[
+ {
+  level:"Pre-A1",
+  title:"Foundation English",
+  icon:"🌱",
+  lessons:0,
+  desc:"Alphabet, sounds, basic words and survival English"
+ },
+ {
+  level:"A1",
+  title:"Beginner English",
+  icon:"🌿",
+  lessons:10,
+  desc:"Everyday English, basic grammar and simple conversations"
+ },
+ {
+  level:"A2",
+  title:"Elementary English",
+  icon:"🌳",
+  lessons:20,
+  desc:"Past, future, travel, health, work and practical communication"
+ },
+ {
+  level:"B1",
+  title:"Intermediate English",
+  icon:"🚀",
+  lessons:20,
+  desc:"Fluency, workplace communication, sales and professional English"
+ },
+ {
+  level:"B2",
+  title:"Upper Intermediate",
+  icon:"💎",
+  lessons:0,
+  desc:"Advanced workplace communication, negotiation and presentations"
+ },
+ {
+  level:"C1",
+  title:"Advanced English",
+  icon:"🏆",
+  lessons:0,
+  desc:"Complex professional English, strategy and persuasive communication"
+ },
+ {
+  level:"C2",
+  title:"Proficiency English",
+  icon:"👑",
+  lessons:0,
+  desc:"Precision, nuance, idiomatic language and advanced writing"
+ }
 ];
 
-
-/* =========================
+/* =========================================================
    STATE
-   ========================= */
+   ========================================================= */
 
-function getJSON(key,fallback){
-  try{
-    const value=localStorage.getItem(key);
-    return value ? JSON.parse(value) : fallback;
-  }catch(e){
-    return fallback;
-  }
-}
-
-function setJSON(key,value){
-  localStorage.setItem(key,JSON.stringify(value));
-}
-
-function getXP(){
-  return Number(localStorage.getItem(STORAGE.xp)||0);
-}
-
-function setXP(value){
-  localStorage.setItem(STORAGE.xp,String(value));
+function getNumber(key,def=0){
+  const value=parseInt(localStorage.getItem(key),10);
+  return Number.isFinite(value)?value:def;
 }
 
 function getCompleted(){
-  return getJSON(STORAGE.completed,[]);
+  try{
+    return JSON.parse(localStorage.getItem(STORAGE.completed)||"[]");
+  }catch(e){
+    return [];
+  }
 }
 
-function getScores(){
-  return getJSON(STORAGE.scores,{});
+function setCompleted(arr){
+  localStorage.setItem(STORAGE.completed,JSON.stringify(arr));
 }
 
-function getMistakes(){
-  return getJSON(STORAGE.mistakes,[]);
+function getQuizScore(id){
+  return getNumber(STORAGE.quiz+id,0);
+}
+
+function getLanguage(){
+  return localStorage.getItem(STORAGE.language)||"enmy";
+}
+
+function getAccent(){
+  return localStorage.getItem(STORAGE.accent)||"us";
+}
+
+function getSpeed(){
+  return localStorage.getItem(STORAGE.speed)||"normal";
 }
 
 function getGoal(){
-  return Number(localStorage.getItem(STORAGE.goal)||20);
+  return getNumber(STORAGE.goal,15);
 }
 
-function getMinutes(){
-  return Number(localStorage.getItem(STORAGE.minutes)||0);
+function getXP(){
+  return getNumber(STORAGE.xp,0);
+}
+
+function getStreak(){
+  return getNumber(STORAGE.streak,0);
 }
 
 function getHearts(){
-  return Number(localStorage.getItem(STORAGE.hearts)||5);
+  return getNumber(STORAGE.hearts,5);
 }
 
+function saveXP(amount){
+  const old=getXP();
+  localStorage.setItem(STORAGE.xp,String(old+amount));
+  addDailyXP(amount);
+}
 
-/* =========================
-   STREAK
-   ========================= */
+function addDailyXP(amount){
+  const today=getToday();
+
+  if(localStorage.getItem(STORAGE.dailyDate)!==today){
+    localStorage.setItem(STORAGE.dailyDate,today);
+    localStorage.setItem(STORAGE.dailyXP,String(amount));
+  }else{
+    const current=getNumber(STORAGE.dailyXP,0);
+    localStorage.setItem(STORAGE.dailyXP,String(current+amount));
+  }
+}
+
+function getDailyXP(){
+  if(localStorage.getItem(STORAGE.dailyDate)!==getToday()) return 0;
+  return getNumber(STORAGE.dailyXP,0);
+}
+
+function getToday(){
+  return new Date().toISOString().slice(0,10);
+}
 
 function updateStreak(){
-
-  const today=new Date().toISOString().slice(0,10);
+  const today=getToday();
   const last=localStorage.getItem(STORAGE.lastStudy);
 
-  let streak=Number(localStorage.getItem(STORAGE.streak)||0);
+  if(last===today) return;
 
-  if(last===today){
-    return streak;
-  }
+  let streak=getStreak();
 
   if(last){
-
-    const lastDate=new Date(last);
-    const now=new Date(today);
-
-    const diff=Math.round(
-      (now-lastDate)/(1000*60*60*24)
-    );
+    const lastDate=new Date(last+"T00:00:00");
+    const todayDate=new Date(today+"T00:00:00");
+    const diff=Math.round((todayDate-lastDate)/86400000);
 
     if(diff===1){
       streak++;
     }else if(diff>1){
       streak=1;
     }
-
   }else{
     streak=1;
   }
 
   localStorage.setItem(STORAGE.streak,String(streak));
   localStorage.setItem(STORAGE.lastStudy,today);
-
-  return streak;
 }
 
+function getCurrentLesson(){
+  const saved=getNumber(STORAGE.lastLesson,1);
+  return ALL_LESSONS.find(x=>x.id===saved)||ALL_LESSONS[0];
+}
 
-/* =========================
+function isCompleted(id){
+  return getCompleted().includes(id);
+}
+
+function isUnlocked(id){
+  if(id<=3) return true;
+  return isCompleted(id-1);
+}
+
+/* =========================================================
    NAVIGATION
-   ========================= */
+   ========================================================= */
 
 const pageTitles={
-  dashboard:"Dashboard",
-  path:"Learning Path",
-  courses:"Courses",
-  practice:"Practice",
-  lesson:"Lesson",
-  grammar:"Grammar",
-  vocabulary:"Vocabulary",
-  business:"Business English",
-  ai:"AI English Coach",
-  test:"Level Test",
-  progress:"Progress",
-  settings:"Settings"
+ dashboard:"Dashboard",
+ path:"Learning Path",
+ courses:"Courses",
+ lesson:"Current Lesson",
+ grammar:"Grammar",
+ vocabulary:"Vocabulary",
+ test:"Level Test",
+ progress:"Progress",
+ business:"Business English",
+ settings:"Settings"
 };
 
-function showPage(page){
-
-  document.querySelectorAll(".page").forEach(x=>{
-    x.classList.remove("active");
+function showPage(name){
+  document.querySelectorAll(".page").forEach(p=>{
+    p.classList.remove("active");
   });
 
-  const el=document.getElementById("page-"+page);
+  const page=document.getElementById("page-"+name);
 
-  if(el){
-    el.classList.add("active");
+  if(page){
+    page.classList.add("active");
   }
 
   document.querySelectorAll(".nav-btn").forEach(btn=>{
-    btn.classList.toggle(
-      "active",
-      btn.dataset.page===page
-    );
+    btn.classList.toggle("active",btn.dataset.page===name);
   });
 
-  document.getElementById("topTitle").textContent =
-    pageTitles[page] || "Aung English Pro";
+  document.getElementById("topTitle").textContent=pageTitles[name]||"Aung English Pro";
 
-  closeMobile();
+  if(name==="dashboard") renderDashboard();
+  if(name==="path") renderPath();
+  if(name==="courses") renderCourses();
+  if(name==="lesson") renderLesson(getCurrentLesson().id);
+  if(name==="grammar") renderGrammar();
+  if(name==="vocabulary") renderVocabulary();
+  if(name==="test") renderLevelTest();
+  if(name==="progress") renderProgress();
 
-  if(page==="dashboard") renderDashboard();
-  if(page==="path") renderPath();
-  if(page==="courses") renderCourses();
-  if(page==="grammar") renderGrammar();
-  if(page==="vocabulary") renderVocabulary();
-  if(page==="business") renderBusiness();
-  if(page==="progress") renderProgress();
-  if(page==="test") renderLevelTest();
-  if(page==="practice") renderMistakes();
+  closeSidebar();
 
   window.scrollTo({top:0,behavior:"smooth"});
 }
-
 
 document.querySelectorAll(".nav-btn").forEach(btn=>{
   btn.addEventListener("click",()=>{
@@ -2777,1902 +2293,1444 @@ document.querySelectorAll(".nav-btn").forEach(btn=>{
   });
 });
 
+document.getElementById("mobileMenu").addEventListener("click",()=>{
+  document.getElementById("sidebar").classList.toggle("open");
+  document.getElementById("overlay").classList.toggle("show");
+});
 
-/* =========================
-   MOBILE MENU
-   ========================= */
+document.getElementById("overlay").addEventListener("click",closeSidebar);
 
-const sidebar=document.getElementById("sidebar");
-const overlay=document.getElementById("overlay");
-
-document.getElementById("mobileMenu").onclick=()=>{
-  sidebar.classList.add("open");
-  overlay.classList.add("show");
-};
-
-overlay.onclick=closeMobile;
-
-function closeMobile(){
-  sidebar.classList.remove("open");
-  overlay.classList.remove("show");
+function closeSidebar(){
+  document.getElementById("sidebar").classList.remove("open");
+  document.getElementById("overlay").classList.remove("show");
 }
 
-
-/* =========================
+/* =========================================================
    DASHBOARD
-   ========================= */
+   ========================================================= */
+
+function getUserLevel(){
+  const completed=getCompleted();
+
+  if(completed.filter(id=>id<=10).length<10) return "A1";
+  if(completed.filter(id=>id>=11&&id<=30).length<20) return "A2";
+  return "B1";
+}
 
 function renderDashboard(){
 
   const completed=getCompleted();
   const xp=getXP();
-  const streak=Number(localStorage.getItem(STORAGE.streak)||0);
-  const minutes=getMinutes();
+  const streak=getStreak();
+  const daily=getDailyXP();
   const goal=getGoal();
 
-  document.getElementById("dashStreak").textContent=streak;
+  document.getElementById("dashLevel").textContent=getUserLevel();
+  document.getElementById("dashLessons").textContent=completed.length;
   document.getElementById("dashXP").textContent=xp;
-  document.getElementById("dashCompleted").textContent=completed.length;
-  document.getElementById("dashMinutes").textContent=minutes;
+  document.getElementById("dashStreak").textContent=streak+" 🔥";
 
   document.getElementById("topStreak").textContent=streak;
   document.getElementById("topXP").textContent=xp;
   document.getElementById("topHearts").textContent=getHearts();
 
-  const next=getNextLesson();
+  const percent=Math.min(100,Math.round((daily/goal)*100));
+
+  document.getElementById("goalText").textContent=daily+" / "+goal+" XP";
+  document.getElementById("goalPercent").textContent=percent+"%";
+  document.getElementById("goalBar").style.width=percent+"%";
+
+  const lesson=getCurrentLesson();
 
   document.getElementById("continueCard").innerHTML=`
-    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center">
-      <div>
-        <span class="badge">${next.level}</span>
-        <h3 style="margin-top:9px">${next.title}</h3>
-        <p>${next.myTitle||next.focus}</p>
+    <div class="card course-card" onclick="openLesson(${lesson.id})">
+      <div class="course-top">
+        <div class="course-icon">🎯</div>
+        <span class="badge active">${lesson.level}</span>
       </div>
-      <button class="btn btn-primary" onclick="openLesson(${next.id})">
-        Continue →
-      </button>
-    </div>
-
-    <div class="progress">
-      <div style="width:${completed.includes(next.id)?100:20}%"></div>
+      <h3>Lesson ${lesson.id}: ${escapeHTML(lesson.title)}</h3>
+      <p>${escapeHTML(lesson.focus)}</p>
+      <div class="progress">
+        <div class="progress-bar" style="width:${isCompleted(lesson.id)?100:10}%"></div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--muted)">
+        ${isCompleted(lesson.id)?"Completed ✓":"Continue this lesson →"}
+      </div>
     </div>
   `;
-
-  renderSkills("dashboardSkills");
-
-  const pct=Math.min(100,Math.round(minutes/goal*100));
-
-  document.getElementById("missionCard").innerHTML=`
-    <div style="display:flex;justify-content:space-between">
-      <strong>🎯 Study for ${goal} minutes</strong>
-      <strong>${minutes}/${goal}</strong>
-    </div>
-
-    <div class="progress">
-      <div style="width:${pct}%"></div>
-    </div>
-
-    <p style="margin-top:10px">
-      ${pct>=100
-        ? "Mission complete — excellent work"
-        : "Keep going and complete today's goal"}
-    </p>
-  `;
-
-  const achievements=[
-    ["🔥","First Day","Complete your first lesson",completed.length>=1],
-    ["📚","10 Lessons","Complete 10 lessons",completed.length>=10],
-    ["⚡","500 XP","Earn 500 XP",xp>=500],
-    ["🏆","25 Lessons","Complete 25 lessons",completed.length>=25]
-  ];
-
-  document.getElementById("achievementCard").innerHTML=
-    achievements.map(a=>`
-      <div class="achievement ${a[3]?"":"locked"}"
-        style="margin-bottom:8px">
-        <div class="achievement-icon">${a[0]}</div>
-        <div>
-          <strong style="font-size:12px">${a[1]}</strong>
-          <div style="font-size:10px;color:var(--muted)">
-            ${a[2]}
-          </div>
-        </div>
-      </div>
-    `).join("");
 }
 
-
-/* =========================
-   SKILLS
-   ========================= */
-
-function calculateSkill(skill){
-
-  const completed=getCompleted();
-
-  if(!completed.length) return 0;
-
-  const scoreMap={
-    listening:72,
-    speaking:55,
-    reading:78,
-    writing:60
-  };
-
-  const base=scoreMap[skill]||50;
-
-  return Math.min(
-    100,
-    Math.round(base + Math.min(20,completed.length*1.2))
-  );
+function resumeLearning(){
+  const lesson=getCurrentLesson();
+  openLesson(lesson.id);
 }
 
-function renderSkills(id){
-
-  const skills=[
-    ["🔊","Listening","listening"],
-    ["🗣️","Speaking","speaking"],
-    ["📖","Reading","reading"],
-    ["✍️","Writing","writing"]
-  ];
-
-  document.getElementById(id).innerHTML=
-    skills.map(s=>{
-      const pct=calculateSkill(s[2]);
-
-      return `
-        <div class="skill">
-          <div class="skill-icon">${s[0]}</div>
-          <div class="skill-name">${s[1]}</div>
-          <div class="skill-percent">${pct}%</div>
-          <div class="progress">
-            <div style="width:${pct}%"></div>
-          </div>
-        </div>
-      `;
-    }).join("");
-}
-
-
-/* =========================
-   PATH
-   ========================= */
+/* =========================================================
+   LEARNING PATH
+   ========================================================= */
 
 function renderPath(){
 
-  const completed=getCompleted();
+  const path=document.getElementById("learningPath");
 
-  const levels=[
-    {
-      level:"A1",
-      title:"Beginner",
-      start:1,
-      end:10
-    },
-    {
-      level:"A2",
-      title:"Elementary",
-      start:11,
-      end:30
-    },
-    {
-      level:"B1",
-      title:"Intermediate",
-      start:31,
-      end:50
-    },
-    {
-      level:"B2",
-      title:"Upper Intermediate",
-      start:51,
-      end:80
-    },
-    {
-      level:"C1",
-      title:"Advanced",
-      start:81,
-      end:110
-    },
-    {
-      level:"C2",
-      title:"Proficiency",
-      start:111,
-      end:140
+  let html="";
+
+  ALL_LESSONS.forEach((lesson,index)=>{
+
+    const completed=isCompleted(lesson.id);
+    const unlocked=isUnlocked(lesson.id);
+    const current=!completed && unlocked;
+
+    let cls="locked";
+    let icon="🔒";
+
+    if(completed){
+      cls="completed";
+      icon="✓";
+    }else if(current){
+      cls="current";
+      icon="▶";
     }
-  ];
-
-  let html='<div class="path-line"></div>';
-
-  levels.forEach((l,index)=>{
-
-    const total=l.end-l.start+1;
-
-    const done=completed.filter(
-      id=>id>=l.start && id<=l.end
-    ).length;
-
-    const pct=Math.round(done/total*100);
-
-    let state="locked";
-
-    if(index===0 || done>0) state="current";
-    if(pct===100) state="done";
 
     html+=`
-      <div class="path-node">
+      <div class="path-item">
 
-        <div class="node-info">
-          <h4>${l.level} • ${l.title}</h4>
-          <p>${done}/${total} lessons • ${pct}%</p>
-          <div class="progress">
-            <div style="width:${pct}%"></div>
-          </div>
+        <div class="path-info">
+          <h4>${lesson.level} • Lesson ${lesson.id}</h4>
+          <p>${escapeHTML(lesson.title)}</p>
+          ${
+            unlocked
+            ? `<button onclick="openLesson(${lesson.id})">${completed?"Review":"Start Lesson"}</button>`
+            : `<span style="font-size:9px;color:#999">Complete previous lesson</span>`
+          }
         </div>
 
-        <div class="node ${state}">
-          ${state==="done"?"✓":state==="locked"?"🔒":l.level}
-        </div>
-
-        <div class="node-info">
-          <h4>${l.level} Learning Zone</h4>
-          <p>
-            ${l.start}–${l.end}
-          </p>
+        <div class="path-node ${cls}">
+          ${icon}
         </div>
 
       </div>
     `;
   });
 
-  document.getElementById("learningPath").innerHTML=html;
+  path.innerHTML=html;
 }
 
-
-/* =========================
+/* =========================================================
    COURSES
-   ========================= */
+   ========================================================= */
 
 function renderCourses(){
 
-  const allCourses=[
-    {
-      level:"A1",
-      title:"Beginner",
-      icon:"🌱",
-      desc:"Essential everyday English",
-      lessons:"10 lessons"
-    },
-    {
-      level:"A2",
-      title:"Elementary",
-      icon:"🌿",
-      desc:"Everyday communication",
-      lessons:"20 lessons"
-    },
-    {
-      level:"B1",
-      title:"Intermediate",
-      icon:"🚀",
-      desc:"Independent communication",
-      lessons:"20 lessons"
-    },
-    ...ADVANCED_COURSES
-  ];
+  const grid=document.getElementById("courseGrid");
 
-  document.getElementById("courseCards").innerHTML=
-    allCourses.map(c=>`
-      <div class="card">
-        <div style="font-size:30px">${c.icon}</div>
-        <span class="badge" style="margin-top:8px">${c.level}</span>
-        <h3 style="margin-top:8px">${c.title||""}</h3>
-        <p>${c.desc||c.description||""}</p>
-        <div style="margin-top:10px;font-size:11px;color:var(--muted)">
-          ${c.lessons}
+  grid.innerHTML=COURSES.map(course=>{
+
+    let percent=0;
+
+    if(course.level==="A1"){
+      percent=Math.round(getCompleted().filter(x=>x>=1&&x<=10).length/10*100);
+    }
+
+    if(course.level==="A2"){
+      percent=Math.round(getCompleted().filter(x=>x>=11&&x<=30).length/20*100);
+    }
+
+    if(course.level==="B1"){
+      percent=Math.round(getCompleted().filter(x=>x>=31&&x<=50).length/20*100);
+    }
+
+    return `
+      <div class="card course-card">
+
+        <div class="course-top">
+          <div class="course-icon">${course.icon}</div>
+          <span class="badge ${course.lessons?"active":""}">
+            ${course.lessons?course.lessons+" Lessons":"Roadmap"}
+          </span>
         </div>
-      </div>
-    `).join("");
 
-  renderLessonList("A1");
+        <h3>${course.level} — ${course.title}</h3>
+
+        <p>${course.desc}</p>
+
+        ${
+          course.lessons
+          ? `
+            <div class="progress">
+              <div class="progress-bar" style="width:${percent}%"></div>
+            </div>
+            <div style="font-size:10px;color:var(--muted);margin-top:6px">
+              ${percent}% complete
+            </div>
+          `
+          : `
+            <div style="margin-top:13px">
+              <span class="badge">Coming in roadmap</span>
+            </div>
+          `
+        }
+
+      </div>
+    `;
+  }).join("");
 }
 
-function renderLessonList(level){
-
-  const lessons=ALL_LESSONS.filter(x=>x.level===level);
-
-  document.getElementById("courseLessonTitle").textContent=
-    level==="A1"
-      ?"A1 Beginner"
-      :level==="A2"
-      ?"A2 Elementary"
-      :"B1 Intermediate";
-
-  document.getElementById("courseLessons").innerHTML=
-    lessons.map(l=>lessonCard(l)).join("");
-}
-
-function lessonCard(l){
-
-  const completed=getCompleted();
-  const done=completed.includes(l.id);
-
-  const unlocked=
-    l.id===1 ||
-    completed.includes(l.id-1) ||
-    l.id<=3;
-
-  return `
-    <div class="lesson-card ${done?"done":""} ${unlocked?"":"locked"}"
-      ${unlocked?`onclick="openLesson(${l.id})"`:""}>
-
-      <div class="lesson-number">
-        ${done?"✓":l.id}
-      </div>
-
-      <div style="flex:1">
-        <div class="lesson-title">${l.title}</div>
-        <div class="lesson-meta">
-          ${l.level} • ${l.focus}
-        </div>
-      </div>
-
-      <div>
-        ${done
-          ?'<span class="badge green">DONE</span>'
-          :unlocked
-          ?'<span class="badge">START</span>'
-          :'<span class="badge red">🔒</span>'}
-      </div>
-
-    </div>
-  `;
-}
-
-
-/* =========================
-   OPEN LESSON
-   ========================= */
-
-let currentLesson=null;
-let currentQuizAnswers={};
+/* =========================================================
+   LESSON
+   ========================================================= */
 
 function openLesson(id){
 
-  const lesson=ALL_LESSONS.find(x=>x.id===id);
+  const lesson=ALL_LESSONS.find(x=>x.id===Number(id));
 
   if(!lesson){
-    showToast("This advanced lesson is planned for a future module");
+    toast("Lesson မတွေ့ပါ");
     return;
   }
 
-  currentLesson=lesson;
-  currentQuizAnswers={};
+  if(!isUnlocked(lesson.id)){
+    toast("အရင် Lesson ကို ပြီးအောင်လေ့လာပါ");
+    return;
+  }
 
-  localStorage.setItem(
-    STORAGE.lastLesson,
-    String(id)
-  );
+  localStorage.setItem(STORAGE.lastLesson,String(lesson.id));
 
   showPage("lesson");
-  renderLesson(lesson);
 }
 
+function renderLesson(id){
 
-/* =========================
-   LESSON RENDERER
-   ========================= */
+  const lesson=ALL_LESSONS.find(x=>x.id===Number(id))||ALL_LESSONS[0];
 
-function renderLesson(l){
+  const lang=getLanguage();
 
-  const completed=getCompleted();
-  const done=completed.includes(l.id);
+  const my=lang!=="en";
 
   document.getElementById("lessonContainer").innerHTML=`
 
-    <div class="lesson-header">
+    <div class="lesson-head">
 
-      <div class="lesson-top">
-        <span class="badge">${l.level}</span>
-        <span class="badge orange">${l.module}</span>
-        ${done?'<span class="badge green">✓ COMPLETED</span>':""}
+      <div class="lesson-meta">
+        <span>${lesson.level}</span>
+        <span>Lesson ${lesson.id}</span>
+        <span>❤️ ${getHearts()}</span>
+        <span>⭐ +10 XP</span>
       </div>
 
-      <h1>${l.id}. ${l.title}</h1>
+      <h1>${escapeHTML(lesson.title)}</h1>
 
-      <div class="my-title">${l.myTitle||l.focus}</div>
+      ${my?`<div style="color:#c8c0df;font-size:13px;margin-top:4px">${escapeHTML(lesson.myTitle)}</div>`:""}
 
-      <div class="progress" style="margin-top:16px">
-        <div style="width:${done?100:12}%"></div>
-      </div>
+      <p>${escapeHTML(lesson.focus)}</p>
 
-      <div class="lesson-tabs">
-        <button class="lesson-tab active">Overview</button>
-        <button class="lesson-tab">Vocabulary</button>
-        <button class="lesson-tab">Grammar</button>
-        <button class="lesson-tab">Listening</button>
-        <button class="lesson-tab">Speaking</button>
-        <button class="lesson-tab">Reading</button>
-        <button class="lesson-tab">Writing</button>
-        <button class="lesson-tab">Quiz</button>
+      <div class="lesson-progress">
+        <div></div>
       </div>
 
     </div>
 
 
-    <div class="lesson-section">
+    <div class="lesson-grid">
 
-      <h2>🎯 Lesson Objectives</h2>
 
-      <div class="objective-list">
-        ${l.objectives.map(x=>`
-          <div class="objective">✓ ${x}</div>
-        `).join("")}
+      <div class="lesson-section full">
+
+        <h3><span>🎯</span> Objectives</h3>
+
+        <ul class="objective-list">
+          ${lesson.objectives.map(x=>`<li>${escapeHTML(x)}</li>`).join("")}
+        </ul>
+
       </div>
 
-    </div>
 
+      <div class="lesson-section">
 
-    <div class="lesson-section">
+        <h3><span>🔥</span> Warm-up</h3>
 
-      <h2>🔥 Warm-up</h2>
+        <p style="font-size:12px;line-height:1.7">${escapeHTML(lesson.warmup)}</p>
 
-      <p>
-        Think about how you use English in real life
-        related to <strong>${l.title}</strong>
-      </p>
+        ${my?`<div class="my-text">စကားလုံးတွေကို အရင်စဉ်းစားပြီး English နဲ့ ပြောကြည့်ပါ</div>`:""}
 
-      <div class="example">
-        <strong>Think in English</strong><br>
-        What words do you already know about this topic?
       </div>
 
-    </div>
 
+      <div class="lesson-section">
 
-    <div class="lesson-section">
+        <h3><span>🔤</span> Vocabulary</h3>
 
-      <h2>📚 Vocabulary</h2>
+        <div class="vocab-list">
 
-      <p>
-        Learn these words in context, not as isolated translations
-      </p>
+          ${lesson.vocab.map(v=>`
 
-      <div class="vocab-grid" style="margin-top:12px">
+            <div class="vocab-row">
 
-        ${l.vocab.map(v=>`
-          <div class="vocab-item">
+              <div class="vocab-main">
 
-            <div class="vocab-word">${v[0]}</div>
+                <div>
+                  <span class="vocab-word">${escapeHTML(v.word)}</span>
+                  ${my?`<span class="vocab-meaning">— ${escapeHTML(v.meaning)}</span>`:""}
+                </div>
 
-            <div class="vocab-meaning">
-              ${v[1]}
+                <button class="speak-btn" onclick="speakText('${escapeJS(v.word)}')">🔊</button>
+
+              </div>
+
+              <div class="example">${escapeHTML(v.example)}</div>
+
+              ${my?`<div class="example-my">${escapeHTML(v.myMeaning)}</div>`:""}
+
             </div>
 
-            <div class="vocab-example">
-              ${v[2]}
+          `).join("")}
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>🗣️</span> Pronunciation</h3>
+
+        <p style="font-size:12px;line-height:1.7">${escapeHTML(lesson.pronunciation)}</p>
+
+        <div class="script-actions" style="margin-top:13px">
+          <button class="btn btn-soft" onclick="speakText('${escapeJS(lesson.pronunciation)}')">🔊 Listen</button>
+          <button class="btn btn-green" onclick="startSpeakingPractice()">🎙️ Speak</button>
+        </div>
+
+        <div id="speechStatus" class="my-text">
+          Speaking practice ready
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>🧠</span> Grammar</h3>
+
+        <p style="font-size:13px;line-height:1.7">${escapeHTML(lesson.grammar)}</p>
+
+        ${my?`<div class="my-text">${escapeHTML(lesson.grammarMy)}</div>`:""}
+
+        <div style="margin-top:12px">
+          ${lesson.grammarExamples.map(x=>`
+            <div class="pattern">
+              <div class="pattern-en">${escapeHTML(x)}</div>
             </div>
+          `).join("")}
+        </div>
 
-            <button class="btn btn-outline"
-              style="margin-top:8px;padding:6px 8px;font-size:10px"
-              onclick="speakText('${escapeJS(v[0])}')">
-              🔊 Listen
-            </button>
+      </div>
 
+
+      <div class="lesson-section full">
+
+        <h3><span>🧩</span> Sentence Patterns</h3>
+
+        ${lesson.patterns.map(p=>`
+          <div class="pattern">
+            <div class="pattern-en">${escapeHTML(p.en)}</div>
+            ${my?`<div class="pattern-my">${escapeHTML(p.my)}</div>`:""}
           </div>
         `).join("")}
 
       </div>
 
-    </div>
 
+      <div class="lesson-section full">
 
-    <div class="lesson-section">
+        <h3><span>🎧</span> Listening Practice</h3>
 
-      <h2>🗣️ Pronunciation</h2>
+        <div class="script-actions">
 
-      <p>${l.pronunciation}</p>
+          <button class="btn btn-primary"
+            onclick="speakLessonListening(${lesson.id})">
+            🔊 Listen
+          </button>
 
-      <div class="audio-box">
-        <button class="btn btn-primary"
-          onclick="speakText('${escapeJS(l.title)}')">
-          🔊 Normal
-        </button>
+          <button class="btn btn-soft"
+            onclick="speakLessonListening(${lesson.id},true)">
+            🐢 Slow
+          </button>
 
-        <button class="btn btn-outline"
-          onclick="speakText('${escapeJS(l.title)}',0.65)">
-          🐢 Slow
-        </button>
-      </div>
+          <button class="btn btn-soft"
+            onclick="repeatListening(${lesson.id})">
+            🔁 Repeat
+          </button>
 
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>🧠 Grammar</h2>
-
-      <div class="badge">${l.focus}</div>
-
-      <h3>Main Idea</h3>
-
-      <p>
-        Grammar becomes easier when you connect the rule
-        to a real sentence and then use the pattern yourself
-      </p>
-
-      <h3>Examples</h3>
-
-      ${l.grammarExamples.map(x=>`
-        <div class="example">
-          ${x}
         </div>
-      `).join("")}
 
-      <h3>Useful Sentence Patterns</h3>
-
-      ${l.patterns.map(x=>`
-        <div class="example">
-          ${x}
+        <div class="script-box">
+          ${escapeHTML(lesson.listening)}
         </div>
-      `).join("")}
 
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>🎧 Listening Lab</h2>
-
-      <p>
-        First listen without reading, then listen again and check the meaning
-      </p>
-
-      <div class="audio-box">
-
-        <button class="btn btn-primary"
-          onclick="speakText('${escapeJS(l.listening)}',1)">
-          🔊 Normal Speed
-        </button>
-
-        <button class="btn btn-outline"
-          onclick="speakText('${escapeJS(l.listening)}',0.65)">
-          🐢 Slow Speed
-        </button>
-
-        <button class="btn btn-outline"
-          onclick="speakText('${escapeJS(l.listening)}',1)">
-          🔁 Repeat
-        </button>
-
-      </div>
-
-      <div class="example" style="margin-top:15px">
-        <strong>Listening Script</strong><br><br>
-        ${l.listening}
-      </div>
-
-      <h3>Listening Challenge</h3>
-
-      <p>
-        Listen three times and write down five words you hear
-      </p>
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>💬 Real Conversation</h2>
-
-      <p>
-        Read once, listen once and then role-play the conversation
-      </p>
-
-      <div class="conversation" style="margin-top:12px">
-
-        ${l.conversation.map(x=>`
-          <div class="dialogue">
-            <strong>${x[0]}:</strong> ${x[1]}
+        ${my?`
+          <div class="my-text" style="margin-top:10px">
+            ${escapeHTML(lesson.listeningMy)}
           </div>
-        `).join("")}
+        `:""}
+
+        <div style="margin-top:14px">
+
+          ${lesson.listeningQuestions.map((q,i)=>`
+            <div class="question">
+              <p>${i+1}. ${escapeHTML(q)}</p>
+              <input class="input" placeholder="Type your answer">
+            </div>
+          `).join("")}
+
+        </div>
 
       </div>
 
-      <button class="btn btn-primary"
-        style="margin-top:12px"
-        onclick="speakText('${escapeJS(l.conversation.map(x=>x[1]).join(". "))}')">
-        🔊 Play Conversation
+
+      <div class="lesson-section full">
+
+        <h3><span>🗣️</span> Speaking Practice</h3>
+
+        <p style="font-size:12px;line-height:1.7">
+          ${escapeHTML(lesson.speaking)}
+        </p>
+
+        ${my?`
+          <div class="my-text">
+            အရင် Listen လုပ်ပြီးနောက် ကိုယ်တိုင် အသံထွက်ပြောပါ
+          </div>
+        `:""}
+
+        <div class="script-actions" style="margin-top:13px">
+
+          <button class="btn btn-primary"
+            onclick="speakText('${escapeJS(lesson.speaking)}')">
+            🔊 Model
+          </button>
+
+          <button class="btn btn-green"
+            onclick="startSpeakingPractice()">
+            🎙️ Record / Speak
+          </button>
+
+        </div>
+
+        <div id="speakingQuestions" style="margin-top:14px">
+
+          ${lesson.speakingQuestions.map((q,i)=>`
+            <div class="question">
+              <p>${i+1}. ${escapeHTML(q)}</p>
+            </div>
+          `).join("")}
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section full">
+
+        <h3><span>💬</span> Real Conversation</h3>
+
+        <div class="dialogue">
+
+          ${lesson.conversation.map(row=>`
+            <div class="dialogue-row">
+              <div class="dialogue-speaker">${escapeHTML(row.speaker)}</div>
+              <div class="dialogue-en">${escapeHTML(row.en)}</div>
+              ${my?`<div class="dialogue-my">${escapeHTML(row.my)}</div>`:""}
+            </div>
+          `).join("")}
+
+        </div>
+
+        <div class="script-actions" style="margin-top:12px">
+          <button class="btn btn-soft" onclick="speakConversation(${lesson.id})">
+            🔊 Listen Conversation
+          </button>
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section full">
+
+        <h3><span>📖</span> Reading</h3>
+
+        <div class="script-box">
+          ${escapeHTML(lesson.reading)}
+        </div>
+
+        ${my?`
+          <div class="my-text">${escapeHTML(lesson.readingMy)}</div>
+        `:""}
+
+        <div style="margin-top:13px">
+
+          ${lesson.readingQuestions.map((q,i)=>`
+            <div class="question">
+              <p>${i+1}. ${escapeHTML(q)}</p>
+              <input class="input" placeholder="Your answer">
+            </div>
+          `).join("")}
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>✍️</span> Writing</h3>
+
+        <p style="font-size:12px;line-height:1.6">
+          ${escapeHTML(lesson.writingTask)}
+        </p>
+
+        <textarea id="writing-${lesson.id}"
+          placeholder="Write your English answer here..."></textarea>
+
+        <button class="btn btn-primary"
+          style="margin-top:9px"
+          onclick="saveWriting(${lesson.id})">
+          Save Writing
+        </button>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>🧩</span> Practice</h3>
+
+        <div class="practice-list">
+
+          ${lesson.practice.map((x,i)=>`
+            <div class="practice-item">
+              ${i+1}. ${escapeHTML(x)}
+            </div>
+          `).join("")}
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>⚠️</span> Common Mistakes</h3>
+
+        <div class="practice-list">
+
+          ${lesson.mistakes.map(x=>`
+            <div class="practice-item">
+              ${escapeHTML(x)}
+            </div>
+          `).join("")}
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>🔁</span> Review</h3>
+
+        <p style="font-size:12px;line-height:1.7">
+          ${escapeHTML(lesson.review)}
+        </p>
+
+      </div>
+
+
+      <div class="lesson-section full">
+
+        <h3><span>📝</span> Lesson Quiz</h3>
+
+        <div id="quiz-${lesson.id}">
+
+          ${lesson.quiz.map((q,i)=>`
+
+            <div class="question">
+
+              <p>${i+1}. ${escapeHTML(q.q)}</p>
+
+              <div class="options">
+
+                ${q.options.map((op,j)=>`
+                  <button
+                    class="option"
+                    data-q="${i}"
+                    data-a="${j}"
+                    onclick="selectQuizOption(${lesson.id},${i},${j})">
+                    ${escapeHTML(op)}
+                  </button>
+                `).join("")}
+
+              </div>
+
+            </div>
+
+          `).join("")}
+
+        </div>
+
+        <button class="btn btn-primary" onclick="submitQuiz(${lesson.id})">
+          Check Quiz
+        </button>
+
+        <div class="quiz-result" id="quizResult-${lesson.id}"></div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>🏆</span> 4-Skills Challenge</h3>
+
+        <p style="font-size:12px;line-height:1.7">
+          ${escapeHTML(lesson.challenge)}
+        </p>
+
+        <div class="skill-buttons" style="margin-top:13px">
+
+          <button class="skill-chip" onclick="completeSkill(${lesson.id},'Listening',this)">
+            🎧 Listening
+          </button>
+
+          <button class="skill-chip" onclick="completeSkill(${lesson.id},'Speaking',this)">
+            🗣️ Speaking
+          </button>
+
+          <button class="skill-chip" onclick="completeSkill(${lesson.id},'Reading',this)">
+            📖 Reading
+          </button>
+
+          <button class="skill-chip" onclick="completeSkill(${lesson.id},'Writing',this)">
+            ✍️ Writing
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="lesson-section">
+
+        <h3><span>💡</span> Key Takeaways</h3>
+
+        <ul class="takeaway-list">
+
+          ${lesson.takeaways.map(x=>`
+            <li>${escapeHTML(x)}</li>
+          `).join("")}
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="lesson-footer">
+
+      <button class="btn btn-soft"
+        onclick="previousLesson(${lesson.id})">
+        ← Previous
       </button>
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>🗣️ Speaking Lab</h2>
-
-      <p>
-        Listen → Repeat → Speak
-      </p>
-
-      <div class="example">
-        <strong>Speaking Task</strong><br><br>
-        Explain <strong>${l.title}</strong> in your own words for
-        30–60 seconds
-      </div>
-
-      <div class="audio-box">
-
-        <button class="btn btn-primary" id="speakStart"
-          onclick="startSpeaking()">
-          🎙️ Start Speaking
-        </button>
-
-        <button class="btn btn-outline"
-          onclick="stopSpeaking()">
-          ⏹ Stop
-        </button>
-
-      </div>
-
-      <div class="example" id="speechResult">
-        Your speech transcript will appear here
-      </div>
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>📖 Reading</h2>
-
-      <div class="example">
-        ${l.reading}
-      </div>
-
-      <h3>Reading Challenge</h3>
-
-      <p>
-        What is the main idea of this passage?
-      </p>
-
-      <div class="options">
-        <button class="option"
-          onclick="selectReading(this,true)">
-          The passage is about ${l.title}
-        </button>
-
-        <button class="option"
-          onclick="selectReading(this,false)">
-          The passage is about cooking only
-        </button>
-      </div>
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>✍️ Writing</h2>
-
-      <p>${l.writingTask}</p>
-
-      <textarea id="writingArea"
-        placeholder="Write your answer in English..."></textarea>
-
-      <div style="display:flex;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap">
-
-        <span style="font-size:11px;color:var(--muted)">
-          Words: <span id="wordCount">0</span>
-        </span>
-
-        <button class="btn btn-primary"
-          onclick="saveWriting(${l.id})">
-          💾 Save Writing
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>🧩 Practice</h2>
-
-      ${l.practice.map((x,i)=>`
-        <div class="question">
-          <div class="question-title">
-            ${i+1}. ${x}
-          </div>
-          <input
-            id="practice-${i}"
-            placeholder="Write your answer...">
-        </div>
-      `).join("")}
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>⚠️ Common Mistakes</h2>
-
-      ${l.mistakes.map(x=>`
-        <div class="objective">✓ ${x}</div>
-      `).join("")}
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>📝 Lesson Quiz</h2>
-
-      <div id="lessonQuiz">
-
-        ${l.quiz.map((q,i)=>`
-          <div class="question">
-
-            <div class="question-title">
-              ${i+1}. ${q[0]}
-            </div>
-
-            <div class="options">
-
-              ${q[1].split("|").map(option=>`
-                <button class="option"
-                  data-q="${i}"
-                  data-value="${escapeHTML(option)}"
-                  onclick="chooseQuiz(this)">
-                  ${option}
-                </button>
-              `).join("")}
-
-            </div>
-
-          </div>
-        `).join("")}
-
-      </div>
-
-      <button class="btn btn-primary"
-        style="margin-top:15px"
-        onclick="submitQuiz()">
-        Check Quiz
-      </button>
-
-      <div id="quizResult"></div>
-
-    </div>
-
-
-    <div class="lesson-section">
-
-      <h2>🏆 Final Challenge</h2>
-
-      <p>
-        Complete these four tasks to finish the lesson
-      </p>
-
-      <div class="objective-list">
-
-        <div class="objective">🔊 Listen to the lesson</div>
-        <div class="objective">🗣️ Speak for 30 seconds</div>
-        <div class="objective">📖 Read the passage</div>
-        <div class="objective">✍️ Complete the writing task</div>
-
-      </div>
 
       <button class="btn btn-green"
-        style="margin-top:15px"
-        onclick="completeLesson(${l.id})">
-        🏆 Complete Lesson + Earn XP
+        onclick="completeLesson(${lesson.id})">
+        ✓ Complete Lesson +10 XP
+      </button>
+
+      <button class="btn btn-primary"
+        onclick="nextLesson(${lesson.id})">
+        Next →
       </button>
 
     </div>
 
-
-    <div class="lesson-section">
-
-      <div style="display:flex;justify-content:space-between;gap:10px">
-
-        <button class="btn btn-outline"
-          onclick="previousLesson(${l.id})">
-          ← Previous
-        </button>
-
-        <button class="btn btn-primary"
-          onclick="nextLesson(${l.id})">
-          Next →
-        </button>
-
-      </div>
-
-    </div>
-
   `;
 
-  const writing=getJSON(
-    STORAGE.writing,
-    {}
+  const saved=localStorage.getItem("aep_writing_"+lesson.id);
+
+  if(saved){
+    const box=document.getElementById("writing-"+lesson.id);
+    if(box) box.value=saved;
+  }
+
+  updateSkillButtons(lesson.id);
+}
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+const quizAnswers={};
+
+function selectQuizOption(lessonId,qIndex,aIndex){
+
+  if(!quizAnswers[lessonId]){
+    quizAnswers[lessonId]={};
+  }
+
+  quizAnswers[lessonId][qIndex]=aIndex;
+
+  document
+    .querySelectorAll(`#quiz-${lessonId} .option[data-q="${qIndex}"]`)
+    .forEach(btn=>{
+      btn.classList.toggle(
+        "selected",
+        Number(btn.dataset.a)===aIndex
+      );
+    });
+}
+
+function submitQuiz(id){
+
+  const lesson=ALL_LESSONS.find(x=>x.id===Number(id));
+
+  if(!lesson) return;
+
+  const answers=quizAnswers[id]||{};
+  let score=0;
+
+  lesson.quiz.forEach((q,i)=>{
+    if(answers[i]===q.a) score++;
+  });
+
+  const percent=Math.round(score/lesson.quiz.length*100);
+
+  localStorage.setItem(
+    STORAGE.quiz+id,
+    String(percent)
   );
 
-  if(writing[l.id]){
-    document.getElementById("writingArea").value=
-      writing[l.id];
+  const result=document.getElementById("quizResult-"+id);
 
-    updateWordCount();
-  }
+  if(result){
 
-  document.getElementById("writingArea")
-    .addEventListener("input",updateWordCount);
-}
+    result.style.display="block";
 
-
-/* =========================
-   QUIZ
-   ========================= */
-
-function chooseQuiz(btn){
-
-  const q=btn.dataset.q;
-
-  document.querySelectorAll(
-    `.option[data-q="${q}"]`
-  ).forEach(x=>{
-    x.classList.remove("selected");
-  });
-
-  btn.classList.add("selected");
-
-  currentQuizAnswers[q]=btn.dataset.value;
-}
-
-function submitQuiz(){
-
-  if(!currentLesson) return;
-
-  let correct=0;
-
-  currentLesson.quiz.forEach((q,i)=>{
-
-    const selected=currentQuizAnswers[i];
-
-    document.querySelectorAll(
-      `.option[data-q="${i}"]`
-    ).forEach(btn=>{
-
-      if(btn.dataset.value===q[2]){
-        btn.classList.add("correct");
-      }
-
-      if(
-        btn.classList.contains("selected") &&
-        btn.dataset.value!==q[2]
-      ){
-        btn.classList.add("wrong");
-      }
-
-    });
-
-    if(selected===q[2]){
-      correct++;
-    }else if(selected){
-      addMistake({
-        lesson:currentLesson.id,
-        question:q[0],
-        correct:q[2]
-      });
+    if(percent>=80){
+      result.innerHTML=`
+        🎉 Excellent — ${score}/${lesson.quiz.length}
+        <br>
+        <strong>+5 XP</strong>
+      `;
+      saveXP(5);
+      updateStreak();
+    }else if(percent>=60){
+      result.innerHTML=`
+        👍 Good — ${score}/${lesson.quiz.length}
+        <br>
+        Review the mistakes and try again
+      `;
+    }else{
+      result.innerHTML=`
+        📚 ${score}/${lesson.quiz.length}
+        <br>
+        Lesson ကို ပြန်လေ့လာပြီး Quiz ပြန်ဖြေပါ
+      `;
     }
-
-  });
-
-  const total=currentLesson.quiz.length;
-  const score=Math.round(correct/total*100);
-
-  const scores=getScores();
-  scores[currentLesson.id]=score;
-  setJSON(STORAGE.scores,scores);
-
-  document.getElementById("quizResult").innerHTML=`
-    <div class="result">
-
-      <div class="score-circle">
-        ${score}%
-      </div>
-
-      <h3>${correct}/${total} Correct</h3>
-
-      <p style="margin-top:8px">
-        ${score>=80
-          ?"Excellent work — keep moving"
-          :score>=60
-          ?"Good progress — review the mistakes"
-          :"Keep practicing — you can improve"}
-      </p>
-
-    </div>
-  `;
-
-  if(correct>0){
-    addXP(correct*2);
   }
 
-  updateAll();
+  refreshTop();
 }
 
-
-/* =========================
-   LESSON COMPLETE
-   ========================= */
+/* =========================================================
+   COMPLETE LESSON
+   ========================================================= */
 
 function completeLesson(id){
 
+  const lesson=ALL_LESSONS.find(x=>x.id===Number(id));
+
+  if(!lesson) return;
+
   const completed=getCompleted();
 
-  if(!completed.includes(id)){
+  if(!completed.includes(lesson.id)){
 
-    completed.push(id);
+    completed.push(lesson.id);
     completed.sort((a,b)=>a-b);
 
-    setJSON(STORAGE.completed,completed);
+    setCompleted(completed);
 
-    addXP(10);
-
+    saveXP(10);
     updateStreak();
 
     localStorage.setItem(
-      STORAGE.hearts,
-      "5"
+      STORAGE.lastLesson,
+      String(Math.min(50,lesson.id+1))
     );
 
-    addMinutes(5);
-
-    showToast(
-      "Lesson completed +10 XP 🎉"
-    );
+    toast("Lesson Completed 🎉 +10 XP");
 
   }else{
-
-    showToast(
-      "Lesson already completed"
-    );
-
+    updateStreak();
+    toast("ဒီ Lesson ကို ပြီးပြီးသားပါ");
   }
 
-  updateAll();
-
-  setTimeout(()=>{
-    renderLesson(currentLesson);
-  },300);
+  refreshTop();
+  renderDashboard();
+  renderPath();
 }
 
+function previousLesson(id){
 
-/* =========================
-   NEXT / PREVIOUS
-   ========================= */
+  const prev=ALL_LESSONS.find(x=>x.id===Number(id)-1);
+
+  if(prev){
+    if(isUnlocked(prev.id)){
+      openLesson(prev.id);
+    }else{
+      toast("ဒီ Lesson ကို မဖွင့်ရသေးပါ");
+    }
+  }
+}
 
 function nextLesson(id){
 
-  const next=ALL_LESSONS.find(x=>x.id===id+1);
+  const next=ALL_LESSONS.find(x=>x.id===Number(id)+1);
 
   if(!next){
-    showToast("You reached the end of this module");
+    toast("ဒီ course ရဲ့ နောက်ဆုံး Lesson ဖြစ်ပါတယ်");
     return;
   }
 
-  const completed=getCompleted();
-
-  if(
-    next.id>3 &&
-    !completed.includes(id)
-  ){
-    showToast(
-      "Complete this lesson to unlock the next one"
-    );
+  if(!isUnlocked(next.id)){
+    toast("အရင် Lesson ကို Complete လုပ်ပါ");
     return;
   }
 
   openLesson(next.id);
 }
 
-function previousLesson(id){
+/* =========================================================
+   SKILLS
+   ========================================================= */
 
-  const prev=ALL_LESSONS.find(x=>x.id===id-1);
+function skillKey(id,skill){
+  return "aep_skill_"+id+"_"+skill;
+}
 
-  if(prev){
-    openLesson(prev.id);
-  }else{
-    showPage("courses");
+function completeSkill(id,skill,button){
+
+  localStorage.setItem(skillKey(id,skill),"1");
+
+  if(button){
+    button.classList.add("done");
+  }
+
+  saveXP(2);
+  updateStreak();
+
+  toast(skill+" Practice Completed +2 XP");
+  refreshTop();
+}
+
+function updateSkillButtons(id){
+
+  document.querySelectorAll(".skill-chip").forEach(btn=>{
+    btn.classList.remove("done");
+  });
+
+  ["Listening","Speaking","Reading","Writing"].forEach(skill=>{
+
+    if(localStorage.getItem(skillKey(id,skill))==="1"){
+
+      document
+        .querySelectorAll(".skill-chip")
+        .forEach(btn=>{
+          if(btn.textContent.includes(skill)){
+            btn.classList.add("done");
+          }
+        });
+
+    }
+  });
+}
+
+/* =========================================================
+   TTS / ACCENT
+   ========================================================= */
+
+let voices=[];
+
+function loadVoices(){
+  if("speechSynthesis" in window){
+    voices=window.speechSynthesis.getVoices();
   }
 }
 
-function getNextLesson(){
-
-  const completed=getCompleted();
-
-  const next=ALL_LESSONS.find(
-    x=>!completed.includes(x.id)
-  );
-
-  return next || ALL_LESSONS[0];
+if("speechSynthesis" in window){
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged=loadVoices;
 }
 
-function resumeLearning(){
+function chooseVoice(){
 
-  const id=Number(
-    localStorage.getItem(STORAGE.lastLesson)||0
-  );
+  const accent=getAccent();
 
-  if(id && ALL_LESSONS.some(x=>x.id===id)){
-    openLesson(id);
-  }else{
-    openLesson(getNextLesson().id);
+  if(!voices.length){
+    loadVoices();
   }
+
+  const target=accent==="uk"?"en-GB":"en-US";
+
+  let voice=voices.find(v=>v.lang===target);
+
+  if(!voice){
+    voice=voices.find(v=>v.lang.startsWith(target.split("-")[0]));
+  }
+
+  if(!voice){
+    voice=voices.find(v=>{
+      const n=v.name.toLowerCase();
+
+      if(accent==="uk"){
+        return n.includes("british")||n.includes("uk");
+      }
+
+      return n.includes("american")||n.includes("united states")||n.includes("us");
+    });
+  }
+
+  if(!voice){
+    voice=voices.find(v=>v.lang.startsWith("en"));
+  }
+
+  return voice||null;
 }
 
-
-/* =========================
-   LISTENING
-   ========================= */
-
-function speakText(text,rate=1){
+function speakText(text,forceSlow=false){
 
   if(!("speechSynthesis" in window)){
-    showToast("Text-to-Speech is not supported on this browser");
+    toast("ဒီ browser မှာ English voice မရပါ");
     return;
   }
 
   window.speechSynthesis.cancel();
 
-  const utterance=
-    new SpeechSynthesisUtterance(
-      String(text)
-    );
+  const utter=new SpeechSynthesisUtterance(text);
 
-  utterance.lang="en-US";
-  utterance.rate=rate;
-  utterance.pitch=1;
+  const voice=chooseVoice();
 
-  window.speechSynthesis.speak(
-    utterance
-  );
+  if(voice){
+    utter.voice=voice;
+    utter.lang=voice.lang;
+  }else{
+    utter.lang=getAccent()==="uk"?"en-GB":"en-US";
+  }
+
+  const slow=forceSlow || getSpeed()==="slow";
+
+  utter.rate=slow?.68:.92;
+  utter.pitch=1;
+  utter.volume=1;
+
+  window.speechSynthesis.speak(utter);
 }
 
+function speakLessonListening(id,slow=false){
 
-/* =========================
-   SPEECH RECOGNITION
-   ========================= */
+  const lesson=ALL_LESSONS.find(x=>x.id===Number(id));
 
-let recognition=null;
+  if(lesson){
+    speakText(lesson.listening,slow);
+    completeSkill(id,"Listening",null);
+  }
+}
 
-function startSpeaking(){
+function repeatListening(id){
+  speakLessonListening(id,getSpeed()==="slow");
+}
 
-  const SpeechRecognition=
-    window.SpeechRecognition ||
-    window.webkitSpeechRecognition;
+function speakConversation(id){
 
-  if(!SpeechRecognition){
+  const lesson=ALL_LESSONS.find(x=>x.id===Number(id));
 
-    document.getElementById(
-      "speechResult"
-    ).innerHTML=
-      "Speech recognition is not supported on this browser. Please use a supported browser and allow microphone access";
+  if(!lesson) return;
 
+  const text=lesson.conversation
+    .map(x=>`${x.speaker}. ${x.en}`)
+    .join(" ");
+
+  speakText(text);
+}
+
+function startSpeakingPractice(){
+
+  const status=document.getElementById("speechStatus");
+
+  if(!("webkitSpeechRecognition" in window) &&
+     !("SpeechRecognition" in window)){
+
+    if(status){
+      status.textContent=
+        "Speech recognition မရတဲ့ browser ဖြစ်လို့ အသံနဲ့ repeat practice လုပ်ပါ";
+    }
+
+    toast("Speech recognition မရပါ — Listen → Repeat နည်းနဲ့ လေ့ကျင့်ပါ");
     return;
   }
 
-  recognition=new SpeechRecognition();
+  const Recognition=
+    window.SpeechRecognition||
+    window.webkitSpeechRecognition;
 
-  recognition.lang="en-US";
-  recognition.interimResults=true;
-  recognition.continuous=false;
+  const recognition=new Recognition();
 
-  recognition.onresult=function(event){
+  recognition.lang=getAccent()==="uk"?"en-GB":"en-US";
+  recognition.interimResults=false;
+  recognition.maxAlternatives=1;
 
-    let transcript="";
-
-    for(
-      let i=event.resultIndex;
-      i<event.results.length;
-      i++
-    ){
-
-      transcript+=
-        event.results[i][0].transcript;
-
-    }
-
-    document.getElementById(
-      "speechResult"
-    ).innerHTML=
-      `<strong>Your speech:</strong><br>${escapeHTML(transcript)}`;
-
-  };
-
-  recognition.onerror=function(){
-    document.getElementById(
-      "speechResult"
-    ).textContent=
-      "Microphone or speech recognition error. Please check browser microphone permission";
-  };
+  if(status){
+    status.textContent="🎙️ Listening to your voice...";
+  }
 
   recognition.start();
 
-  document.getElementById(
-    "speechResult"
-  ).textContent=
-    "Listening... start speaking now";
+  recognition.onresult=function(event){
+
+    const transcript=event.results[0][0].transcript;
+
+    if(status){
+      status.innerHTML=
+        "You said: <strong>"+escapeHTML(transcript)+"</strong>";
+    }
+
+    toast("Speaking practice recorded 🎙️");
+  };
+
+  recognition.onerror=function(){
+    if(status){
+      status.textContent="Try again and speak clearly";
+    }
+  };
 }
 
-function stopSpeaking(){
+/* =========================================================
+   GRAMMAR
+   ========================================================= */
 
-  if(recognition){
-    recognition.stop();
-  }
+function renderGrammar(){
+
+  const grammar=document.getElementById("grammarGrid");
+
+  const topics=[
+    ["A1","Be Verb","am / is / are","ကိုယ့်အကြောင်း အခြေခံပြောခြင်း"],
+    ["A1","Present Simple","I work / She works","နေ့စဉ်လုပ်ငန်းများ"],
+    ["A1","Question Forms","What / Where / Who","အခြေခံမေးခွန်းများ"],
+    ["A2","Past Simple","worked / went / saw","အတိတ်ဖြစ်ရပ်များ"],
+    ["A2","Future","will / going to","အနာဂတ်အစီအစဉ်"],
+    ["A2","Comparatives","bigger / more useful","နှိုင်းယှဉ်ခြင်း"],
+    ["B1","Present Perfect","have + past participle","အတွေ့အကြုံ"],
+    ["B1","Conditionals","if + sentence","အခြေအနေများ"],
+    ["B1","Modals","should / could / might","အကြံပြုခြင်းနှင့် possibility"],
+    ["B1","Linking Words","because / although / however","အတွေးအမြင်ချိတ်ဆက်ခြင်း"]
+  ];
+
+  grammar.innerHTML=topics.map(t=>`
+    <div class="card">
+      <span class="badge active">${t[0]}</span>
+      <h3 style="margin-top:11px">${t[1]}</h3>
+      <p style="margin-top:6px;font-size:12px;font-weight:700">${t[2]}</p>
+      <p class="my-text">${t[3]}</p>
+      <button class="btn btn-soft" style="margin-top:12px"
+        onclick="grammarSpeak('${escapeJS(t[2])}')">
+        🔊 Listen
+      </button>
+    </div>
+  `).join("");
 }
 
-
-/* =========================
-   WRITING
-   ========================= */
-
-function saveWriting(id){
-
-  const area=document.getElementById(
-    "writingArea"
-  );
-
-  if(!area) return;
-
-  const data=getJSON(
-    STORAGE.writing,
-    {}
-  );
-
-  data[id]=area.value;
-
-  setJSON(
-    STORAGE.writing,
-    data
-  );
-
-  addMinutes(3);
-
-  showToast("Writing saved successfully");
+function grammarSpeak(text){
+  speakText(text);
 }
 
-function updateWordCount(){
-
-  const area=document.getElementById(
-    "writingArea"
-  );
-
-  const counter=document.getElementById(
-    "wordCount"
-  );
-
-  if(!area || !counter) return;
-
-  const words=
-    area.value
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean);
-
-  counter.textContent=
-    area.value.trim()?words.length:0;
-}
-
-
-/* =========================
-   READING
-   ========================= */
-
-function selectReading(btn,correct){
-
-  btn.parentElement
-    .querySelectorAll(".option")
-    .forEach(x=>{
-      x.classList.remove(
-        "correct",
-        "wrong"
-      );
-    });
-
-  btn.classList.add(
-    correct?"correct":"wrong"
-  );
-
-  if(correct){
-    addXP(2);
-    showToast("Correct +2 XP");
-  }
-}
-
-
-/* =========================
+/* =========================================================
    VOCABULARY
-   ========================= */
+   ========================================================= */
 
-function getAllVocabulary(){
+function renderVocabulary(){
 
-  const data=[];
+  const all=[];
 
-  ALL_LESSONS.forEach(l=>{
-    l.vocab.forEach(v=>{
-      data.push({
-        word:v[0],
-        meaning:v[1],
-        example:v[2],
-        level:l.level,
-        lesson:l.id
+  ALL_LESSONS.forEach(lesson=>{
+    lesson.vocab.forEach(v=>{
+      all.push({
+        ...v,
+        level:lesson.level,
+        lesson:lesson.id
       });
     });
   });
 
-  return data;
+  window.vocabularyData=all;
+
+  document.getElementById("vocabCount").textContent=
+    all.length+" words";
+
+  displayVocabulary(all);
 }
 
-function renderVocabulary(){
+function displayVocabulary(data){
 
-  const query=
-    (
-      document.getElementById(
-        "vocabSearch"
-      )?.value || ""
-    ).toLowerCase().trim();
+  const container=document.getElementById("vocabList");
 
-  const words=getAllVocabulary()
-    .filter(x=>
-      !query ||
-      x.word.toLowerCase().includes(query) ||
-      x.meaning.toLowerCase().includes(query)
-    )
-    .slice(0,100);
+  if(!data.length){
+    container.innerHTML=`<div class="empty">No vocabulary found</div>`;
+    return;
+  }
 
-  document.getElementById(
-    "vocabularyGrid"
-  ).innerHTML=
-    words.map(v=>`
-      <div class="vocab-item">
+  container.innerHTML=`
 
-        <div class="vocab-word">
-          ${v.word}
+    <div class="vocab-list">
+
+      ${data.slice(0,100).map(v=>`
+
+        <div class="vocab-row">
+
+          <div class="vocab-main">
+
+            <div>
+              <span class="vocab-word">${escapeHTML(v.word)}</span>
+              <span class="vocab-meaning">— ${escapeHTML(v.meaning)}</span>
+            </div>
+
+            <button class="speak-btn"
+              onclick="speakText('${escapeJS(v.word)}')">
+              🔊
+            </button>
+
+          </div>
+
+          <div class="example">${escapeHTML(v.example)}</div>
+
+          <div class="example-my">${escapeHTML(v.myMeaning)}</div>
+
         </div>
 
-        <div class="vocab-meaning">
-          ${v.meaning}
-        </div>
+      `).join("")}
 
-        <div class="vocab-example">
-          ${v.example}
-        </div>
-
-        <div style="margin-top:8px">
-          <span class="badge">
-            ${v.level} • Lesson ${v.lesson}
-          </span>
-        </div>
-
-        <button class="btn btn-outline"
-          style="margin-top:8px;padding:6px 8px;font-size:10px"
-          onclick="speakText('${escapeJS(v.word)}')">
-          🔊
-        </button>
-
-      </div>
-    `).join("");
-}
-
-
-/* =========================
-   GRAMMAR
-   ========================= */
-
-const grammarTopics=[
-["🌱","Present Simple","I work every day","A1"],
-["🌱","Present Continuous","I am working now","A1"],
-["🌱","Past Simple","I worked yesterday","A2"],
-["🌿","Present Perfect","I have worked here for two years","A2"],
-["🌿","Future Forms","I will call you tomorrow","A2"],
-["🚀","Conditionals","If we plan well, we can improve","B1"],
-["🚀","Modals","We should focus on the customer","B1"],
-["🏆","Passive Voice","The report was completed yesterday","B2"],
-["🏆","Advanced Conditionals","If we had planned earlier...","C1"],
-["👑","Advanced Discourse","Although the results were...","C2"]
-];
-
-function renderGrammar(){
-
-  document.getElementById(
-    "grammarCards"
-  ).innerHTML=
-    grammarTopics.map(g=>`
-      <div class="card">
-
-        <div style="font-size:27px">
-          ${g[0]}
-        </div>
-
-        <span class="badge" style="margin-top:8px">
-          ${g[3]}
-        </span>
-
-        <h3 style="margin-top:8px">
-          ${g[1]}
-        </h3>
-
-        <div class="example">
-          ${g[2]}
-        </div>
-
-        <button class="btn btn-outline"
-          style="margin-top:10px"
-          onclick="speakText('${escapeJS(g[2])}')">
-          🔊 Listen
-        </button>
-
-      </div>
-    `).join("");
-}
-
-
-/* =========================
-   BUSINESS ENGLISH
-   ========================= */
-
-const businessTopics=[
-["💼","Workplace Communication","Speak clearly and professionally"],
-["📊","Sales English","Discuss targets, customers and performance"],
-["🤝","Negotiation","Agree, disagree and negotiate professionally"],
-["🎤","Presentations","Present ideas with confidence"],
-["👥","Meetings","Lead and participate in meetings"],
-["☎️","Customer Service","Handle customer questions and problems"],
-["✉️","Business Email","Write clear professional emails"],
-["🧑‍💼","Leadership","Communicate as a manager"],
-["📈","Reports","Explain business results and trends"],
-["🎯","Interview English","Answer professional interview questions"],
-["🌎","Professional Travel","Communicate during business trips"],
-["☕","Small Talk","Build professional relationships"]
-];
-
-function renderBusiness(){
-
-  document.getElementById(
-    "businessCards"
-  ).innerHTML=
-    businessTopics.map(x=>`
-      <div class="card">
-
-        <div style="font-size:29px">
-          ${x[0]}
-        </div>
-
-        <h3 style="margin-top:8px">
-          ${x[1]}
-        </h3>
-
-        <p>${x[2]}</p>
-
-        <button class="btn btn-primary"
-          style="margin-top:12px"
-          onclick="businessPractice('${escapeJS(x[1])}')">
-          Practice
-        </button>
-
-      </div>
-    `).join("");
-}
-
-function businessPractice(topic){
-
-  showPage("ai");
-
-  document.getElementById(
-    "aiInput"
-  ).value=
-    `Help me practice ${topic} in English`;
-
-  sendAI();
-}
-
-
-/* =========================
-   AI COACH
-   ========================= */
-
-function sendAI(){
-
-  const input=document.getElementById(
-    "aiInput"
-  );
-
-  const text=input.value.trim();
-
-  if(!text) return;
-
-  const chat=document.getElementById(
-    "chatBox"
-  );
-
-  chat.innerHTML+=`
-    <div class="msg user">
-      ${escapeHTML(text)}
     </div>
+
   `;
-
-  const lower=text.toLowerCase();
-
-  let response=
-    "Good question. Try answering in English with 3 to 5 complete sentences. I can help you practice vocabulary, grammar, speaking and business communication";
-
-  if(
-    lower.includes("interview")
-  ){
-    response=
-      "Let's practice a job interview. Question 1: Tell me about yourself. Answer in English in 5 to 8 sentences";
-  }
-
-  if(
-    lower.includes("sales")
-  ){
-    response=
-      "Let's practice Sales English. Imagine you are a Sales Manager. Explain your monthly sales target, actual achievement and action plan";
-  }
-
-  if(
-    lower.includes("grammar")
-  ){
-    response=
-      "Grammar Coach: Write one English sentence. I will help you identify the tense, structure and possible correction";
-  }
-
-  if(
-    lower.includes("speaking")
-  ){
-    response=
-      "Speaking Coach: Choose a topic and speak for 30 seconds. Start with: Today I would like to talk about...";
-  }
-
-  if(
-    lower.includes("business")
-  ){
-    response=
-      "Business English Coach: Imagine you are in a meeting. Start by saying: Good morning everyone. Today I would like to discuss...";
-  }
-
-  setTimeout(()=>{
-
-    chat.innerHTML+=`
-      <div class="msg ai">
-        ${response}
-      </div>
-    `;
-
-    chat.scrollTop=
-      chat.scrollHeight;
-
-  },250);
-
-  input.value="";
 }
 
+document.getElementById("vocabSearch").addEventListener("input",function(){
 
-/* =========================
+  const q=this.value.toLowerCase().trim();
+
+  if(!window.vocabularyData) renderVocabulary();
+
+  const data=window.vocabularyData.filter(v=>
+    v.word.toLowerCase().includes(q)||
+    v.meaning.toLowerCase().includes(q)||
+    v.example.toLowerCase().includes(q)
+  );
+
+  displayVocabulary(data);
+});
+
+/* =========================================================
    LEVEL TEST
-   ========================= */
+   ========================================================= */
 
-const testQuestions=[
-["She ___ to work every day","go|goes|going","goes"],
-["I ___ English yesterday","study|studied|studying","studied"],
-["We have ___ the report","finish|finished|finishing","finished"],
-["If I have time, I ___ you","call|will call|called","will call"],
-["I think communication is ___ in business","important|importance|importantly","important"],
-["He has worked here ___ 2020","for|since|from","since"],
-["The meeting ___ at 9 tomorrow","starts|started|starting","starts"],
-["You ___ speak politely to customers","should|would|might","should"],
-["Although it was difficult, we ___ the target","achieved|achieve|achieving","achieved"],
-["If we had planned earlier, we ___ more time","would have had|will have|have","would have had"]
+const TEST=[
+ {
+  q:"I ___ from Myanmar.",
+  options:["am","is","are"],
+  a:0
+ },
+ {
+  q:"She ___ to work every day.",
+  options:["go","goes","going"],
+  a:1
+ },
+ {
+  q:"Yesterday, I ___ a customer.",
+  options:["meet","met","meeting"],
+  a:1
+ },
+ {
+  q:"I have ___ this movie before.",
+  options:["see","saw","seen"],
+  a:2
+ },
+ {
+  q:"If we have a problem, we ___ discuss it.",
+  options:["can","was","did"],
+  a:0
+ },
+ {
+  q:"Choose the professional sentence",
+  options:[
+   "Could you please explain this?",
+   "You explain this now",
+   "Explain this!"
+  ],
+  a:0
+ },
+ {
+  q:"Which word shows contrast?",
+  options:["however","because","and"],
+  a:0
+ },
+ {
+  q:"I am interested ___ learning English.",
+  options:["in","on","at"],
+  a:0
+ },
+ {
+  q:"The sales result is ___ than last month.",
+  options:["good","better","best"],
+  a:1
+ },
+ {
+  q:"Which sentence is most natural?",
+  options:[
+   "I have worked here for five years.",
+   "I work here since five years.",
+   "I am work here five years."
+  ],
+  a:0
+ }
 ];
-
-let testAnswers={};
 
 function renderLevelTest(){
 
-  testAnswers={};
+  document.getElementById("testQuestions").innerHTML=
+    TEST.map((q,i)=>`
 
-  document.getElementById(
-    "testArea"
-  ).innerHTML=`
-
-    <p style="margin-bottom:15px">
-      Choose the best answer for each question
-    </p>
-
-    ${testQuestions.map((q,i)=>`
       <div class="question">
 
-        <div class="question-title">
-          ${i+1}. ${q[0]}
-        </div>
+        <p>${i+1}. ${escapeHTML(q.q)}</p>
 
         <div class="options">
 
-          ${q[1].split("|").map(o=>`
-            <button class="option"
-              data-test="${i}"
-              data-value="${escapeHTML(o)}"
-              onclick="chooseTest(this)">
-              ${o}
+          ${q.options.map((op,j)=>`
+            <button
+              class="option test-option"
+              data-q="${i}"
+              data-a="${j}"
+              onclick="selectTestOption(${i},${j})">
+              ${escapeHTML(op)}
             </button>
           `).join("")}
 
         </div>
 
       </div>
-    `).join("")}
 
-    <button class="btn btn-primary"
-      style="margin-top:15px"
-      onclick="submitLevelTest()">
-      Check My Level
-    </button>
+    `).join("");
 
-    <div id="testResult"></div>
-  `;
+  document.getElementById("testResult").innerHTML="";
 }
 
-function chooseTest(btn){
+const testAnswers={};
 
-  const i=btn.dataset.test;
+function selectTestOption(q,a){
 
-  document.querySelectorAll(
-    `.option[data-test="${i}"]`
-  ).forEach(x=>{
-    x.classList.remove("selected");
-  });
+  testAnswers[q]=a;
 
-  btn.classList.add("selected");
-
-  testAnswers[i]=btn.dataset.value;
+  document
+    .querySelectorAll(`.test-option[data-q="${q}"]`)
+    .forEach(btn=>{
+      btn.classList.toggle(
+        "selected",
+        Number(btn.dataset.a)===a
+      );
+    });
 }
 
 function submitLevelTest(){
 
   let score=0;
 
-  testQuestions.forEach((q,i)=>{
-    if(testAnswers[i]===q[2]){
-      score++;
-    }
+  TEST.forEach((q,i)=>{
+    if(testAnswers[i]===q.a) score++;
   });
 
   let level="A1";
 
-  if(score>=9) level="B2";
-  else if(score>=7) level="B1";
-  else if(score>=5) level="A2";
+  if(score>=9) level="B1";
+  else if(score>=6) level="A2";
 
-  if(score===10) level="C1";
+  document.getElementById("testResult").innerHTML=`
 
-  localStorage.setItem(
-    STORAGE.test,
-    JSON.stringify({
-      score,
-      level
-    })
-  );
+    <div class="card" style="background:#f9f7ff">
 
-  document.getElementById(
-    "testResult"
-  ).innerHTML=`
-
-    <div class="result">
-
-      <div class="score-circle">
-        ${score}/10
-      </div>
+      <div class="score-big">${score}/10</div>
 
       <h3>Suggested Level: ${level}</h3>
 
-      <p style="margin-top:8px">
-        This is a practice diagnostic, not an official CEFR certification
+      <p class="my-text">
+        ဒီ result က placement အတွက် အကြမ်းဖျင်းသတ်မှတ်ချက်သာ ဖြစ်ပါတယ်
+        Listening နဲ့ Speaking assessment ထပ်လုပ်ရင် ပိုတိကျပါမယ်
       </p>
 
     </div>
+
   `;
 
-  addXP(10);
 }
 
-
-/* =========================
+/* =========================================================
    PROGRESS
-   ========================= */
+   ========================================================= */
 
 function renderProgress(){
 
   const completed=getCompleted();
-  const xp=getXP();
-  const streak=Number(
-    localStorage.getItem(STORAGE.streak)||0
-  );
 
-  document.getElementById(
-    "progressStats"
-  ).innerHTML=`
+  document.getElementById("progressCompleted").textContent=completed.length;
+  document.getElementById("progressXP").textContent=getXP();
+  document.getElementById("progressStreak").textContent=getStreak();
 
-    <div class="stat">
-      <div class="stat-icon">📚</div>
-      <div class="stat-label">Lessons</div>
-      <div class="stat-value">${completed.length}</div>
-      <div class="stat-sub">completed</div>
-    </div>
+  let totalScore=0;
+  let count=0;
 
-    <div class="stat">
-      <div class="stat-icon">⚡</div>
-      <div class="stat-label">XP</div>
-      <div class="stat-value">${xp}</div>
-      <div class="stat-sub">total</div>
-    </div>
+  completed.forEach(id=>{
+    const score=getQuizScore(id);
 
-    <div class="stat">
-      <div class="stat-icon">🔥</div>
-      <div class="stat-label">Streak</div>
-      <div class="stat-value">${streak}</div>
-      <div class="stat-sub">days</div>
-    </div>
+    if(score>0){
+      totalScore+=score;
+      count++;
+    }
+  });
 
-    <div class="stat">
-      <div class="stat-icon">🎯</div>
-      <div class="stat-label">Daily Goal</div>
-      <div class="stat-value">${getMinutes()}/${getGoal()}</div>
-      <div class="stat-sub">minutes</div>
-    </div>
-  `;
+  const avg=count?Math.round(totalScore/count):0;
 
-  renderSkills("progressSkills");
+  document.getElementById("progressQuiz").textContent=avg+"%";
 
-  const levels=[
-    ["A1","Beginner",10],
-    ["A2","Elementary",30],
-    ["B1","Intermediate",50],
-    ["B2","Upper Intermediate",80],
-    ["C1","Advanced",110],
-    ["C2","Proficiency",140]
-  ];
+  const a1=completed.filter(x=>x>=1&&x<=10).length;
+  const a2=completed.filter(x=>x>=11&&x<=30).length;
+  const b1=completed.filter(x=>x>=31&&x<=50).length;
 
-  document.getElementById(
-    "cefrProgress"
-  ).innerHTML=
-    levels.map(l=>{
+  setProgress("a1",Math.round(a1/10*100));
+  setProgress("a2",Math.round(a2/20*100));
+  setProgress("b1",Math.round(b1/20*100));
 
-      const done=completed.filter(
-        id=>id>=1 && id<=l[2]
-      ).length;
+  const tbody=document.getElementById("historyTable");
 
-      const pct=Math.min(
-        100,
-        Math.round(done/l[2]*100)
-      );
+  if(!completed.length){
+    tbody.innerHTML=`
+      <tr>
+        <td colspan="4" style="text-align:center;color:#888">
+          No completed lessons yet
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  tbody.innerHTML=completed
+    .slice()
+    .reverse()
+    .map(id=>{
+
+      const lesson=ALL_LESSONS.find(x=>x.id===id);
 
       return `
-        <div style="margin-bottom:15px">
-
-          <div style="display:flex;justify-content:space-between">
-            <strong>${l[0]} • ${l[1]}</strong>
-            <span style="font-size:11px;color:var(--muted)">
-              ${pct}%
-            </span>
-          </div>
-
-          <div class="progress">
-            <div style="width:${pct}%"></div>
-          </div>
-
-        </div>
+        <tr>
+          <td>Lesson ${id} — ${escapeHTML(lesson?lesson.title:"")}</td>
+          <td>${lesson?lesson.level:""}</td>
+          <td style="color:#198052">Completed ✓</td>
+          <td>${getQuizScore(id)||"-"}%</td>
+        </tr>
       `;
 
     }).join("");
 }
 
+function setProgress(prefix,value){
 
-/* =========================
-   PRACTICE
-   ========================= */
+  document.getElementById(prefix+"ProgressText").textContent=value+"%";
+  document.getElementById(prefix+"ProgressBar").style.width=value+"%";
+}
 
-function renderMistakes(){
+/* =========================================================
+   SETTINGS
+   ========================================================= */
 
-  const mistakes=getMistakes();
+document.getElementById("languageMode").value=getLanguage();
+document.getElementById("accentSelect").value=getAccent();
+document.getElementById("speedSelect").value=getSpeed();
+document.getElementById("goalSelect").value=String(getGoal());
 
-  const el=document.getElementById(
-    "mistakeReview"
-  );
+document.getElementById("languageMode").addEventListener("change",function(){
+  localStorage.setItem(STORAGE.language,this.value);
+  toast("Language mode updated");
+  const active=document.querySelector(".page.active");
+  if(active && active.id==="page-lesson"){
+    renderLesson(getCurrentLesson().id);
+  }
+});
 
-  if(!mistakes.length){
+document.getElementById("accentSelect").addEventListener("change",function(){
+  localStorage.setItem(STORAGE.accent,this.value);
+  loadVoices();
+  toast("Accent updated");
+});
 
-    el.innerHTML=`
-      <div class="result">
-        <div style="font-size:40px">🎉</div>
-        <h3>No mistakes to review yet</h3>
-        <p>
-          Complete some quizzes and your mistakes will appear here
-        </p>
-      </div>
-    `;
+document.getElementById("speedSelect").addEventListener("change",function(){
+  localStorage.setItem(STORAGE.speed,this.value);
+  toast("Speech speed updated");
+});
 
-    return;
+document.getElementById("goalSelect").addEventListener("change",function(){
+  localStorage.setItem(STORAGE.goal,this.value);
+  renderDashboard();
+  toast("Daily goal updated");
+});
+
+/* =========================================================
+   WRITING
+   ========================================================= */
+
+function saveWriting(id){
+
+  const box=document.getElementById("writing-"+id);
+
+  if(!box) return;
+
+  localStorage.setItem("aep_writing_"+id,box.value);
+
+  if(box.value.trim().length>=20){
+    completeSkill(id,"Writing",null);
   }
 
-  el.innerHTML=
-    mistakes.slice(-20).reverse()
-      .map(m=>`
-        <div class="question">
-
-          <div class="question-title">
-            ${m.question}
-          </div>
-
-          <p style="margin-top:7px">
-            Correct answer:
-            <strong>${m.correct}</strong>
-          </p>
-
-          <span class="badge red">
-            Lesson ${m.lesson}
-          </span>
-
-        </div>
-      `).join("");
+  toast("Writing saved ✓");
 }
 
-function practiceListening(){
-
-  const lesson=getNextLesson();
-
-  speakText(
-    lesson.listening,
-    0.85
-  );
-
-  addXP(2);
-
-  showToast(
-    "Listening practice +2 XP"
-  );
-}
-
-function practiceSpeaking(){
-
-  showPage("lesson");
-  openLesson(
-    getNextLesson().id
-  );
-
-  setTimeout(
-    startSpeaking,
-    500
-  );
-}
-
-function practiceGrammar(){
-
-  showPage("grammar");
-
-  addXP(2);
-
-  showToast(
-    "Grammar practice +2 XP"
-  );
-}
-
-
-/* =========================
-   MISTAKES
-   ========================= */
-
-function addMistake(mistake){
-
-  const data=getMistakes();
-
-  data.push({
-    ...mistake,
-    date:new Date().toISOString()
-  });
-
-  setJSON(
-    STORAGE.mistakes,
-    data.slice(-100)
-  );
-}
-
-
-/* =========================
-   XP
-   ========================= */
-
-function addXP(amount){
-
-  const xp=getXP()+amount;
-
-  setXP(xp);
-
-  updateAll();
-}
-
-function addMinutes(amount){
-
-  const minutes=
-    getMinutes()+amount;
-
-  localStorage.setItem(
-    STORAGE.minutes,
-    String(Math.min(minutes,999))
-  );
-
-  updateAll();
-}
-
-
-/* =========================
-   SETTINGS
-   ========================= */
-
-function toggleDarkMode(){
-
-  document.body.classList.toggle(
-    "dark"
-  );
-
-  localStorage.setItem(
-    STORAGE.dark,
-    document.body.classList.contains("dark")
-      ?"1"
-      :"0"
-  );
-}
-
-function changeGoal(){
-
-  const goal=
-    Number(
-      document.getElementById(
-        "goalSelect"
-      ).value
-    );
-
-  localStorage.setItem(
-    STORAGE.goal,
-    String(goal)
-  );
-
-  showToast(
-    "Daily goal updated"
-  );
-
-  renderDashboard();
-}
+/* =========================================================
+   RESET
+   ========================================================= */
 
 function resetProgress(){
 
   const ok=confirm(
-    "Reset all learning progress?"
+    "Learning progress အားလုံးကို reset လုပ်မလား"
   );
 
   if(!ok) return;
 
-  Object.values(STORAGE).forEach(key=>{
-    localStorage.removeItem(key);
-  });
+  Object.keys(localStorage)
+    .filter(key=>key.startsWith("aep_"))
+    .forEach(key=>localStorage.removeItem(key));
 
   location.reload();
 }
 
-
-/* =========================
+/* =========================================================
    HELPERS
-   ========================= */
+   ========================================================= */
 
 function escapeHTML(value){
 
@@ -4692,112 +3750,50 @@ function escapeJS(value){
     .replace(/\n/g," ");
 }
 
-function showToast(message){
+function toast(message){
 
-  const toast=document.getElementById(
-    "toast"
-  );
+  const el=document.getElementById("toast");
 
-  toast.textContent=message;
+  el.textContent=message;
+  el.classList.add("show");
 
-  toast.classList.add("show");
+  clearTimeout(window.toastTimer);
 
-  setTimeout(()=>{
-    toast.classList.remove("show");
+  window.toastTimer=setTimeout(()=>{
+    el.classList.remove("show");
   },2200);
 }
 
-function updateAll(){
+function refreshTop(){
 
-  const streak=Number(
-    localStorage.getItem(
-      STORAGE.streak
-    )||0
-  );
+  document.getElementById("topStreak").textContent=getStreak();
+  document.getElementById("topXP").textContent=getXP();
+  document.getElementById("topHearts").textContent=getHearts();
 
-  document.getElementById(
-    "topStreak"
-  ).textContent=streak;
-
-  document.getElementById(
-    "topXP"
-  ).textContent=getXP();
-
-  document.getElementById(
-    "topHearts"
-  ).textContent=getHearts();
-
-  const active=document.querySelector(
-    ".page.active"
-  );
-
-  if(active?.id==="page-dashboard"){
-    renderDashboard();
-  }
+  renderDashboard();
 }
 
-
-/* =========================
-   COURSE CARD CLICK
-   ========================= */
-
-document.addEventListener(
-  "click",
-  function(e){
-
-    const card=
-      e.target.closest(".card");
-
-  }
-);
-
-
-/* =========================
-   INITIALIZATION
-   ========================= */
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
 
 function init(){
 
-  if(
-    localStorage.getItem(
-      STORAGE.dark
-    )==="1"
-  ){
-    document.body.classList.add("dark");
-  }
-
-  const goalSelect=
-    document.getElementById(
-      "goalSelect"
-    );
-
-  if(goalSelect){
-    goalSelect.value=
-      String(getGoal());
-  }
-
-  if(!localStorage.getItem(
-    STORAGE.hearts
-  )){
-    localStorage.setItem(
-      STORAGE.hearts,
-      "5"
-    );
-  }
-
   updateStreak();
+
+  if(!localStorage.getItem(STORAGE.hearts)){
+    localStorage.setItem(STORAGE.hearts,"5");
+  }
 
   renderDashboard();
   renderPath();
   renderCourses();
   renderGrammar();
   renderVocabulary();
-  renderBusiness();
-  renderProgress();
   renderLevelTest();
-  renderMistakes();
+  renderProgress();
 
-  updateAll();
+  refreshTop();
 }
 
 init();
