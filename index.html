@@ -1,0 +1,2281 @@
+```html
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<title>Aung English Pro</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#0f172a;
+  --blue:#2563eb;
+  --blue2:#1d4ed8;
+  --light:#f8fafc;
+  --card:#ffffff;
+  --text:#172033;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --green:#16a34a;
+  --orange:#f59e0b;
+  --purple:#7c3aed;
+  --red:#dc2626;
+  --shadow:0 8px 25px rgba(15,23,42,.07);
+}
+
+body{
+  font-family:Arial,"Noto Sans Myanmar",sans-serif;
+  background:#f1f5f9;
+  color:var(--text);
+  line-height:1.65;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.app{
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  width:260px;
+  background:var(--navy);
+  color:white;
+  padding:20px 14px;
+  z-index:100;
+  overflow-y:auto;
+}
+
+.brand{
+  padding:8px 10px 22px;
+}
+
+.brand-title{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.brand-sub{
+  color:#94a3b8;
+  font-size:12px;
+  margin-top:3px;
+}
+
+.level-box{
+  background:#1e293b;
+  border:1px solid #334155;
+  border-radius:14px;
+  padding:13px;
+  margin-bottom:18px;
+}
+
+.level-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.level-name{
+  font-weight:800;
+}
+
+.level-badge{
+  background:#2563eb;
+  padding:3px 9px;
+  border-radius:20px;
+  font-size:11px;
+}
+
+.progress{
+  height:7px;
+  background:#334155;
+  border-radius:20px;
+  margin-top:10px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  height:100%;
+  width:24%;
+  background:#60a5fa;
+  border-radius:20px;
+}
+
+.nav-title{
+  color:#64748b;
+  font-size:11px;
+  font-weight:700;
+  margin:18px 10px 7px;
+  text-transform:uppercase;
+}
+
+.nav-btn{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#cbd5e1;
+  text-align:left;
+  padding:11px 12px;
+  border-radius:10px;
+  margin:2px 0;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+  background:#1e293b;
+  color:white;
+}
+
+.nav-icon{
+  width:26px;
+  display:inline-block;
+}
+
+/* MAIN */
+.main{
+  margin-left:260px;
+  min-height:100vh;
+}
+
+.topbar{
+  height:68px;
+  background:white;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.top-title{
+  font-size:18px;
+  font-weight:800;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.avatar{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#2563eb;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+}
+
+.content{
+  max-width:1200px;
+  margin:auto;
+  padding:28px;
+}
+
+/* PAGE */
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f172a,#1e40af);
+  color:white;
+  border-radius:20px;
+  padding:28px;
+  margin-bottom:22px;
+  box-shadow:var(--shadow);
+}
+
+.hero h1{
+  font-size:27px;
+  margin-bottom:6px;
+}
+
+.hero p{
+  color:#dbeafe;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.btn{
+  border:0;
+  border-radius:10px;
+  padding:10px 16px;
+  font-weight:700;
+}
+
+.btn-primary{
+  background:#fff;
+  color:#1d4ed8;
+}
+
+.btn-blue{
+  background:var(--blue);
+  color:white;
+}
+
+.btn-light{
+  background:#e2e8f0;
+  color:#172033;
+}
+
+.btn-green{
+  background:var(--green);
+  color:white;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-bottom:22px;
+}
+
+.stat{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.stat-label{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.stat-value{
+  font-size:27px;
+  font-weight:800;
+  margin-top:5px;
+}
+
+.stat-small{
+  color:var(--green);
+  font-size:12px;
+  margin-top:3px;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+
+.card h3{
+  font-size:18px;
+  margin-bottom:7px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:13px;
+}
+
+.icon-box{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#eff6ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+}
+
+.tag{
+  background:#dbeafe;
+  color:#1d4ed8;
+  padding:4px 9px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+}
+
+/* COURSE */
+.course-list{
+  display:grid;
+  gap:10px;
+}
+
+.lesson{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  cursor:pointer;
+}
+
+.lesson:hover{
+  border-color:#93c5fd;
+}
+
+.lesson-number{
+  width:40px;
+  height:40px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  border-radius:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  flex:none;
+}
+
+.lesson-info{
+  flex:1;
+}
+
+.lesson-title{
+  font-weight:800;
+}
+
+.lesson-desc{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.lock{
+  color:#94a3b8;
+}
+
+/* LESSON */
+.lesson-header{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:18px;
+}
+
+.breadcrumb{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.lesson-header h1{
+  font-size:27px;
+}
+
+.lesson-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+
+.meta{
+  background:#f1f5f9;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:12px;
+}
+
+.section{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:22px;
+  margin-bottom:16px;
+}
+
+.section h2{
+  font-size:20px;
+  margin-bottom:13px;
+}
+
+.section h3{
+  font-size:16px;
+  margin:17px 0 8px;
+}
+
+.burmese{
+  color:#475569;
+  margin-bottom:8px;
+}
+
+.example{
+  background:#f8fafc;
+  border-left:4px solid var(--blue);
+  padding:12px 14px;
+  margin:9px 0;
+  border-radius:0 9px 9px 0;
+}
+
+.english{
+  font-weight:700;
+  font-size:16px;
+}
+
+.translation{
+  color:#64748b;
+  margin-top:3px;
+}
+
+.word-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.word{
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:12px;
+}
+
+.word strong{
+  color:#1d4ed8;
+}
+
+.audio-box{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  border-radius:14px;
+  padding:17px;
+  margin:10px 0;
+}
+
+.audio-controls{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.question{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  margin:10px 0;
+}
+
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  border:1px solid var(--border);
+  background:white;
+  padding:10px;
+  border-radius:9px;
+  margin-top:7px;
+}
+
+.option:hover{
+  background:#f8fafc;
+}
+
+.option.correct{
+  background:#dcfce7;
+  border-color:#86efac;
+}
+
+.option.wrong{
+  background:#fee2e2;
+  border-color:#fecaca;
+}
+
+.answer{
+  margin-top:8px;
+  font-weight:700;
+}
+
+.challenge{
+  background:#f8fafc;
+  border-radius:13px;
+  padding:16px;
+  margin-top:10px;
+}
+
+.score-box{
+  text-align:center;
+  background:#0f172a;
+  color:white;
+  border-radius:17px;
+  padding:24px;
+}
+
+.score{
+  font-size:40px;
+  font-weight:900;
+}
+
+.skill-score{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:16px;
+}
+
+.skill{
+  background:#1e293b;
+  padding:10px;
+  border-radius:10px;
+}
+
+.lesson-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:18px;
+}
+
+/* MOBILE */
+.mobile-menu{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:25px;
+}
+
+@media(max-width:900px){
+  .sidebar{
+    transform:translateX(-100%);
+    transition:.25s;
+  }
+
+  .sidebar.open{
+    transform:translateX(0);
+  }
+
+  .main{
+    margin-left:0;
+  }
+
+  .mobile-menu{
+    display:block;
+  }
+
+  .topbar{
+    padding:0 16px;
+  }
+
+  .content{
+    padding:17px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .top-title{
+    font-size:15px;
+  }
+
+  .profile span{
+    display:none;
+  }
+
+  .hero{
+    padding:21px;
+  }
+
+  .hero h1{
+    font-size:22px;
+  }
+
+  .stats{
+    gap:9px;
+  }
+
+  .stat{
+    padding:13px;
+  }
+
+  .stat-value{
+    font-size:22px;
+  }
+
+  .section{
+    padding:16px;
+  }
+
+  .word-grid{
+    grid-template-columns:1fr;
+  }
+
+  .skill-score{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .lesson-header h1{
+    font-size:22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+  <div class="brand">
+    <div class="brand-title">Aung English Pro</div>
+    <div class="brand-sub">Basic to Advanced English</div>
+  </div>
+
+  <div class="level-box">
+    <div class="level-row">
+      <div class="level-name">My Level</div>
+      <div class="level-badge">A1</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:6px">
+      Beginner • 24% Complete
+    </div>
+  </div>
+
+  <div class="nav-title">Learning</div>
+
+  <button class="nav-btn active" onclick="showPage('dashboard',this)">
+    <span class="nav-icon">🏠</span> Dashboard
+  </button>
+
+  <button class="nav-btn" onclick="showPage('courses',this)">
+    <span class="nav-icon">📚</span> Courses
+  </button>
+
+  <button class="nav-btn" onclick="showPage('listening',this)">
+    <span class="nav-icon">🎧</span> Listening
+  </button>
+
+  <button class="nav-btn" onclick="showPage('speaking',this)">
+    <span class="nav-icon">🗣️</span> Speaking
+  </button>
+
+  <button class="nav-btn" onclick="showPage('reading',this)">
+    <span class="nav-icon">📖</span> Reading
+  </button>
+
+  <button class="nav-btn" onclick="showPage('writing',this)">
+    <span class="nav-icon">✍️</span> Writing
+  </button>
+
+  <button class="nav-btn" onclick="showPage('grammar',this)">
+    <span class="nav-icon">📘</span> Grammar
+  </button>
+
+  <button class="nav-btn" onclick="showPage('vocabulary',this)">
+    <span class="nav-icon">🧠</span> Vocabulary
+  </button>
+
+  <div class="nav-title">Tools</div>
+
+  <button class="nav-btn" onclick="showPage('test',this)">
+    <span class="nav-icon">🧪</span> Level Test
+  </button>
+
+  <button class="nav-btn" onclick="showPage('progress',this)">
+    <span class="nav-icon">🏆</span> My Progress
+  </button>
+
+  <button class="nav-btn" onclick="showPage('business',this)">
+    <span class="nav-icon">💼</span> Business English
+  </button>
+
+  <button class="nav-btn" onclick="showPage('settings',this)">
+    <span class="nav-icon">⚙️</span> Settings
+  </button>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
+    <div class="top-title" id="topTitle">Dashboard</div>
+  </div>
+
+  <div class="profile">
+    <span>Aung Zar Ni Win</span>
+    <div class="avatar">A</div>
+  </div>
+</header>
+
+<div class="content">
+
+<!-- DASHBOARD -->
+<section class="page active" id="dashboard">
+
+  <div class="hero">
+    <h1>Welcome back, Aung Zar Ni Win 👋</h1>
+    <p>Build your English skills from Basic to Advanced with 4 Skills practice.</p>
+
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="openLesson()">
+        ▶ Continue Lesson
+      </button>
+      <button class="btn btn-light" onclick="showPage('courses')">
+        📚 View Courses
+      </button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label">Current Level</div>
+      <div class="stat-value">A1</div>
+      <div class="stat-small">Beginner</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-label">Lessons</div>
+      <div class="stat-value">1 / 30</div>
+      <div class="stat-small">A1 Module 1</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-label">Learning Streak</div>
+      <div class="stat-value">1 🔥</div>
+      <div class="stat-small">Keep learning</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-label">4 Skills</div>
+      <div class="stat-value">24%</div>
+      <div class="stat-small">Overall progress</div>
+    </div>
+  </div>
+
+  <h2 style="margin-bottom:13px">Continue Learning</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">📘</div>
+        <span class="tag">A1</span>
+      </div>
+      <h3>Lesson 1</h3>
+      <p>Introducing Yourself — ကိုယ့်အကြောင်းကိုယ် မိတ်ဆက်ခြင်း</p>
+      <button class="btn btn-blue" style="margin-top:14px;width:100%" onclick="openLesson()">
+        Start Lesson
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">🎧</div>
+        <span class="tag">4 Skills</span>
+      </div>
+      <h3>Daily Practice</h3>
+      <p>Listening, Speaking, Reading and Writing</p>
+      <button class="btn btn-light" style="margin-top:14px;width:100%" onclick="showPage('listening')">
+        Practice
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">🧪</div>
+        <span class="tag">Test</span>
+      </div>
+      <h3>Check Your Level</h3>
+      <p>Find your current English level</p>
+      <button class="btn btn-light" style="margin-top:14px;width:100%" onclick="showPage('test')">
+        Start Test
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- COURSES -->
+<section class="page" id="courses">
+
+  <div class="lesson-header">
+    <div class="breadcrumb">AUNG ENGLISH PRO / COURSES</div>
+    <h1>English Courses</h1>
+    <p style="color:#64748b;margin-top:5px">
+      Basic to Advanced • English + မြန်မာ
+    </p>
+  </div>
+
+  <div class="grid" style="margin-bottom:20px">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">🟢</div>
+        <span class="tag">START</span>
+      </div>
+      <h3>Pre-A1</h3>
+      <p>English အခြေခံအကျဆုံး</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">📗</div>
+        <span class="tag">CURRENT</span>
+      </div>
+      <h3>A1 Beginner</h3>
+      <p>အခြေခံ English communication</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">📙</div>
+        <span class="tag">NEXT</span>
+      </div>
+      <h3>A2 Elementary</h3>
+      <p>နေ့စဉ်ဘဝ English</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">🟠</div>
+        <span class="tag">B1</span>
+      </div>
+      <h3>B1 Intermediate</h3>
+      <p>Conversation & practical English</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">🔵</div>
+        <span class="tag">B2</span>
+      </div>
+      <h3>B2 Upper-Intermediate</h3>
+      <p>Professional communication</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-box">🟣</div>
+        <span class="tag">C1–C2</span>
+      </div>
+      <h3>Advanced</h3>
+      <p>High-level English mastery</p>
+    </div>
+
+  </div>
+
+  <h2 style="margin-bottom:13px">A1 — Module 1</h2>
+
+  <div class="course-list">
+
+    <div class="lesson" onclick="openLesson()">
+      <div class="lesson-number">01</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Introducing Yourself</div>
+        <div class="lesson-desc">ကိုယ့်အကြောင်းကိုယ် မိတ်ဆက်ခြင်း • 4 Skills</div>
+      </div>
+      <div>▶</div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-number">02</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Greetings & Basic Conversations</div>
+        <div class="lesson-desc">နှုတ်ဆက်ခြင်းနှင့် အခြေခံစကားပြောခြင်း</div>
+      </div>
+      <div class="lock">🔒</div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-number">03</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Personal Information</div>
+        <div class="lesson-desc">ကိုယ်ရေးအချက်အလက်များ</div>
+      </div>
+      <div class="lock">🔒</div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-number">04</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Family</div>
+        <div class="lesson-desc">မိသားစုအကြောင်း</div>
+      </div>
+      <div class="lock">🔒</div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-number">05</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Daily Routine</div>
+        <div class="lesson-desc">နေ့စဉ်လုပ်ငန်းဆောင်တာများ</div>
+      </div>
+      <div class="lock">🔒</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- LESSON 1 -->
+<section class="page" id="lesson1">
+
+  <div class="lesson-header">
+    <div class="breadcrumb">A1 BEGINNER / MODULE 1 / LESSON 1</div>
+    <h1>Introducing Yourself</h1>
+    <p style="color:#64748b">
+      ကိုယ့်အကြောင်းကိုယ် မိတ်ဆက်ခြင်း
+    </p>
+
+    <div class="lesson-meta">
+      <span class="meta">🟢 A1 Beginner</span>
+      <span class="meta">⏱ 30–40 min</span>
+      <span class="meta">🎧 Listening</span>
+      <span class="meta">🗣️ Speaking</span>
+      <span class="meta">📖 Reading</span>
+      <span class="meta">✍️ Writing</span>
+    </div>
+  </div>
+
+
+  <!-- OBJECTIVES -->
+  <div class="section">
+    <h2>🎯 1. Learning Objectives</h2>
+
+    <p class="burmese">
+      ဒီသင်ခန်းစာပြီးတဲ့အခါ learner က —
+    </p>
+
+    <ul style="padding-left:20px">
+      <li>ကိုယ့်နာမည်ကို English လို ပြောနိုင်မယ်</li>
+      <li>ဘယ်နိုင်ငံကလဲ ပြောနိုင်မယ်</li>
+      <li>ဘယ်မြို့မှာနေလဲ ပြောနိုင်မယ်</li>
+      <li>အလုပ်အကိုင်ကို ပြောနိုင်မယ်</li>
+      <li>တစ်ဖက်လူရဲ့ အချက်အလက်ကို မေးနိုင်မယ်</li>
+      <li>Self-introduction 6–8 sentences ပြောနိုင်မယ်</li>
+      <li>ကိုယ့်အကြောင်း short paragraph ရေးနိုင်မယ်</li>
+    </ul>
+  </div>
+
+
+  <!-- WARM UP -->
+  <div class="section">
+    <h2>🔥 2. Warm-up</h2>
+
+    <p class="burmese">
+      လူတစ်ယောက်နဲ့ ပထမဆုံးတွေ့တဲ့အခါ အသုံးများတဲ့ English စကားတွေကို အရင်လေ့လာပါ။
+    </p>
+
+    <div class="example">
+      <div class="english">Hello.</div>
+      <div class="translation">မင်္ဂလာပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">What's your name?</div>
+      <div class="translation">နာမည်ဘယ်လိုခေါ်လဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">My name is Aung.</div>
+      <div class="translation">ကျွန်တော့်နာမည် Aung ပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">Where are you from?</div>
+      <div class="translation">ဘယ်နိုင်ငံကလဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I am from Myanmar.</div>
+      <div class="translation">ကျွန်တော် မြန်မာနိုင်ငံကပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">Nice to meet you.</div>
+      <div class="translation">တွေ့ရတာဝမ်းသာပါတယ်</div>
+    </div>
+
+    <div class="challenge">
+      <strong>💡 Learning Tip</strong>
+      <p style="margin-top:5px;color:#64748b">
+        Self-introduction ကို Name → Country → City → Job → Company → Interest
+        အစဉ်လိုက်ပြောရင် လွယ်ကူပါတယ်။
+      </p>
+    </div>
+  </div>
+
+
+  <!-- VOCAB -->
+  <div class="section">
+    <h2>📚 3. Vocabulary</h2>
+
+    <div class="word-grid">
+
+      <div class="word">
+        <strong>name</strong>
+        <div>နာမည်</div>
+        <small>My name is Aung.</small>
+      </div>
+
+      <div class="word">
+        <strong>country</strong>
+        <div>နိုင်ငံ</div>
+        <small>Myanmar is my country.</small>
+      </div>
+
+      <div class="word">
+        <strong>city</strong>
+        <div>မြို့</div>
+        <small>Yangon is a big city.</small>
+      </div>
+
+      <div class="word">
+        <strong>live</strong>
+        <div>နေထိုင်သည်</div>
+        <small>I live in Yangon.</small>
+      </div>
+
+      <div class="word">
+        <strong>work</strong>
+        <div>အလုပ်လုပ်သည်</div>
+        <small>I work in Yangon.</small>
+      </div>
+
+      <div class="word">
+        <strong>job</strong>
+        <div>အလုပ်အကိုင်</div>
+        <small>My job is sales.</small>
+      </div>
+
+      <div class="word">
+        <strong>manager</strong>
+        <div>မန်နေဂျာ</div>
+        <small>I am a manager.</small>
+      </div>
+
+      <div class="word">
+        <strong>company</strong>
+        <div>ကုမ္ပဏီ</div>
+        <small>I work for a company.</small>
+      </div>
+
+      <div class="word">
+        <strong>student</strong>
+        <div>ကျောင်းသား/ကျောင်းသူ</div>
+        <small>I am a student.</small>
+      </div>
+
+      <div class="word">
+        <strong>teacher</strong>
+        <div>ဆရာ/ဆရာမ</div>
+        <small>She is a teacher.</small>
+      </div>
+
+      <div class="word">
+        <strong>from</strong>
+        <div>…မှ / …က</div>
+        <small>I am from Myanmar.</small>
+      </div>
+
+      <div class="word">
+        <strong>meet</strong>
+        <div>တွေ့ဆုံသည်</div>
+        <small>Nice to meet you.</small>
+      </div>
+
+      <div class="word">
+        <strong>introduce</strong>
+        <div>မိတ်ဆက်သည်</div>
+        <small>Let me introduce myself.</small>
+      </div>
+
+      <div class="word">
+        <strong>myself</strong>
+        <div>မိမိကိုယ်တိုင်</div>
+        <small>Let me introduce myself.</small>
+      </div>
+
+      <div class="word">
+        <strong>friend</strong>
+        <div>သူငယ်ချင်း</div>
+        <small>He is my friend.</small>
+      </div>
+
+      <div class="word">
+        <strong>learn</strong>
+        <div>သင်ယူသည်</div>
+        <small>I learn English every day.</small>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- GRAMMAR -->
+  <div class="section">
+    <h2>📘 4. Grammar — Be Verb</h2>
+
+    <p class="burmese">
+      ဒီ Lesson ရဲ့ အဓိက Grammar က <strong>am / is / are</strong> ဖြစ်ပါတယ်။
+    </p>
+
+    <h3>I → am</h3>
+    <div class="example">
+      <div class="english">I am Aung.</div>
+      <div class="translation">ကျွန်တော် Aung ပါ</div>
+    </div>
+
+    <h3>You → are</h3>
+    <div class="example">
+      <div class="english">You are a student.</div>
+      <div class="translation">သင်က ကျောင်းသား/ကျောင်းသူပါ</div>
+    </div>
+
+    <h3>He → is</h3>
+    <div class="example">
+      <div class="english">He is a manager.</div>
+      <div class="translation">သူက မန်နေဂျာပါ</div>
+    </div>
+
+    <h3>She → is</h3>
+    <div class="example">
+      <div class="english">She is a teacher.</div>
+      <div class="translation">သူမက ဆရာမပါ</div>
+    </div>
+
+    <h3>We → are</h3>
+    <div class="example">
+      <div class="english">We are friends.</div>
+      <div class="translation">ကျွန်တော်တို့ သူငယ်ချင်းတွေပါ</div>
+    </div>
+
+    <h3>They → are</h3>
+    <div class="example">
+      <div class="english">They are students.</div>
+      <div class="translation">သူတို့က ကျောင်းသား/ကျောင်းသူတွေပါ</div>
+    </div>
+  </div>
+
+
+  <!-- PATTERNS -->
+  <div class="section">
+    <h2>🧩 5. Sentence Patterns</h2>
+
+    <div class="example">
+      <div class="english">My name is + Name</div>
+      <div class="translation">My name is Aung.</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I am from + Country</div>
+      <div class="translation">I am from Myanmar.</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I live in + City</div>
+      <div class="translation">I live in Yangon.</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I am a/an + Job</div>
+      <div class="translation">I am a manager.</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I work for + Company</div>
+      <div class="translation">I work for ABC Company.</div>
+    </div>
+  </div>
+
+
+  <!-- COMMON MISTAKES -->
+  <div class="section">
+    <h2>❌ 6. Common Mistakes</h2>
+
+    <div class="example">
+      <div style="color:#dc2626;font-weight:800">❌ I from Myanmar.</div>
+      <div style="color:#16a34a;font-weight:800;margin-top:5px">✅ I am from Myanmar.</div>
+    </div>
+
+    <div class="example">
+      <div style="color:#dc2626;font-weight:800">❌ I am live in Yangon.</div>
+      <div style="color:#16a34a;font-weight:800;margin-top:5px">✅ I live in Yangon.</div>
+    </div>
+
+    <div class="example">
+      <div style="color:#dc2626;font-weight:800">❌ I am manager.</div>
+      <div style="color:#16a34a;font-weight:800;margin-top:5px">✅ I am a manager.</div>
+    </div>
+  </div>
+
+
+  <!-- LISTENING -->
+  <div class="section">
+    <h2>🎧 7. Listening</h2>
+
+    <p class="burmese">
+      ပထမအကြိမ်မှာ စာသားနဲ့အတူ နားထောင်ပါ။ ဒုတိယအကြိမ်မှာ စာသားမကြည့်ဘဲ
+      information ကို ဖမ်းယူပါ။
+    </p>
+
+    <div class="audio-box">
+      <strong>🔊 Listening Audio</strong>
+
+      <div class="example" style="background:white;margin-top:10px">
+        <div class="english">
+          Hello. My name is David. I am from Myanmar.
+          I live in Yangon. I am a sales manager.
+          I work for ABC Company. Nice to meet you.
+        </div>
+        <div class="translation">
+          မင်္ဂလာပါ။ ကျွန်တော့်နာမည် David ပါ။
+          ကျွန်တော် မြန်မာနိုင်ငံကပါ။ ရန်ကုန်မှာနေပါတယ်။
+          Sales Manager တစ်ယောက်ပါ။ ABC Company မှာ အလုပ်လုပ်ပါတယ်။
+          တွေ့ရတာဝမ်းသာပါတယ်။
+        </div>
+      </div>
+
+      <div class="audio-controls">
+        <button class="btn btn-blue" onclick="speakLesson()">
+          🔊 Listen
+        </button>
+
+        <button class="btn btn-light" onclick="speakLessonSlow()">
+          🐢 Slow
+        </button>
+
+        <button class="btn btn-green" onclick="speakLesson()">
+          🔁 Repeat
+        </button>
+      </div>
+    </div>
+
+    <h3>Listening Questions</h3>
+
+    <div class="question">
+      <strong>1. What is his name?</strong>
+      <button class="option" onclick="answer(this,false)">A. Aung</button>
+      <button class="option" onclick="answer(this,true)">B. David</button>
+      <button class="option" onclick="answer(this,false)">C. John</button>
+    </div>
+
+    <div class="question">
+      <strong>2. Where is he from?</strong>
+      <button class="option" onclick="answer(this,true)">A. Myanmar</button>
+      <button class="option" onclick="answer(this,false)">B. Thailand</button>
+      <button class="option" onclick="answer(this,false)">C. Singapore</button>
+    </div>
+
+    <div class="question">
+      <strong>3. Where does he live?</strong>
+      <button class="option" onclick="answer(this,true)">A. Yangon</button>
+      <button class="option" onclick="answer(this,false)">B. Mandalay</button>
+      <button class="option" onclick="answer(this,false)">C. Bago</button>
+    </div>
+
+    <div class="question">
+      <strong>4. What is his job?</strong>
+      <button class="option" onclick="answer(this,false)">A. Teacher</button>
+      <button class="option" onclick="answer(this,false)">B. Student</button>
+      <button class="option" onclick="answer(this,true)">C. Sales Manager</button>
+    </div>
+  </div>
+
+
+  <!-- SPEAKING -->
+  <div class="section">
+    <h2>🗣️ 8. Speaking</h2>
+
+    <div class="example">
+      <div class="english">What's your name?</div>
+      <div class="translation">နာမည်ဘယ်လိုခေါ်လဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">Where are you from?</div>
+      <div class="translation">ဘယ်နိုင်ငံကလဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">Where do you live?</div>
+      <div class="translation">ဘယ်မှာနေပါသလဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">What do you do?</div>
+      <div class="translation">ဘာအလုပ်လုပ်ပါသလဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">Where do you work?</div>
+      <div class="translation">ဘယ်မှာအလုပ်လုပ်ပါသလဲ</div>
+    </div>
+
+    <div class="challenge">
+      <strong>🎤 Speaking Challenge</strong>
+      <p style="margin-top:7px">
+        English လို ကိုယ့်အကြောင်း 6–8 sentences ပြောပါ။
+      </p>
+
+      <div class="example" style="margin-top:10px">
+        <div class="english">
+          Hello. My name is ______.
+          I am from ______.
+          I live in ______.
+          I am a ______.
+          I work for ______.
+          Nice to meet you.
+        </div>
+      </div>
+
+      <button class="btn btn-blue" onclick="startSpeaking()">
+        🎤 Practice Speaking
+      </button>
+
+      <p id="speakStatus" style="margin-top:9px;color:#64748b"></p>
+    </div>
+  </div>
+
+
+  <!-- CONVERSATION -->
+  <div class="section">
+    <h2>💬 9. Real Conversation</h2>
+
+    <div class="example">
+      <div class="english">A: Hello. I'm David. What's your name?</div>
+      <div class="translation">မင်္ဂလာပါ။ ကျွန်တော့်နာမည် David ပါ။ ခင်ဗျားနာမည်ဘယ်လိုခေါ်လဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">B: Hello. My name is Aung.</div>
+      <div class="translation">မင်္ဂလာပါ။ ကျွန်တော့်နာမည် Aung ပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">A: Nice to meet you, Aung.</div>
+      <div class="translation">တွေ့ရတာဝမ်းသာပါတယ် Aung</div>
+    </div>
+
+    <div class="example">
+      <div class="english">B: Nice to meet you too.</div>
+      <div class="translation">ကျွန်တော်လည်း တွေ့ရတာဝမ်းသာပါတယ်</div>
+    </div>
+
+    <div class="example">
+      <div class="english">A: Where are you from?</div>
+      <div class="translation">ဘယ်နိုင်ငံကလဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">B: I am from Myanmar.</div>
+      <div class="translation">ကျွန်တော် မြန်မာနိုင်ငံကပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">A: What do you do?</div>
+      <div class="translation">ဘာအလုပ်လုပ်ပါသလဲ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">B: I am a Sales Manager.</div>
+      <div class="translation">ကျွန်တော် Sales Manager တစ်ယောက်ပါ</div>
+    </div>
+  </div>
+
+
+  <!-- READING -->
+  <div class="section">
+    <h2>📖 10. Reading</h2>
+
+    <div class="example">
+      <div class="english">
+        My name is Alex. I am from Myanmar. I live in Yangon
+        with my family. I work for a company. I am a sales manager.
+        I like my job because I enjoy meeting customers.
+        I am learning English because I want to communicate better at work.
+      </div>
+
+      <div class="translation" style="margin-top:12px">
+        ကျွန်တော့်နာမည် Alex ပါ။ ကျွန်တော် မြန်မာနိုင်ငံကပါ။
+        မိသားစုနဲ့အတူ ရန်ကုန်မှာနေပါတယ်။
+        ကုမ္ပဏီတစ်ခုမှာ အလုပ်လုပ်ပါတယ်။
+        Sales Manager တစ်ယောက်ပါ။
+        Customer တွေနဲ့ တွေ့ဆုံရတာကို သဘောကျတဲ့အတွက်
+        ကျွန်တော့်အလုပ်ကို သဘောကျပါတယ်။
+        အလုပ်မှာ ပိုကောင်းကောင်း ဆက်သွယ်ပြောဆိုနိုင်ဖို့
+        English ကို သင်ယူနေပါတယ်။
+      </div>
+    </div>
+
+    <h3>Reading Questions</h3>
+
+    <div class="question">
+      <strong>1. What is his name?</strong>
+      <button class="option" onclick="answer(this,true)">A. Alex</button>
+      <button class="option" onclick="answer(this,false)">B. David</button>
+      <button class="option" onclick="answer(this,false)">C. John</button>
+    </div>
+
+    <div class="question">
+      <strong>2. Where does he live?</strong>
+      <button class="option" onclick="answer(this,false)">A. Mandalay</button>
+      <button class="option" onclick="answer(this,true)">B. Yangon</button>
+      <button class="option" onclick="answer(this,false)">C. Bago</button>
+    </div>
+
+    <div class="question">
+      <strong>3. Who does he live with?</strong>
+      <button class="option" onclick="answer(this,false)">A. Friends</button>
+      <button class="option" onclick="answer(this,true)">B. Family</button>
+      <button class="option" onclick="answer(this,false)">C. Customers</button>
+    </div>
+
+    <div class="question">
+      <strong>4. What is his job?</strong>
+      <button class="option" onclick="answer(this,false)">A. Teacher</button>
+      <button class="option" onclick="answer(this,true)">B. Sales Manager</button>
+      <button class="option" onclick="answer(this,false)">C. Driver</button>
+    </div>
+  </div>
+
+
+  <!-- WRITING -->
+  <div class="section">
+    <h2>✍️ 11. Writing</h2>
+
+    <h3>Task 1 — Complete the sentences</h3>
+
+    <div class="example">
+      <div class="english">
+        My name is ______.<br>
+        I am from ______.<br>
+        I live in ______.<br>
+        I am a ______.<br>
+        I work for ______.
+      </div>
+    </div>
+
+    <h3>Task 2 — Write About Yourself</h3>
+
+    <p class="burmese">
+      အောက်ပါအချက်များကို အသုံးပြုပြီး English လို 50–70 words ရေးပါ။
+    </p>
+
+    <ul style="padding-left:20px;margin-top:8px">
+      <li>Name</li>
+      <li>Country</li>
+      <li>City</li>
+      <li>Job</li>
+      <li>Company</li>
+      <li>Family</li>
+      <li>Hobby</li>
+      <li>Why you learn English</li>
+    </ul>
+
+    <textarea
+      id="writingBox"
+      placeholder="Write about yourself in English..."
+      style="width:100%;min-height:180px;margin-top:15px;padding:13px;border:1px solid #cbd5e1;border-radius:10px;font:inherit"
+    ></textarea>
+
+    <button class="btn btn-blue" style="margin-top:10px" onclick="checkWriting()">
+      Check Writing
+    </button>
+
+    <div id="writingResult" style="margin-top:10px"></div>
+  </div>
+
+
+  <!-- QUIZ -->
+  <div class="section">
+    <h2>🧪 12. Grammar & Vocabulary Quiz</h2>
+
+    <div class="question">
+      <strong>1. I ___ from Myanmar.</strong>
+      <button class="option" onclick="answer(this,true)">A. am</button>
+      <button class="option" onclick="answer(this,false)">B. is</button>
+      <button class="option" onclick="answer(this,false)">C. are</button>
+    </div>
+
+    <div class="question">
+      <strong>2. She ___ a teacher.</strong>
+      <button class="option" onclick="answer(this,false)">A. am</button>
+      <button class="option" onclick="answer(this,true)">B. is</button>
+      <button class="option" onclick="answer(this,false)">C. are</button>
+    </div>
+
+    <div class="question">
+      <strong>3. They ___ students.</strong>
+      <button class="option" onclick="answer(this,false)">A. am</button>
+      <button class="option" onclick="answer(this,false)">B. is</button>
+      <button class="option" onclick="answer(this,true)">C. are</button>
+    </div>
+
+    <div class="question">
+      <strong>4. I ___ in Yangon.</strong>
+      <button class="option" onclick="answer(this,true)">A. live</button>
+      <button class="option" onclick="answer(this,false)">B. lives</button>
+      <button class="option" onclick="answer(this,false)">C. living</button>
+    </div>
+
+    <div class="question">
+      <strong>5. I am ___ manager.</strong>
+      <button class="option" onclick="answer(this,true)">A. a</button>
+      <button class="option" onclick="answer(this,false)">B. an</button>
+      <button class="option" onclick="answer(this,false)">C. the</button>
+    </div>
+
+  </div>
+
+
+  <!-- FINAL -->
+  <div class="section">
+    <h2>🏆 13. 4-Skills Final Challenge</h2>
+
+    <div class="challenge">
+      <strong>🎧 Listening</strong>
+      <p>Audio နားထောင်ပြီး information နဲ့ questions တွေကို ဖြေပါ</p>
+    </div>
+
+    <div class="challenge">
+      <strong>🗣️ Speaking</strong>
+      <p>ကိုယ့်အကြောင်း 6–8 sentences ပြောပါ</p>
+    </div>
+
+    <div class="challenge">
+      <strong>📖 Reading</strong>
+      <p>Passage ဖတ်ပြီး questions ဖြေပါ</p>
+    </div>
+
+    <div class="challenge">
+      <strong>✍️ Writing</strong>
+      <p>ကိုယ့်အကြောင်း 50–70 words ရေးပါ</p>
+    </div>
+  </div>
+
+
+  <!-- SCORE -->
+  <div class="section">
+    <div class="score-box">
+      <div>Lesson Assessment</div>
+      <div class="score">24%</div>
+
+      <div class="skill-score">
+        <div class="skill">🎧<br>Listening</div>
+        <div class="skill">🗣️<br>Speaking</div>
+        <div class="skill">📖<br>Reading</div>
+        <div class="skill">✍️<br>Writing</div>
+      </div>
+
+      <button
+        class="btn btn-green"
+        style="margin-top:18px"
+        onclick="completeLesson()"
+      >
+        ✅ Complete Lesson
+      </button>
+
+      <div id="completeMessage" style="margin-top:10px"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- LISTENING -->
+<section class="page" id="listening">
+  <div class="lesson-header">
+    <div class="breadcrumb">PRACTICE</div>
+    <h1>🎧 Listening Practice</h1>
+    <p style="color:#64748b">
+      Listen → Understand → Repeat
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Lesson 1 Listening</h2>
+
+    <div class="audio-box">
+      <div class="english">
+        Hello. My name is David. I am from Myanmar.
+        I live in Yangon. I am a sales manager.
+      </div>
+
+      <div class="audio-controls">
+        <button class="btn btn-blue" onclick="speakLesson()">🔊 Listen</button>
+        <button class="btn btn-light" onclick="speakLessonSlow()">🐢 Slow</button>
+      </div>
+    </div>
+
+    <p class="burmese">
+      အသံကို ၂–၃ ကြိမ် နားထောင်ပြီး ကြားတဲ့အချက်အလက်တွေကို မှတ်သားပါ။
+    </p>
+  </div>
+</section>
+
+
+<!-- SPEAKING -->
+<section class="page" id="speaking">
+  <div class="lesson-header">
+    <div class="breadcrumb">PRACTICE</div>
+    <h1>🗣️ Speaking Practice</h1>
+    <p style="color:#64748b">
+      Listen → Repeat → Speak
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Introduce Yourself</h2>
+
+    <div class="example">
+      <div class="english">My name is ______.</div>
+      <div class="translation">ကျွန်တော့်နာမည် ______ ပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I am from ______.</div>
+      <div class="translation">ကျွန်တော် ______ ကပါ</div>
+    </div>
+
+    <div class="example">
+      <div class="english">I live in ______.</div>
+      <div class="translation">ကျွန်တော် ______ မှာနေပါတယ်</div>
+    </div>
+
+    <button class="btn btn-blue" onclick="startSpeaking()">
+      🎤 Start Speaking Practice
+    </button>
+
+    <p id="speakStatus2" style="margin-top:10px;color:#64748b"></p>
+  </div>
+</section>
+
+
+<!-- READING -->
+<section class="page" id="reading">
+  <div class="lesson-header">
+    <div class="breadcrumb">PRACTICE</div>
+    <h1>📖 Reading Practice</h1>
+    <p style="color:#64748b">Read → Understand → Answer</p>
+  </div>
+
+  <div class="section">
+    <h2>A1 Reading</h2>
+
+    <div class="example">
+      <div class="english">
+        My name is Alex. I am from Myanmar.
+        I live in Yangon. I am a sales manager.
+      </div>
+      <div class="translation">
+        ကျွန်တော့်နာမည် Alex ပါ။ ကျွန်တော် မြန်မာနိုင်ငံကပါ။
+        ရန်ကုန်မှာနေပါတယ်။ Sales Manager တစ်ယောက်ပါ။
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WRITING PAGE -->
+<section class="page" id="writing">
+  <div class="lesson-header">
+    <div class="breadcrumb">PRACTICE</div>
+    <h1>✍️ Writing Practice</h1>
+    <p style="color:#64748b">Write in English</p>
+  </div>
+
+  <div class="section">
+    <h2>Write About Yourself</h2>
+
+    <textarea
+      id="writingBox2"
+      placeholder="My name is..."
+      style="width:100%;min-height:220px;padding:14px;border:1px solid #cbd5e1;border-radius:10px;font:inherit"
+    ></textarea>
+
+    <button class="btn btn-blue" style="margin-top:10px" onclick="checkWriting2()">
+      Check My Writing
+    </button>
+
+    <div id="writingResult2" style="margin-top:10px"></div>
+  </div>
+</section>
+
+
+<!-- GRAMMAR -->
+<section class="page" id="grammar">
+  <div class="lesson-header">
+    <div class="breadcrumb">GRAMMAR</div>
+    <h1>📘 Grammar</h1>
+    <p style="color:#64748b">Learn grammar step by step</p>
+  </div>
+
+  <div class="section">
+    <h2>A1 Grammar — Be Verb</h2>
+
+    <div class="example">
+      <div class="english">I am</div>
+      <div class="translation">ကျွန်တော် / ကျွန်မ ... ဖြစ်သည်</div>
+    </div>
+
+    <div class="example">
+      <div class="english">You are</div>
+      <div class="translation">သင် ... ဖြစ်သည်</div>
+    </div>
+
+    <div class="example">
+      <div class="english">He is / She is</div>
+      <div class="translation">သူ / သူမ ... ဖြစ်သည်</div>
+    </div>
+
+    <div class="example">
+      <div class="english">We are / They are</div>
+      <div class="translation">ကျွန်တော်တို့ / သူတို့ ... ဖြစ်သည်</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- VOCABULARY -->
+<section class="page" id="vocabulary">
+  <div class="lesson-header">
+    <div class="breadcrumb">VOCABULARY</div>
+    <h1>🧠 Vocabulary</h1>
+    <p style="color:#64748b">Learn words with examples</p>
+  </div>
+
+  <div class="section">
+    <h2>Lesson 1 Vocabulary</h2>
+
+    <div class="word-grid">
+      <div class="word"><strong>name</strong><br>နာမည်</div>
+      <div class="word"><strong>country</strong><br>နိုင်ငံ</div>
+      <div class="word"><strong>city</strong><br>မြို့</div>
+      <div class="word"><strong>live</strong><br>နေထိုင်သည်</div>
+      <div class="word"><strong>work</strong><br>အလုပ်လုပ်သည်</div>
+      <div class="word"><strong>job</strong><br>အလုပ်အကိုင်</div>
+      <div class="word"><strong>manager</strong><br>မန်နေဂျာ</div>
+      <div class="word"><strong>company</strong><br>ကုမ္ပဏီ</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TEST -->
+<section class="page" id="test">
+  <div class="lesson-header">
+    <div class="breadcrumb">ASSESSMENT</div>
+    <h1>🧪 Level Test</h1>
+    <p style="color:#64748b">
+      Find your current English level
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Quick Placement Test</h2>
+
+    <div class="question">
+      <strong>1. My name ___ Aung.</strong>
+      <button class="option" onclick="answer(this,true)">A. is</button>
+      <button class="option" onclick="answer(this,false)">B. are</button>
+      <button class="option" onclick="answer(this,false)">C. am</button>
+    </div>
+
+    <div class="question">
+      <strong>2. I ___ from Myanmar.</strong>
+      <button class="option" onclick="answer(this,true)">A. am</button>
+      <button class="option" onclick="answer(this,false)">B. is</button>
+      <button class="option" onclick="answer(this,false)">C. are</button>
+    </div>
+
+    <button class="btn btn-blue" onclick="showTestResult()" style="margin-top:10px">
+      Finish Test
+    </button>
+
+    <div id="testResult" style="margin-top:15px"></div>
+  </div>
+</section>
+
+
+<!-- PROGRESS -->
+<section class="page" id="progress">
+  <div class="lesson-header">
+    <div class="breadcrumb">MY LEARNING</div>
+    <h1>🏆 My Progress</h1>
+    <p style="color:#64748b">Track your English journey</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label">Level</div>
+      <div class="stat-value">A1</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-label">Lessons</div>
+      <div class="stat-value">1</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-label">Streak</div>
+      <div class="stat-value">1 🔥</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-label">Progress</div>
+      <div class="stat-value">24%</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4 Skills</h2>
+
+    <div class="challenge">
+      🎧 Listening — Beginner
+    </div>
+
+    <div class="challenge">
+      🗣️ Speaking — Beginner
+    </div>
+
+    <div class="challenge">
+      📖 Reading — Beginner
+    </div>
+
+    <div class="challenge">
+      ✍️ Writing — Beginner
+    </div>
+  </div>
+</section>
+
+
+<!-- BUSINESS ENGLISH -->
+<section class="page" id="business">
+  <div class="lesson-header">
+    <div class="breadcrumb">SPECIAL COURSE</div>
+    <h1>💼 Business English</h1>
+    <p style="color:#64748b">
+      Professional English for work
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon-box">🤝</div>
+      <h3>Business Conversation</h3>
+      <p>Professional conversations and workplace communication</p>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">📊</div>
+      <h3>Sales English</h3>
+      <p>Customer, sales and negotiation language</p>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">📧</div>
+      <h3>Email English</h3>
+      <p>Professional emails and workplace writing</p>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">🎤</div>
+      <h3>Presentation English</h3>
+      <p>Present ideas clearly and professionally</p>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">🤝</div>
+      <h3>Negotiation</h3>
+      <p>Useful language for business negotiations</p>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">👔</div>
+      <h3>Management English</h3>
+      <p>English for managers and leaders</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SETTINGS -->
+<section class="page" id="settings">
+  <div class="lesson-header">
+    <div class="breadcrumb">SETTINGS</div>
+    <h1>⚙️ Settings</h1>
+    <p style="color:#64748b">Customize your learning experience</p>
+  </div>
+
+  <div class="section">
+
+    <h3>Language</h3>
+    <button class="btn btn-blue">English + မြန်မာ</button>
+
+    <h3>Learning Level</h3>
+    <button class="btn btn-light">A1 Beginner</button>
+
+    <h3>Daily Goal</h3>
+    <button class="btn btn-light">30 Minutes</button>
+
+  </div>
+</section>
+
+</div>
+</main>
+</div>
+
+
+<script>
+
+/* PAGE NAVIGATION */
+
+const pageTitles={
+  dashboard:"Dashboard",
+  courses:"Courses",
+  lesson1:"Lesson 1 — Introducing Yourself",
+  listening:"Listening",
+  speaking:"Speaking",
+  reading:"Reading",
+  writing:"Writing",
+  grammar:"Grammar",
+  vocabulary:"Vocabulary",
+  test:"Level Test",
+  progress:"My Progress",
+  business:"Business English",
+  settings:"Settings"
+};
+
+function showPage(id,button){
+
+  document.querySelectorAll(".page").forEach(function(page){
+    page.classList.remove("active");
+  });
+
+  const target=document.getElementById(id);
+
+  if(target){
+    target.classList.add("active");
+  }
+
+  document.getElementById("topTitle").textContent=
+    pageTitles[id] || "Aung English Pro";
+
+  document.querySelectorAll(".nav-btn").forEach(function(btn){
+    btn.classList.remove("active");
+  });
+
+  if(button){
+    button.classList.add("active");
+  }
+
+  closeSidebar();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+function openLesson(){
+  showPage("lesson1");
+}
+
+
+/* MOBILE SIDEBAR */
+
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle("open");
+}
+
+function closeSidebar(){
+  document.getElementById("sidebar").classList.remove("open");
+}
+
+
+/* TEXT TO SPEECH */
+
+const listeningText=
+"Hello. My name is David. I am from Myanmar. I live in Yangon. I am a sales manager. I work for ABC Company. Nice to meet you.";
+
+function speakText(text,rate){
+
+  if(!("speechSynthesis" in window)){
+    alert("ဒီ Browser မှာ English voice မရနိုင်သေးပါ");
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  const utterance=new SpeechSynthesisUtterance(text);
+
+  utterance.lang="en-US";
+  utterance.rate=rate;
+  utterance.pitch=1;
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function speakLesson(){
+  speakText(listeningText,0.9);
+}
+
+function speakLessonSlow(){
+  speakText(listeningText,0.65);
+}
+
+
+/* SPEAKING */
+
+function startSpeaking(){
+
+  const status=
+    document.getElementById("speakStatus") ||
+    document.getElementById("speakStatus2");
+
+  if(status){
+    status.textContent=
+      "🎤 Speaking practice ကို စတင်ပါ — ကိုယ့်အကြောင်း English လို ပြောပါ";
+  }
+
+  if(!("webkitSpeechRecognition" in window) &&
+     !("SpeechRecognition" in window)){
+    return;
+  }
+
+  const Recognition=
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+  const recognition=new Recognition();
+
+  recognition.lang="en-US";
+  recognition.interimResults=false;
+  recognition.maxAlternatives=1;
+
+  recognition.start();
+
+  recognition.onresult=function(event){
+
+    const text=
+      event.results[0][0].transcript;
+
+    if(status){
+      status.textContent=
+        "You said: " + text;
+    }
+  };
+
+  recognition.onerror=function(){
+
+    if(status){
+      status.textContent=
+        "Microphone permission သို့မဟုတ် Browser support ကို စစ်ပါ";
+    }
+  };
+}
+
+
+/* QUIZ */
+
+function answer(button,isCorrect){
+
+  const parent=button.parentElement;
+
+  parent.querySelectorAll(".option").forEach(function(option){
+    option.disabled=true;
+  });
+
+  if(isCorrect){
+
+    button.classList.add("correct");
+
+    const msg=document.createElement("div");
+    msg.className="answer";
+    msg.style.color="#16a34a";
+    msg.textContent="✅ Correct!";
+
+    parent.appendChild(msg);
+
+  }else{
+
+    button.classList.add("wrong");
+
+    const msg=document.createElement("div");
+    msg.className="answer";
+    msg.style.color="#dc2626";
+    msg.textContent="❌ Try again next time";
+
+    parent.appendChild(msg);
+  }
+}
+
+
+/* WRITING */
+
+function checkWriting(){
+
+  const box=document.getElementById("writingBox");
+  const result=document.getElementById("writingResult");
+
+  if(!box || !result)return;
+
+  const text=box.value.trim();
+
+  if(!text){
+    result.innerHTML=
+      '<div style="color:#dc2626">စာရေးပြီးမှ Check Writing နှိပ်ပါ</div>';
+    return;
+  }
+
+  const words=text.split(/\s+/).filter(Boolean).length;
+
+  result.innerHTML=
+    '<div style="background:#dcfce7;padding:12px;border-radius:10px;color:#166534">'+
+    '✅ Writing saved for practice<br>'+
+    'Word count: '+words+
+    '</div>';
+}
+
+function checkWriting2(){
+
+  const box=document.getElementById("writingBox2");
+  const result=document.getElementById("writingResult2");
+
+  if(!box || !result)return;
+
+  const text=box.value.trim();
+
+  if(!text){
+    result.innerHTML=
+      '<div style="color:#dc2626">စာရေးပြီးမှ Check My Writing နှိပ်ပါ</div>';
+    return;
+  }
+
+  const words=text.split(/\s+/).filter(Boolean).length;
+
+  result.innerHTML=
+    '<div style="background:#dcfce7;padding:12px;border-radius:10px;color:#166534">'+
+    '✅ Practice completed<br>'+
+    'Word count: '+words+
+    '</div>';
+}
+
+
+/* COMPLETE LESSON */
+
+function completeLesson(){
+
+  localStorage.setItem(
+    "aungEnglishLesson1Completed",
+    "true"
+  );
+
+  const msg=
+    document.getElementById("completeMessage");
+
+  if(msg){
+    msg.innerHTML=
+      "🎉 Lesson 1 Complete!<br>Lesson 2 will be available in the next content update.";
+  }
+}
+
+
+/* TEST */
+
+function showTestResult(){
+
+  const result=document.getElementById("testResult");
+
+  if(result){
+
+    result.innerHTML=
+      '<div style="background:#eff6ff;border:1px solid #bfdbfe;padding:16px;border-radius:12px">'+
+      '<strong>Estimated Starting Level: A1 Beginner</strong>'+
+      '<br><span style="color:#64748b">ဒီ Quick Test က demo ဖြစ်ပါတယ်။ Full placement test ကို နောက် Version မှာ 4 Skills အပြည့်အစုံနဲ့ ထည့်မယ်</span>'+
+      '</div>';
+  }
+}
+
+
+/* START */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+  const completed=
+    localStorage.getItem(
+      "aungEnglishLesson1Completed"
+    );
+
+  if(completed==="true"){
+
+    const msg=
+      document.getElementById("completeMessage");
+
+    if(msg){
+      msg.innerHTML=
+        "✅ Lesson 1 completed";
+    }
+  }
+
+});
+
+</script>
+
+</body>
+</html>
+```
